@@ -1,0 +1,11 @@
+Class Name: Dish
+
+Responsibilities:
+* Store information about Name, Ingredients, Cook Time, Cook Instructions and Attributes
+* Setter and Getter functions for above information
+* Override the toString functionality to output above information in a concise manner
+
+Collaborators:
+* RecipeBook
+* Ingredients
+* DishManager

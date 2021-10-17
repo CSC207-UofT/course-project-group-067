@@ -1,0 +1,7 @@
+Class Name: IngSearch
+
+Responsibilities:
+* Return a list containing *Dish*(es) which contain all the ingredients input
+
+Collaborators:
+SearchDistributor

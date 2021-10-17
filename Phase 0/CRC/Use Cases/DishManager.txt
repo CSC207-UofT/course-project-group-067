@@ -1,0 +1,9 @@
+Class name: DishManager
+
+Responsibilities:
+* Store list of existing Dishes
+* Create/ edit Dishes
+
+Collaborators:
+* Dish
+* RecipeBook

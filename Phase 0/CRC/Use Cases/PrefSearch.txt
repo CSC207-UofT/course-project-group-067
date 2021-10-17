@@ -1,0 +1,9 @@
+Class Name: PrefSearch
+
+Responsibilities:
+* Return a list of *Dish*(es) containing all attributes in the preferences of current user
+
+
+Collaborators:
+SearchDistributor
+User

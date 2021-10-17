@@ -1,0 +1,12 @@
+Class Name: UserManager
+
+Responsibilities:
+* Store a mapping between usernames and users in userList
+* Create new users and remove them from the userList
+
+
+Collaborators:
+* User
+
+Collapse
+UserManager.txt

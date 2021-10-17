@@ -1,0 +1,9 @@
+Class name: IngredientManager
+
+Responsibilities:
+* Store list of Ingredients
+* Create/ edit Ingredient
+
+Collaborators:
+* Ingredient
+* RecipeBook

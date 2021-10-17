@@ -1,0 +1,11 @@
+Class Name: RecipeBook
+
+Responsibilities:
+* Allows User input for commands
+
+
+Collaborators:
+* BookView
+* Command
+* User
+* UserManager
