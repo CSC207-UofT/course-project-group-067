@@ -1,31 +1,23 @@
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class Dish {
-    public String name;
-    public double time;
-    public ArrayList<Ingredient> ingredients;
-    public ArrayList<String> method;
-    public ArrayList<String> attributes;
+    private String name;
+    private double time;
+    private ArrayList<Ingredient> ingredients;
+    private ArrayList<String> method;
+    private ArrayList<String> attributes;
 
-    /**
-     * Constructor that takes one parameter dishName and create empty lists
-     * for both ingredients and method
-     * default time is -1.00
-     *
-     * @param dishName name of dish
-     */
-    public Dish(String dishName) {
-        this.name = dishName;
+    public Dish() {
+        this.name = "EMPTY";
         this.ingredients = new ArrayList<>();
         this.method = new ArrayList<>();
         this.time = -1.00;
         this.attributes = new ArrayList<String>();
     }
 
-
     /**
-     * Alternative constructor where all dishName ingredients and method are provided
-     * and creates list for the later 2 and implements name
+     * Alternative Constructor for reading from file with all input fields given
      *
      * @param dishName  name of Dish
      * @param ingredients List of Ingredients in Dish
@@ -39,6 +31,9 @@ public class Dish {
         this.time = time;
     }
 
+    public void addName(String name){
+        this.name = name;
+    }
     public void addIngredient(Ingredient i) {
         this.ingredients.add(i);
         this.attributes.addAll(i.getAttributes());
@@ -52,10 +47,35 @@ public class Dish {
         this.time = time;
     }
 
-    public String getName() {return this.name;}
-    public ArrayList<Ingredient> getIngredients(){return (ArrayList<Ingredient>) this.ingredients.clone();}
-    public ArrayList<String> getMethod() {return (ArrayList<String>) this.method.clone();}
-    public double getTime() {return this.time;}
+
+    public String getName() {
+        return this.name;
+    }
+
+    public ArrayList<Ingredient> getIngredients(){
+        return (ArrayList<Ingredient>) this.ingredients.clone();
+    }
+
+    public ArrayList<String> getIngredientsName(){
+        ArrayList<String> names = new ArrayList<>();
+
+        for(Ingredient i: this.ingredients){
+            names.add(i.getName());
+        }
+
+        return names;
+    }
+
+    public ArrayList<String> getMethod() {
+        return (ArrayList<String>) this.method.clone();
+    }
+
+    public double getTime() {
+        return this.time;
+    }
 
 
+    public ArrayList<String> getAttributes() {
+        return (ArrayList<String>) this.attributes.clone();
+    }
 }
