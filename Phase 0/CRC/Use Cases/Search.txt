@@ -1,0 +1,9 @@
+Class Name: Search
+
+Responsibilities:
+* Allows a User to input search terms and passes each search request to SearchDistributor
+
+Collaborators:
+* SearchDistributor
+* Recipe Book
+

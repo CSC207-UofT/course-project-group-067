@@ -1,0 +1,8 @@
+Class Name: NameSearch
+
+Responsibilities:
+* Return a list of *Dish*(es) with the input String as their name
+
+
+Collaborators:
+SearchDistributor

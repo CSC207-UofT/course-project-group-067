@@ -1,0 +1,7 @@
+Class Name: TimeSearch
+
+Responsibilities:
+* Return a list containing *Dish*(es) with cook time less than input time
+
+Collaborators:
+SearchDistributor

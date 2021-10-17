@@ -1,0 +1,9 @@
+Class Name: Ingredients
+
+Responsibilities:
+* Store information about Name and Attributes
+* Setter and Getter functions for above information
+
+Collaborators:
+* Dish
+* IngredientManager

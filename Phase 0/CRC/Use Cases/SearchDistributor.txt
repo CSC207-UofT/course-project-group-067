@@ -1,0 +1,11 @@
+Class Name: SearchDistributor
+
+Responsibilities:
+* Read a given search term and executes the associated search function
+
+Collaborators:
+NameSearch
+TimeSearch
+PrefSearch
+IngSearch
+AttrSearch
