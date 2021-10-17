@@ -1,0 +1,8 @@
+Class name: PrefSearch
+Parent: Search
+
+Responsibilities:
+* Search function by preference
+
+Collaborators:
+Search

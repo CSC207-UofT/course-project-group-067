@@ -57,5 +57,17 @@ public class Dish {
     public ArrayList<String> getMethod() {return (ArrayList<String>) this.method.clone();}
     public double getTime() {return this.time;}
 
+    @Override
+    public String toString() {
+        StringBuilder desc = new StringBuilder("Dish: ");
+        desc.append(this.name + " ; CookTime: " + this.time + " \n");
+        desc.append("--Ingredients--\n");
+        for (Ingredient i : this.ingredients) {desc.append(i.name +" \n");}
+        desc.append("--METHOD--\n");
+        for ()
 
+        return desc.toString();
+
+
+    }
 }

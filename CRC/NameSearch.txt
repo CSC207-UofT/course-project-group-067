@@ -1,0 +1,8 @@
+Class name: NameSearch
+Parent: Search
+
+Responsibilities:
+* Search function  for name of dish
+
+Collaborators:
+Search

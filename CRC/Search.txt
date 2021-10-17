@@ -1,0 +1,8 @@
+Class name: Search
+Child Class': AttrSearch, IngSearch, TImeSearch, PrefSearch
+
+Responsibilities:
+* Parent class for search functions
+*
+
+Collaborators:

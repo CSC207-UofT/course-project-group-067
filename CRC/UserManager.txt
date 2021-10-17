@@ -1,0 +1,8 @@
+Class name: UserManager
+
+Responsibilities:
+* Stores list of Users and create/ delete users
+* signIn signOut
+
+Collaborators:
+* User

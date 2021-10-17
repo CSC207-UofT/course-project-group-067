@@ -1,0 +1,9 @@
+Class name: Ingredient
+
+Responsibilities:
+* Stores Ingredient's information
+*
+
+Collaborators:
+* IngredientManager
+* Dish

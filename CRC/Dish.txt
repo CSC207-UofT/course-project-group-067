@@ -1,0 +1,9 @@
+Class name: Dish
+
+Responsibilities:
+* Store Dish information
+*
+
+Collaborators:
+*DishManager
+*Ingredient

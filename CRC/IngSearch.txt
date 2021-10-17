@@ -1,0 +1,9 @@
+Class name: IngSearch
+Parent Class: Search
+
+Responsibilities:
+* Search Function by Ingredient
+
+
+Collaborators:
+Search, DishManager

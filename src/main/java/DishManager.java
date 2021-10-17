@@ -14,22 +14,25 @@ public class DishManager {
     }
 
 
-    public void createDish(String dishName, ArrayList<Ingredient> ingredients, ArrayList<String> method, double time) {
+    public void createDishTo(String dishName, ArrayList<Ingredient> ingredients, ArrayList<String> method, double time) {
         Dish d = new Dish(dishName, ingredients, method, time);
         this.dishes.add(d);
     }
 
-
-    public void addIngredient(Dish dish, ArrayList<Ingredient> ingredients) {
+    public void addIngredientTo(Dish dish, ArrayList<Ingredient> ingredients) {
         for (Ingredient i : ingredients) {
             dish.addIngredient(i);}
         this.dishes.add(dish);}
 
-    public void addMethod(Dish dish, ArrayList<String> method) {
+    public void addMethodTo(Dish dish, ArrayList<String> method) {
         for (String stepX : method) {
             dish.addMethod(stepX);}
         this.dishes.add(dish);
         }
+
+    public void addTimeTO(Dish dish,double time) {
+        dish.addTime(time);
+    }
 
     public ArrayList<Dish> getDishes() {
         return this.dishes;

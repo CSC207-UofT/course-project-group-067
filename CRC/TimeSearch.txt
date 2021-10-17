@@ -1,0 +1,8 @@
+Class name: TimeSearch
+
+Responsibilities:
+* Stores Ingredient's information
+*
+
+Collaborators:
+Search
