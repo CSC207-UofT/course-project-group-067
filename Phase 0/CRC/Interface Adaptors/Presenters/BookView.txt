@@ -1,6 +1,8 @@
-Class Name:
+Class Name: BookView
 
 Responsibilities:
+* Present RecipeBook via the CMD line
 
 
 Collaborators:
+* RecipeBook

@@ -1,6 +1,8 @@
-Class Name:
+Class name: Command
+Child Class:
 
 Responsibilities:
-
+* Executes command
+* raises exemption if non-executable
 
 Collaborators:

@@ -1,6 +1,10 @@
-Class Name:
+Class Name: User
 
 Responsibilities:
-
+* Store user's name
+* Store user's copy of RecipeBook
+* Store user's preferences
 
 Collaborators:
+* UserManager
+* RecipeBook

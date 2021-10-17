@@ -1,0 +1,7 @@
+Class Name: FileReader
+
+Responsibilities:
+* Read information from dishinfo.txt
+
+Collaborators:
+* RecipeBook
