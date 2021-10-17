@@ -4,4 +4,4 @@ Responsibilities:
 * Return a list containing *Dish*(es) which contain all the input Attributes
 
 Collaborators:
-SearchDistributor
+* SearchDistributor
