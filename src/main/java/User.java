@@ -31,6 +31,10 @@ public class User {
         return this.preferences;
     }
 
+    public RecipeBook getBook() {
+        return this.book;
+    }
+
     public void resetUser() {
         this.book = new RecipeBook();
         this.preferences = new ArrayList<String>();

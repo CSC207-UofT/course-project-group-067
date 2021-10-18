@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 class UserManager {
-    static HashMap<String, User> userList; //Map of String representing users to personal RecipeBooks
+    private static HashMap<String, User> userList; //Map of String representing users to personal RecipeBooks
     // move public User currentUser; // Represents the RecipeBook that the current user is using
 
     public static void addUser(User u) {
@@ -17,4 +17,7 @@ class UserManager {
         return new ArrayList<>(userList.keySet());
     }
 
+    public static HashMap<String, User> getMap(){
+        return userList;
+    }
 }
