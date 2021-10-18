@@ -1,6 +1,6 @@
 #Progress Report - Phase 0
 
-by: (Name), (Name), Angelo Huang, Prabuddha Senapati
+by: Angelo Huang, Prabuddha Senapati, Jacob Gilbert
 
 Group 067 - Modular Recipe Book.
 
