@@ -7,19 +7,19 @@ which command they may wish to run.
 
 Once the User wishes to log-out, they may input CLOSE, and they will be returned to Launch.
 
-Example:
-Execute Launch
-Create New User TEST
-Input nothing for Preferences
-Input Username TEST
-Command Create Ingredient: 
-Name - Egg
-Attribute- Non-Veg
-Command Create Dish:
-Name - Boiled Egg
-Ingredient - Egg
-Cooking Instructions - Put egg in water
-Cook Time - 5
-Command View Dishes
-Command Boiled Egg
+Example:\
+Execute Launch\
+Create New User TEST\
+Input nothing for Preferences\
+Input Username TEST\
+Command Create Ingredient: \
+Name - Egg\
+Attribute- Non-Veg\
+Command Create Dish:\
+Name - Boiled Egg\
+Ingredient - Egg\
+Cooking Instructions - Put egg in water\
+Cook Time - 5\
+Command View Dishes\
+Command Boiled Egg\
 Command CLOSE
