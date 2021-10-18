@@ -1,0 +1,8 @@
+Class Name: CreateDish
+Responsibilities:
+* Allows creation of a new Dish object
+
+Collaborators:
+* Dish
+* DishManager
+* IngredientManager

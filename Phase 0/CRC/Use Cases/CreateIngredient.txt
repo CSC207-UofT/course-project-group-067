@@ -1,0 +1,7 @@
+Class Name: CreateIngredient
+Responsibilities:
+* Allows creation of a new Ingredient object
+
+Collaborators:
+* Ingredient
+* IngredientManager

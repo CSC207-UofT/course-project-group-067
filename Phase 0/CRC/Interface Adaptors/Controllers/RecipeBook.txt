@@ -8,4 +8,3 @@ Collaborators:
 * BookView
 * Command
 * User
-* UserManager
