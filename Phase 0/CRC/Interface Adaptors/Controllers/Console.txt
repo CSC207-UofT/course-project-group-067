@@ -1,0 +1,10 @@
+Class Name: Console
+
+Responsibilities:
+* Handles user commands and operates on user's RecipeBook
+* Raises an exception if commands are invalid
+
+Collaborators:
+* DishManager
+* IngredientManager
+* RecipeBook

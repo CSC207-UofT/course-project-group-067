@@ -6,4 +6,3 @@ Responsibilities:
 
 Collaborators:
 * Ingredient
-* RecipeBook

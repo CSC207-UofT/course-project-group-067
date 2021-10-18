@@ -6,5 +6,4 @@ Responsibilities:
 * Store user's preferences
 
 Collaborators:
-* UserManager
 * RecipeBook

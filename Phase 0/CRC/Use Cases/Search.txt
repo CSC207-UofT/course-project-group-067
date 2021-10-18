@@ -5,5 +5,5 @@ Responsibilities:
 
 Collaborators:
 * SearchDistributor
-* Recipe Book
+* DishManager
 

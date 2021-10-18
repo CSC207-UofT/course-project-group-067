@@ -1,0 +1,7 @@
+Class Name: CreateUser
+Responsibilities:
+* Allows creation of a new User object
+
+Collaborators:
+* User
+* UserManager

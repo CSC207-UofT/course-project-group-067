@@ -1,0 +1,11 @@
+Class Name: Launch
+
+Responsibilities:
+* Starts the program
+* Allows user to log-in and log-out
+* Keeps track of the current user and opens their RecipeBook instance
+
+Collaborators:
+* User
+* UserManager
+* RecipeBook
