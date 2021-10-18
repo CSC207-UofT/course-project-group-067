@@ -1,28 +1,23 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
-class UserManager {
-    HashMap<String, User> userList; //Map of String representing users to personal RecipeBooks
+public class UserManager {
+    private static HashMap<String, User> userList = new HashMap<String, User>();; //Map of String representing users to personal RecipeBooks
     // move public User currentUser; // Represents the RecipeBook that the current user is using
 
-    public void addUser(String userName) {
-        User newUser = new User(userName);
-        userList.put(userName, newUser);
+    public static void addUser(User u) {
+        userList.put(u.getName(), u);
     }
 
-    public User getUser(String userName) {
+    public static User getUserByName(String userName) {
         return userList.get(userName);
     }
 
-    public void deleteUser(String userName) {
-        userList.remove(userName);
+    public static ArrayList<String> getUserNames(){
+        return new ArrayList<>(userList.keySet());
     }
 
-    //move public void signIn(String userName) {
-        //currentUser = userList.get(userName);
-    //}
-
-    /*public void signOut() {
-        currentUser = null;
+    public static HashMap<String, User> getMap(){
+        return userList;
     }
-    */
 }

@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class TimeSearch implements TypeSearch{
+public class TimeSearch {
 
-    public ArrayList<Dish> getResults(ArrayList<Dish> list){
+    public static ArrayList<Dish> getResults(ArrayList<Dish> list){
 
         Scanner in = new Scanner(System.in);
         System.out.println("Enter Maximum Allowed Cooktime");

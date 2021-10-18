@@ -1,24 +1,16 @@
-import javax.print.DocFlavor;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Ingredient {
     public String name;
     public ArrayList<String> attributes;
 
-    /**
-     * Constructor creating ingredient with no attributes
-     * takes on parameter of its name and makes empty list for attributes
-     * @param name name of ingredient
-     */
-    public Ingredient(String name) {
-        this.name = name;
-        this.attributes = new ArrayList<String>();
+    public Ingredient(){
+        this.name = "EMPTY";
+        this.attributes = new ArrayList<>();
     }
 
     /**
-     *constructor creating ingredient with Name, name
-     * and given attributes
+     *Alternative Constructor for reading from file with all inputs given
      * @param name name of ingredient
      * @param attributes list of string attributes
      */
@@ -27,13 +19,22 @@ public class Ingredient {
         this.attributes = attributes;
     }
 
-    public String getName() { return this.name;}
-
-    public ArrayList<String> getAttributes() {return attributes;}
-
-    public void addAttribute(String att) {
-        this.attributes.add(att);
+    public void addName(String name){
+        this.name = name;
     }
+
+    public void addAttribute(String attr){
+        this.attributes.add(attr);
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public ArrayList<String> getAttributes() {
+        return (ArrayList<String>) attributes.clone();
+    }
+
 
     @Override
     public String toString() {
