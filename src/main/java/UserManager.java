@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-class UserManager {
-    private static HashMap<String, User> userList; //Map of String representing users to personal RecipeBooks
+public class UserManager {
+    private static HashMap<String, User> userList = new HashMap<String, User>();; //Map of String representing users to personal RecipeBooks
     // move public User currentUser; // Represents the RecipeBook that the current user is using
 
     public static void addUser(User u) {

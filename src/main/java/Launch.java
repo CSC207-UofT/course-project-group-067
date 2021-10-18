@@ -4,6 +4,7 @@ public class Launch {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
+
         if(UserManager.getMap().isEmpty()){
             System.out.println("No Users Found, Creating New User....");
             CreateUser.create();

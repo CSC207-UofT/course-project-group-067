@@ -9,7 +9,7 @@ public class User {
 
     public User() { //Constructor creates a new user
         this.name = "EMPTY";
-        this.book = new RecipeBook();
+        this.book = new RecipeBook(this);
         this.preferences = new ArrayList<String>();
         this.favourites = new ArrayList<Dish>();
     }
@@ -36,7 +36,7 @@ public class User {
     }
 
     public void resetUser() {
-        this.book = new RecipeBook();
+        this.book = new RecipeBook(this);
         this.preferences = new ArrayList<String>();
     }
 
@@ -48,4 +48,7 @@ public class User {
         this.favourites.remove(d);
     }
 
+    public ArrayList<Dish> getFavourites() {
+        return this.favourites;
+    }
 }

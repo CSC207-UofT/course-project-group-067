@@ -10,7 +10,6 @@ public class CreateDish {
         fieldIngredients(dish, ingredientManager);
         fieldMethod(dish);
         fieldTime(dish);
-        fieldTime(dish);
         dishManager.addDishToList(dish);
     }
 

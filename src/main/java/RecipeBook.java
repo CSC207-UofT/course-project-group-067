@@ -1,13 +1,17 @@
 import java.util.Scanner;
 
 public class RecipeBook {
-    DishManager dishManager;
-    IngredientManager ingredientManager;
+    private DishManager dishManager;
+    private IngredientManager ingredientManager;
+    private final User u;
 
-    public RecipeBook(){
+    public RecipeBook(User u){
         this.dishManager = new DishManager();
         this.ingredientManager = new IngredientManager();
+        this.u = u;
     }
+
+
     public void open() {
         Scanner sc = new Scanner(System.in);
         BookView.view(this);
@@ -16,11 +20,13 @@ public class RecipeBook {
 
         String input = sc.nextLine();
 
-        Console c = new Console(dishManager, ingredientManager);
+        Console c = new Console(dishManager, ingredientManager, this);
 
         while(!(input.equals("CLOSE"))){
-            Command.run()
+            c.run(input);
+            System.out.println("Enter Command:");
 
+            input = sc.nextLine();
         }
 
         String[] args = new String[]{"TEMP"};
@@ -28,4 +34,11 @@ public class RecipeBook {
 
     }
 
+    public DishManager getDishManager() {
+        return dishManager;
+    }
+
+    public User getUser() {
+        return u;
+    }
 }
