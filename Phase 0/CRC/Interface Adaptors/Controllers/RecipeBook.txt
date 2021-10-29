@@ -9,3 +9,4 @@ Collaborators:
 * Command
 * User
 * UserManager
+* Console
