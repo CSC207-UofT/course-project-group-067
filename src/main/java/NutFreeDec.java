@@ -1,13 +1,13 @@
-public class VeganDec extends AttributeDecorator {
+public class NutFreeDec extends AttributeDecorator {
 
     Dish contains;
-    public VeganDec(Dish d) {
+    public NutFreeDec (Dish d) {
         this.contains = d;
     }
 
     @Override
     public boolean hasAttribute(AttributeDecorator attribute) {
-        if (attribute instanceof VeganDec) {
+        if (attribute instanceof NutFreeDec) {
             return true;
         }
         else {
