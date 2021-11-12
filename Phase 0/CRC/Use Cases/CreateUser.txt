@@ -1,7 +1,7 @@
-Class Name: CreateUser
+Class Name: Temp.CreateUser
 Responsibilities:
-* Allows creation of a new User object
+* Allows creation of a new Entities.User object
 
 Collaborators:
-* User
-* UserManager
+* Entities.User
+* Managers.UserManager

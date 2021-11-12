@@ -1,8 +1,8 @@
 Class Name: CreateDish
 Responsibilities:
-* Allows creation of a new Dish object
+* Allows creation of a new Entities.Dish object
 
 Collaborators:
-* Dish
-* DishManager
-* IngredientManager
+* Entities.Dish
+* Managers.DishManager
+* Managers.IngredientManager

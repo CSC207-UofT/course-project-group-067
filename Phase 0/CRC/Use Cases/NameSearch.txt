@@ -1,8 +1,8 @@
-Class Name: NameSearch
+Class Name: Search.NameSearch
 
 Responsibilities:
-* Return a list of *Dish*(es) with the input String as their name
+* Return a list of *Entities.Dish*(es) with the input String as their name
 
 
 Collaborators:
-SearchDistributor
+Search.SearchDistributor

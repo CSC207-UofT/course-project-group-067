@@ -1,7 +1,7 @@
-Class Name: TimeSearch
+Class Name: Search.TimeSearch
 
 Responsibilities:
-* Return a list containing *Dish*(es) with cook time less than input time
+* Return a list containing *Entities.Dish*(es) with cook time less than input time
 
 Collaborators:
-SearchDistributor
+Search.SearchDistributor

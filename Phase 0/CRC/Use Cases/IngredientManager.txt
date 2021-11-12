@@ -1,8 +1,8 @@
-Class name: IngredientManager
+Class name: Managers.IngredientManager
 
 Responsibilities:
 * Store list of Ingredients
-* Create/ edit Ingredient
+* Create/ edit Entities.Ingredient
 
 Collaborators:
-* Ingredient
+* Entities.Ingredient

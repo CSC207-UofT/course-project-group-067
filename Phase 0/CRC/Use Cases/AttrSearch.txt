@@ -1,7 +1,7 @@
-Class Name: AttrSearch
+Class Name: Search.AttrSearch
 
 Responsibilities:
-* Return a list containing *Dish*(es) which contain all the input Attributes
+* Return a list containing *Entities.Dish*(es) which contain all the input Attributes
 
 Collaborators:
-* SearchDistributor
+* Search.SearchDistributor
