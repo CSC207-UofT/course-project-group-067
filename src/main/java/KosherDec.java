@@ -17,7 +17,7 @@ public class KosherDec extends AttributeDecorator {
     }
 
     @Override
-    public Dish getPlainDish() {
+    public PlainDish getPlainDish() {
         return this.contains.getPlainDish();
     }
 }
