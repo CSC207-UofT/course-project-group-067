@@ -1,11 +1,11 @@
-Class Name: Launch
+Class Name: Controller.Launch
 
 Responsibilities:
 * Starts the program
 * Allows user to log-in and log-out
-* Keeps track of the current user and opens their RecipeBook instance
+* Keeps track of the current user and opens their Controller.RecipeBook instance
 
 Collaborators:
-* User
-* UserManager
-* RecipeBook
+* Entities.User
+* Managers.UserManager
+* Controller.RecipeBook

@@ -1,8 +1,8 @@
-Class Name: BookView
+Class Name: Presenter.BookView
 
 Responsibilities:
-* Present RecipeBook via the CMD line
+* Present Controller.RecipeBook via the CMD line
 
 
 Collaborators:
-* RecipeBook
+* Controller.RecipeBook

@@ -1,4 +1,4 @@
-Class Name: UserManager
+Class Name: Managers.UserManager
 
 Responsibilities:
 * Store a mapping between usernames and users in userList
@@ -6,5 +6,5 @@ Responsibilities:
 
 
 Collaborators:
-* User
+* Entities.User
 
