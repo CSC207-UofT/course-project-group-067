@@ -2,11 +2,12 @@ package Managers;
 
 import Entities.User;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class UserManager {
-    private HashMap<String, User> userList = new HashMap<String, User>();; //Map of String representing users to personal RecipeBooks
+public class UserManager implements Serializable {
+    private HashMap<String, User> userList = new HashMap<String, User>(); //Map of String representing users to personal RecipeBooks
     // move public Entities.User currentUser; // Represents the Controller.RecipeBook that the current user is using
 
     public void addUser(User u) {

@@ -2,9 +2,10 @@ package Managers;
 
 import Entities.Dish;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class DishManager {
+public class DishManager implements Serializable {
     private ArrayList<Dish> dishes;
 
     public DishManager() {
