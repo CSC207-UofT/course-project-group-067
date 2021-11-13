@@ -20,4 +20,9 @@ public class KosherDec extends AttributeDecorator {
     public PlainDish getPlainDish() {
         return this.contains.getPlainDish();
     }
+
+    @Override
+    public String toString() {
+        return ("Kosher " + contains.toString());
+    }
 }

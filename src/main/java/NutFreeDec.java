@@ -20,4 +20,9 @@ public class NutFreeDec extends AttributeDecorator {
     public PlainDish getPlainDish() {
         return this.contains.getPlainDish();
     }
+
+    @Override
+    public String toString() {
+        return ("NutFree " + contains.toString());
+    }
 }

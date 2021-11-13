@@ -1,12 +1,22 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class AttrSearch {
 
     public static ArrayList<Dish> getResults(ArrayList<Dish> list){
-
+        VeganDec veganRef = new VeganDec(null);
+        KosherDec kosRef = new KosherDec(null);
+        NutFreeDec nutRef = new NutFreeDec(null);
+        VegetarianDec vegRef = new VegetarianDec(null);
+        GlutenFreeDec gluRef = new GlutenFreeDec(null);
+        HashMap<String, AttributeDecorator> stringToDecorator = new HashMap<>();
+        stringToDecorator.put("Vegan", veganRef);
+        stringToDecorator.put("Kosher", veganRef);
+        stringToDecorator.put("NutFree", veganRef);
+        stringToDecorator.put("Vegetarian", veganRef);
+        stringToDecorator.put("GlutenFree", veganRef);
         Scanner in = new Scanner(System.in);
         System.out.println("Enter Attribute(s) to search by. Press END to finish");
+        System.out.println("Valid Attributes: NutFree, GlutenFree, Vegetarian, Kosher, Vegan");
         String input = in.nextLine();
 
         ArrayList<String> attributes = new ArrayList<>();
@@ -19,16 +29,25 @@ public class AttrSearch {
         ArrayList<Dish> ret = new ArrayList<>();
 
         for(Dish dish: list){
-            if(dish.getAttributes().containsAll(attributes)){
+            Set<Boolean> verifier = new HashSet<>();
+            for (String attribute : attributes) {
+                if (!(dish.hasAttribute(stringToDecorator.get(attribute)))) {
+                    verifier.add(false);
+                }
+            }
+            if (!(verifier.contains(false))) {
                 ret.add(dish);
             }
+
+
+            }
+        return ret;
         }
 
-        return ret;
+
 
 
 
 
 
     }
-}

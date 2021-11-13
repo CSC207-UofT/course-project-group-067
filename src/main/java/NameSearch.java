@@ -14,7 +14,7 @@ public class NameSearch {
         ArrayList<Dish> ret = new ArrayList<>();
 
         for(Dish dish: list){
-            if (dish.getName().equals(input))
+            if (dish.getPlainDish().getName().equals(input))
                 ret.add(dish);
 
 

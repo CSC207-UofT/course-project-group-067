@@ -20,4 +20,9 @@ public class VeganDec extends AttributeDecorator {
     public PlainDish getPlainDish() {
         return this.contains.getPlainDish();
     }
+
+    @Override
+    public String toString() {
+        return ("Vegan " + contains.toString());
+    }
 }

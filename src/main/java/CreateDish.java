@@ -10,8 +10,8 @@ public class CreateDish {
         fieldIngredients(dish, ingredientManager);
         fieldMethod(dish);
         fieldTime(dish);
-        fieldAttributes(dish);
-        dishManager.addDishToList(dish);
+        Dish decoratedDish = fieldAttributes(dish);
+        dishManager.addDishToList(decoratedDish);
     }
 
     private static void fieldName(PlainDish dish) {
@@ -51,30 +51,39 @@ public class CreateDish {
     private static Dish fieldAttributes(PlainDish dish) {
         System.out.println("Enter Attributes, END to finish");
         System.out.println("Possible Attributes: Vegan, Kosher, Vegetarian, NutFree, GlutenFree");
-        String input = sc.nextLine();
+        String input = "*";
         Dish currentLayer = dish;
 
 
         while(!(input.equals("END"))) {
-            switch (input) {
-                case "Vegan" -> {
-                    currentLayer = new VeganDec(currentLayer);
-                }
-                case "Vegetarian" -> {
-                    currentLayer = new VegetarianDec(currentLayer);
-                }
-                case "Kosher" -> {
-                    currentLayer = new KosherDec(currentLayer);
-                }
-                case "NutFree" -> {
-                    currentLayer = new NutFreeDec(currentLayer);
-                }
-                case "GlutenFree" -> {
-                    currentLayer = new GlutenFreeDec(currentLayer);
-                }
-                default -> System.out.println("Invalid input, please try again");
-            }
             input = sc.nextLine();
+            switch (input) {
+                case "*": { break;
+                }
+                case "Vegan": {
+                    currentLayer = new VeganDec(currentLayer);
+                    break;
+                }
+                case "Vegetarian": {
+                    currentLayer = new VegetarianDec(currentLayer);
+                    break;
+                }
+                case "Kosher": {
+                    currentLayer = new KosherDec(currentLayer);
+                    break;
+                }
+                case "NutFree": {
+                    currentLayer = new NutFreeDec(currentLayer);
+                    break;
+                }
+                case "GlutenFree": {
+                    currentLayer = new GlutenFreeDec(currentLayer);
+                    break;
+                }
+                //default: System.out.println("Invalid input, please try again");
+                //break;
+            }
+
 
 
         }

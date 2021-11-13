@@ -6,7 +6,6 @@ public class CreateIngredient {
     public static void create(IngredientManager ingredientManager){
         Ingredient i = new Ingredient();
         fieldName(i);
-        fieldAttribute(i);
         ingredientManager.addIngredientToList(i);
     }
 
@@ -21,7 +20,6 @@ public class CreateIngredient {
         String input = sc.nextLine();
 
         while(!(input.equals("END"))){
-            i.addAttribute(input);
             input = sc.nextLine();
         }
 

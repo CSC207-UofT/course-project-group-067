@@ -13,7 +13,7 @@ public class TimeSearch {
         ArrayList<Dish> ret = new ArrayList<>();
 
         for(Dish dish: list){
-            if(dish.getTime() <= time)
+            if(dish.getPlainDish().getTime() <= time)
                 ret.add(dish);
 
         }

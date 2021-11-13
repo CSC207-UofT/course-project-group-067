@@ -1,7 +1,6 @@
 public interface Dish {
 
-    public boolean hasAttribute(AttributeDecorator attribute);
-    public PlainDish getPlainDish();
-
+    boolean hasAttribute(AttributeDecorator attribute);
+    PlainDish getPlainDish();
     }
 

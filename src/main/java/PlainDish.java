@@ -21,7 +21,7 @@ public class PlainDish implements Dish {
      * @param method      List of method in Dish
      * @param time        time taken to make dish
      */
-    public Dish(String dishName, ArrayList<Ingredient> ingredients, ArrayList<String> method, double time) {
+    public PlainDish(String dishName, ArrayList<Ingredient> ingredients, ArrayList<String> method, double time) {
         this.name = dishName;
         this.ingredients = ingredients;
         this.method = method;
@@ -78,5 +78,10 @@ public class PlainDish implements Dish {
     @Override
     public PlainDish getPlainDish() {
         return this;
+    }
+
+    @Override
+    public String toString(){
+        return ("");
     }
 }

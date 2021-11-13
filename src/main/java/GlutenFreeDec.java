@@ -20,4 +20,9 @@ public class GlutenFreeDec extends AttributeDecorator {
     public PlainDish getPlainDish() {
         return this.contains.getPlainDish();
     }
+
+    @Override
+    public String toString() {
+        return ("GlutenFree " + contains.toString());
+    }
 }

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class PrefSearch {
+/*public class PrefSearch {
 
     public static ArrayList<Dish> getResults(ArrayList<Dish> list){
 
@@ -29,3 +29,4 @@ public class PrefSearch {
         return ret;
     }
 }
+*/
