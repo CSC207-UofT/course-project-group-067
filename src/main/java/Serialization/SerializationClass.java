@@ -10,17 +10,18 @@ import java.io.*;
 
 public class SerializationClass {
     public static void umWrite(UserManager userManager) throws IOException {
-        FileOutputStream fileOut = new FileOutputStream("um.ser", false);
+        File file = new File("logs/um.ser");
+        FileOutputStream fileOut = new FileOutputStream(file, false);
         ObjectOutputStream out = new ObjectOutputStream(fileOut);
         out.writeObject(userManager);
         out.close();
         fileOut.close();
-        System.out.println("Serialized UserManager data is saved in um.ser");
+        System.out.println("Serialized UserManager data is saved in logs/um.ser");
     }
     public static void umRead() throws IOException, ClassNotFoundException {
-        File f = new File("um.ser");
-        if(f.exists()){
-            FileInputStream fileInputStream = new FileInputStream("um.ser");
+        File f = new File("logs/um.ser");
+        if(f.exists() && f.length() != 0){
+            FileInputStream fileInputStream = new FileInputStream("logs/um.ser");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             ReferenceStorage.um = (UserManager) objectInputStream.readObject();
             objectInputStream.close();
@@ -30,17 +31,17 @@ public class SerializationClass {
         }
     }
     public static void dmWrite(DishManager dishManager) throws IOException {
-        FileOutputStream fileOut = new FileOutputStream("dm.ser", false);
+        FileOutputStream fileOut = new FileOutputStream("logs/dm.ser", false);
         ObjectOutputStream out = new ObjectOutputStream(fileOut);
         out.writeObject(dishManager);
         out.close();
         fileOut.close();
-        System.out.println("Serialized DishManager data is saved in dm.ser");
+        System.out.println("Serialized DishManager data is saved in logs/dm.ser");
     }
     public static void dmRead() throws IOException, ClassNotFoundException {
-        File f = new File("dm.ser");
-        if(f.exists()){
-            FileInputStream fileInputStream = new FileInputStream("dm.ser");
+        File f = new File("logs/dm.ser");
+        if(f.exists() && f.length() != 0){
+            FileInputStream fileInputStream = new FileInputStream("logs/dm.ser");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             ReferenceStorage.dm = (DishManager) objectInputStream.readObject();
             objectInputStream.close();
@@ -50,17 +51,17 @@ public class SerializationClass {
         }
     }
     public static void imWrite(IngredientManager ingredientManager) throws IOException {
-        FileOutputStream fileOut = new FileOutputStream("im.ser", false);
+        FileOutputStream fileOut = new FileOutputStream("logs/im.ser", false);
         ObjectOutputStream out = new ObjectOutputStream(fileOut);
         out.writeObject(ingredientManager);
         out.close();
         fileOut.close();
-        System.out.println("Serialized IngredientManager data is saved in im.ser");
+        System.out.println("Serialized IngredientManager data is saved in logs/im.ser");
     }
     public static void imRead() throws IOException, ClassNotFoundException {
-        File f = new File("im.ser");
-        if(f.exists()){
-            FileInputStream fileInputStream = new FileInputStream("im.ser");
+        File f = new File("logs/im.ser");
+        if(f.exists() && f.length() != 0){
+            FileInputStream fileInputStream = new FileInputStream("logs/im.ser");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             ReferenceStorage.im = (IngredientManager) objectInputStream.readObject();
             objectInputStream.close();
