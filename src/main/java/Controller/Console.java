@@ -34,9 +34,9 @@ public class Console {
                 ReferenceStorage.im.addIngredientToList(EntityCreatorDistributor.distribute("INGREDIENT","").create());
                 break;
             case "Save" :
-                SerializationClass.umWrite(ReferenceStorage.um);
-                SerializationClass.dmWrite(ReferenceStorage.dm);
-                SerializationClass.imWrite(ReferenceStorage.im);
+                SerializationClass.umWrite();
+                SerializationClass.dmWrite();
+                SerializationClass.imWrite();
                 break;
             default : throw new IllegalStateException("Unexpected Command/Entities.Dish: " + input);
         }

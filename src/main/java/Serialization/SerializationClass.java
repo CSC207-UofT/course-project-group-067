@@ -9,11 +9,10 @@ import ObjectConversion.ReferenceStorage;
 import java.io.*;
 
 public class SerializationClass {
-    public static void umWrite(UserManager userManager) throws IOException {
-        File file = new File("logs/um.ser");
-        FileOutputStream fileOut = new FileOutputStream(file, false);
+    public static void umWrite() throws IOException {
+        FileOutputStream fileOut = new FileOutputStream("logs/um.ser", false);
         ObjectOutputStream out = new ObjectOutputStream(fileOut);
-        out.writeObject(userManager);
+        out.writeObject(ReferenceStorage.um);
         out.close();
         fileOut.close();
         System.out.println("Serialized UserManager data is saved in logs/um.ser");
@@ -25,15 +24,16 @@ public class SerializationClass {
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             ReferenceStorage.um = (UserManager) objectInputStream.readObject();
             objectInputStream.close();
+            fileInputStream.close();
         }
         else{
             ReferenceStorage.um = new UserManager();
         }
     }
-    public static void dmWrite(DishManager dishManager) throws IOException {
+    public static void dmWrite() throws IOException {
         FileOutputStream fileOut = new FileOutputStream("logs/dm.ser", false);
         ObjectOutputStream out = new ObjectOutputStream(fileOut);
-        out.writeObject(dishManager);
+        out.writeObject(ReferenceStorage.dm);
         out.close();
         fileOut.close();
         System.out.println("Serialized DishManager data is saved in logs/dm.ser");
@@ -45,15 +45,16 @@ public class SerializationClass {
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             ReferenceStorage.dm = (DishManager) objectInputStream.readObject();
             objectInputStream.close();
+            fileInputStream.close();
         }
         else{
             ReferenceStorage.dm = new DishManager();
         }
     }
-    public static void imWrite(IngredientManager ingredientManager) throws IOException {
+    public static void imWrite() throws IOException {
         FileOutputStream fileOut = new FileOutputStream("logs/im.ser", false);
         ObjectOutputStream out = new ObjectOutputStream(fileOut);
-        out.writeObject(ingredientManager);
+        out.writeObject(ReferenceStorage.im);
         out.close();
         fileOut.close();
         System.out.println("Serialized IngredientManager data is saved in logs/im.ser");
@@ -65,6 +66,7 @@ public class SerializationClass {
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             ReferenceStorage.im = (IngredientManager) objectInputStream.readObject();
             objectInputStream.close();
+            fileInputStream.close();
         }
         else{
             ReferenceStorage.im = new IngredientManager();

@@ -17,14 +17,15 @@ public class Launch {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         initializeUserManager();
 
-        if(ReferenceStorage.um.getMap().isEmpty()){
+        if(ReferenceStorage.um.getUserList().isEmpty()){
             System.out.println("No Users Found, Creating New Entities.User....");
             ReferenceStorage.um.addUser(EntityCreatorDistributor.distribute("USER","").create());
+            SerializationClass.umWrite();
         }
 
         System.out.println("Users:");
-        for(String username: ReferenceStorage.um.getUserNames()){
-            System.out.println(username);
+        for(User u : ReferenceStorage.um.getUserList()){
+            System.out.println(u.getName());
         }
 
         System.out.println("Enter Your Username");
