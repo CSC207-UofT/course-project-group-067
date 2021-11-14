@@ -1,8 +1,9 @@
 package Entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class User{
+public class User implements Serializable {
 
     private ArrayList<Dish> favourites;
     private ArrayList<String> preferences;

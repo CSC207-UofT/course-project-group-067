@@ -5,10 +5,13 @@ import ObjectConversion.ReferenceStorage;
 import Presenter.BookView;
 import Presenter.OpenSesame;
 import Search.Search;
+import Serialization.SerializationClass;
+
+import java.io.IOException;
 
 public class Console {
 
-    public void run(String input) {
+    public void run(String input) throws IOException {
 
         if(ReferenceStorage.dm.getDishNames().contains(input)){
             OpenSesame.recipe(ReferenceStorage.dm.nameToDish(input));
@@ -29,6 +32,11 @@ public class Console {
                 break;
             case "Create Ingredient" :
                 ReferenceStorage.im.addIngredientToList(EntityCreatorDistributor.distribute("INGREDIENT","").create());
+                break;
+            case "Save" :
+                SerializationClass.umWrite(ReferenceStorage.um);
+                SerializationClass.dmWrite(ReferenceStorage.dm);
+                SerializationClass.imWrite(ReferenceStorage.im);
                 break;
             default : throw new IllegalStateException("Unexpected Command/Entities.Dish: " + input);
         }

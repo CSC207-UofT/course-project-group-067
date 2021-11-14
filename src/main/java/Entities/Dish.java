@@ -1,8 +1,9 @@
 package Entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Dish {
+public class Dish implements Serializable {
     private String name;
     private double time;
     private ArrayList<Ingredient> ingredients;

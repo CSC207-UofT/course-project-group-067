@@ -1,16 +1,20 @@
 package Controller;
 
 
+import Entities.User;
 import EntityCreation.EntityCreatorDistributor;
 
+import Managers.UserManager;
 import ObjectConversion.ReferenceStorage;
+import Serialization.SerializationClass;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Launch {
     static Scanner sc = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         initializeUserManager();
 
         if(ReferenceStorage.um.getMap().isEmpty()){
@@ -41,8 +45,8 @@ public class Launch {
     /*
     De-serialize the usermanager data and store it as a UserManager object in ReferenceStorage.um
      */
-    public static void initializeUserManager(){
-
+    public static void initializeUserManager() throws IOException, ClassNotFoundException {
+        SerializationClass.umRead();
     }
 
 }

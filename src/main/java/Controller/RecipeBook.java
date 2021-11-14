@@ -2,12 +2,16 @@ package Controller;
 
 import ObjectConversion.ReferenceStorage;
 import Presenter.BookView;
+import Serialization.SerializationClass;
+
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class RecipeBook {
+public class RecipeBook implements Serializable {
 
 
-    public void open() {
+    public void open() throws IOException, ClassNotFoundException {
         initializeManagers();
         Scanner sc = new Scanner(System.in);
         BookView.view();
@@ -34,7 +38,11 @@ public class RecipeBook {
     /*
     De-serialize the managers data and store it as respective managers in ReferenceStorage
      */
-    private void initializeManagers() {
+    private void initializeManagers() throws IOException, ClassNotFoundException {
+        SerializationClass.umRead();
+        SerializationClass.dmRead();
+        SerializationClass.imRead();
+
     }
 
 
