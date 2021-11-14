@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
-/*public class PrefSearch {
+public class PrefSearch {
 
     public static ArrayList<Dish> getResults(ArrayList<Dish> list){
 
@@ -18,15 +20,6 @@ import java.util.Scanner;
 
         User u = UserManager.getUserByName(input);
 
-        ArrayList<Dish> ret = new ArrayList<>();
-
-        for(Dish dish: list){
-            if(dish.getAttributes().containsAll(u.getPreferences())){
-                ret.add(dish);
-            }
-        }
-
-        return ret;
+        return AttrSearch.searchForAttr(list, u.getPreferences());
     }
 }
-*/

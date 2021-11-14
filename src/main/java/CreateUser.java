@@ -19,6 +19,7 @@ public class CreateUser {
 
     private static void fieldPreferences(User u) {
         System.out.println("Enter Preferences, END to finish");
+        System.out.println("Valid Preferences: Vegan, Vegetarian, Kosher, NutFree, GlutenFree");
         String input = sc.nextLine();
 
         while(!(input.equals("END"))){

@@ -2,7 +2,8 @@ import java.util.*;
 
 public class AttrSearch {
 
-    public static ArrayList<Dish> getResults(ArrayList<Dish> list){
+
+    public static ArrayList<Dish> searchForAttr(ArrayList<Dish> list, List<String> attributes) {
         VeganDec veganRef = new VeganDec(null);
         KosherDec kosRef = new KosherDec(null);
         NutFreeDec nutRef = new NutFreeDec(null);
@@ -14,21 +15,9 @@ public class AttrSearch {
         stringToDecorator.put("NutFree", veganRef);
         stringToDecorator.put("Vegetarian", veganRef);
         stringToDecorator.put("GlutenFree", veganRef);
-        Scanner in = new Scanner(System.in);
-        System.out.println("Enter Attribute(s) to search by. Press END to finish");
-        System.out.println("Valid Attributes: NutFree, GlutenFree, Vegetarian, Kosher, Vegan");
-        String input = in.nextLine();
-
-        ArrayList<String> attributes = new ArrayList<>();
-
-        while(!(input.equals("END"))){
-            attributes.add(input);
-            input = in.nextLine();
-        }
 
         ArrayList<Dish> ret = new ArrayList<>();
-
-        for(Dish dish: list){
+        for (Dish dish : list) {
             Set<Boolean> verifier = new HashSet<>();
             for (String attribute : attributes) {
                 if (!(dish.hasAttribute(stringToDecorator.get(attribute)))) {
@@ -40,14 +29,23 @@ public class AttrSearch {
             }
 
 
-            }
-        return ret;
         }
+        return ret;
+    }
 
+    public static ArrayList<Dish> getResults(ArrayList<Dish> list) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter Attribute(s) to search by. Press END to finish");
+        System.out.println("Valid Attributes: NutFree, GlutenFree, Vegetarian, Kosher, Vegan");
+        String input = in.nextLine();
 
+        ArrayList<String> attributes = new ArrayList<>();
 
-
-
-
+        while (!(input.equals("END"))) {
+            attributes.add(input);
+            input = in.nextLine();
+        }
+        return searchForAttr(list, attributes);
 
     }
+}

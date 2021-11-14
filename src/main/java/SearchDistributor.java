@@ -4,8 +4,8 @@ public class SearchDistributor {
 
     public static ArrayList<Dish> searchBy(String term, ArrayList<Dish> list) {
         switch (term) {
-            //case "Preferences":
-                //return PrefSearch.getResults(list);
+            case "Preferences":
+                return PrefSearch.getResults(list);
             case "Name":
                 return NameSearch.getResults(list);
             case "Time":
