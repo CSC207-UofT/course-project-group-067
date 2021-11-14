@@ -4,25 +4,32 @@ import Entities.User;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class UserManager implements Serializable {
-    private HashMap<String, User> userList = new HashMap<String, User>(); //Map of String representing users to personal RecipeBooks
-    // move public Entities.User currentUser; // Represents the Controller.RecipeBook that the current user is using
+    private ArrayList<User> userList = new ArrayList<User>();
 
     public void addUser(User u) {
-        userList.put(u.getName(), u);
+        userList.add(u);
     }
 
-    public User getUserByName(String userName) {
-        return userList.get(userName);
+    public User getUserByName(String userName){
+        for(User u : this.userList){
+            if(u.getName().equals(userName)){
+                return u;
+            }
+        }
+        return null;
     }
 
     public ArrayList<String> getUserNames(){
-        return new ArrayList<>(userList.keySet());
+        ArrayList<String> ret = new ArrayList<>();
+        for (User u : this.userList){
+            ret.add(u.getName());
+        }
+        return ret;
     }
 
-    public  HashMap<String, User> getMap(){
+    public  ArrayList<User> getUserList(){
         return userList;
     }
 }

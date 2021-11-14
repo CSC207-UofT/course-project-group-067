@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.Scanner;
 
-public class RecipeBook implements Serializable {
+public class RecipeBook{
 
 
     public void open() throws IOException, ClassNotFoundException {
