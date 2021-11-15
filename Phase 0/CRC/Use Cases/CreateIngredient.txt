@@ -1,0 +1,7 @@
+Class Name: Temp.CreateIngredient
+Responsibilities:
+* Allows creation of a new Entities.Ingredient object
+
+Collaborators:
+* Entities.Ingredient
+* Managers.IngredientManager

@@ -1,12 +1,9 @@
-Class Name: RecipeBook
+Class Name: Controller.RecipeBook
 
 Responsibilities:
-* Allows User input for commands
-
+* Allows Entities.User input for commands
 
 Collaborators:
-* BookView
+* Presenter.BookView
 * Command
-* User
-* UserManager
-* Console
+* Entities.User

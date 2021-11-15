@@ -1,9 +1,8 @@
-Class name: DishManager
+Class name: Managers.DishManager
 
 Responsibilities:
 * Store list of existing Dishes
 * Create/ edit Dishes
 
 Collaborators:
-* Dish
-* RecipeBook
+* Entities.Dish

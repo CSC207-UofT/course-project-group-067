@@ -4,4 +4,4 @@ Responsibilities:
 * Read information from dishinfo.txt
 
 Collaborators:
-* RecipeBook
+* Controller.RecipeBook

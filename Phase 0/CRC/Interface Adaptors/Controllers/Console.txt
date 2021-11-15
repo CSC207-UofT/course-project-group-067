@@ -1,10 +1,11 @@
-Class Name: Console
+Class Name: Controller.Console
 
 Responsibilities:
-* Handles user commands and operates on user's RecipeBook
+* Handles user commands and operates on user's Controller.RecipeBook
 * Raises an exception if commands are invalid
 
 Collaborators:
-* DishManager
-* IngredientManager
-* RecipeBook
+* Managers.DishManager
+* Managers.IngredientManager
+* Controller.RecipeBook
+

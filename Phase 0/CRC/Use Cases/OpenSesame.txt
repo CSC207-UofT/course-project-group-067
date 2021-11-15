@@ -1,7 +1,9 @@
-Class Name: OpenSesame
+Class Name: Presenter.OpenSesame
+
 
 Responsibilities:
 * Format information of a particular dish in a string
 
 Collaborators:
-* Dish
+* Entities.Dish
+

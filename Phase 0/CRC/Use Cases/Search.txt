@@ -1,9 +1,9 @@
-Class Name: Search
+Class Name: Search.Search
 
 Responsibilities:
-* Allows a User to input search terms and passes each search request to SearchDistributor
+* Allows a Entities.User to input search terms and passes each search request to Search.SearchDistributor
 
 Collaborators:
-* SearchDistributor
-* Recipe Book
+* Search.SearchDistributor
+* Managers.DishManager
 

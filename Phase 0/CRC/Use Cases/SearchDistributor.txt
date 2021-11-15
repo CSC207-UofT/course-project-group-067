@@ -1,11 +1,11 @@
-Class Name: SearchDistributor
+Class Name: Search.SearchDistributor
 
 Responsibilities:
 * Read a given search term and executes the associated search function
 
 Collaborators:
-NameSearch
-TimeSearch
-PrefSearch
-IngSearch
-AttrSearch
+Search.NameSearch
+Search.TimeSearch
+Search.PrefSearch
+Search.IngSearch
+Search.AttrSearch

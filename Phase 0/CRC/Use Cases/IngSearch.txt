@@ -1,7 +1,7 @@
-Class Name: IngSearch
+Class Name: Search.IngSearch
 
 Responsibilities:
-* Return a list containing *Dish*(es) which contain all the ingredients input
+* Return a list containing *Entities.Dish*(es) which contain all the ingredients input
 
 Collaborators:
-SearchDistributor
+Search.SearchDistributor

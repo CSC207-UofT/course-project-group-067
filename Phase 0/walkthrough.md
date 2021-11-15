@@ -1,10 +1,25 @@
-When we run the program, RecipeBook first determine which User is accessing the program via the UserManager. After determining the User, the associated 
-RecipeBook instance is launched. BookView then presents a Recipe via the Command Line and the User is then allowed to input a command.
+When we run the program, Controller.Launch First determines whether Users exist and if not, creates a new Entities.User, After which it enquires the Username
+of the Entities.User currently accessing it.
+Once the Username is determined, Controller.Launch Opens the Controller.RecipeBook of the user associated with the Username.
 
-The user inputs 'Search' and Search is accessed. Within Search, all possible Filters are presented and the User picks one, say Name.
-Search passes 'Name' to SearchDistributor and that then calls the search method NameSearch associated with 'Name'. 
+Controller.RecipeBook's Open method prints to the command line the list of all dishes in the Controller.RecipeBook initially, then requests user input for
+which command they may wish to run.
 
-Name then allows the User to input the name of the Dish they wish to search for, and NameSearch returns any Dishes in
-the Recipe book with that Name. 
+Once the Entities.User wishes to log-out, they may input CLOSE, and they will be returned to Controller.Launch.
 
-The returned Dishes are then presented to the User. The User inputs END and the program ends.
+Example:\
+Execute Controller.Launch\
+Create New Entities.User TEST\
+Input nothing for Preferences\
+Input Username TEST\
+Command Create Entities.Ingredient: \
+Name - Egg\
+Attribute- Non-Veg\
+Command Create Entities.Dish:\
+Name - Boiled Egg\
+Entities.Ingredient - Egg\
+Cooking Instructions - Put egg in water\
+Cook Time - 5\
+Command View Dishes\
+Command Boiled Egg\
+Command CLOSE

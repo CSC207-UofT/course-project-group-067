@@ -5,5 +5,3 @@ Responsibilities:
 * Setter and Getter functions for above information
 
 Collaborators:
-* Dish
-* IngredientManager

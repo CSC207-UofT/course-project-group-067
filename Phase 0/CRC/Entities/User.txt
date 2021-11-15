@@ -1,10 +1,9 @@
-Class Name: User
+Class Name: Entities.User
 
 Responsibilities:
 * Store user's name
-* Store user's copy of RecipeBook
+* Store user's copy of Controller.RecipeBook
 * Store user's preferences
 
 Collaborators:
-* UserManager
-* RecipeBook
+* Controller.RecipeBook

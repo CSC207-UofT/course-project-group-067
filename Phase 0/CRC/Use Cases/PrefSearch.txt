@@ -1,9 +1,9 @@
-Class Name: PrefSearch
+Class Name: Search.PrefSearch
 
 Responsibilities:
-* Return a list of *Dish*(es) containing all attributes in the preferences of current user
+* Return a list of *Entities.Dish*(es) containing all attributes in the preferences of current user
 
 
 Collaborators:
-SearchDistributor
-User
+Search.SearchDistributor
+Entities.User

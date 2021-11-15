@@ -1,0 +1,8 @@
+Class Name: CreateDish
+Responsibilities:
+* Allows creation of a new Entities.Dish object
+
+Collaborators:
+* Entities.Dish
+* Managers.DishManager
+* Managers.IngredientManager
