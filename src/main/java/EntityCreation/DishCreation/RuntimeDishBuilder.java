@@ -5,7 +5,7 @@ import ObjectConversion.ReferenceStorage;
 public class RuntimeDishBuilder extends DishBuilder {
     @Override
     void buildName() {
-        System.out.println("Enter Entities.Dish Name");
+        System.out.println("Enter Dish Name");
         String input = sc.nextLine().trim();
         dish.addName(input);
     }
