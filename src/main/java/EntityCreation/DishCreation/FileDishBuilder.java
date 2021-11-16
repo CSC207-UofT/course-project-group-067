@@ -12,6 +12,7 @@ public class FileDishBuilder extends DishBuilder {
         int index = 0;
         for(String info: data.split("@")){
             inputs[index] = info;
+            index++;
         }
 
     }
