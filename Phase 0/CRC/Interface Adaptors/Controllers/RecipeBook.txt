@@ -3,7 +3,6 @@ Class Name: Controller.RecipeBook
 Responsibilities:
 * Allows Entities.User input for commands
 
-
 Collaborators:
 * Presenter.BookView
 * Command

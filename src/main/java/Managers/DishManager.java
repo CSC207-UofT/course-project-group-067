@@ -9,7 +9,7 @@ public class DishManager implements Serializable {
     private ArrayList<Dish> dishes;
 
     public DishManager() {
-        this.dishes = new ArrayList<Dish>();
+        this.dishes = new ArrayList<>();
     }
 
     public void addDishToList(Dish dish) {
@@ -22,7 +22,7 @@ public class DishManager implements Serializable {
         boolean found = false;
 
         for(Dish d: this.dishes){
-            if(d.getName().equals(name)){
+            if(d.getPlainDish().getName().equals(name)){
                 ret = d;
                 found = true;
                 break;
@@ -42,7 +42,7 @@ public class DishManager implements Serializable {
     public ArrayList<String> getDishNames() {
         ArrayList<String> ret = new ArrayList<>();
         for (Dish dish : this.dishes) {
-            ret.add(dish.getName());}
+            ret.add(dish.getPlainDish().getName());}
         return ret;
     }
 

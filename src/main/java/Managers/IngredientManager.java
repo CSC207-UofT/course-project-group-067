@@ -10,17 +10,11 @@ public class IngredientManager implements Serializable {
     public ArrayList<String> allAttributes = new ArrayList<>();
 
     public IngredientManager() {
-        this.ingredients = new ArrayList<Ingredient>();
+        this.ingredients = new ArrayList<>();
     }
 
     public void addIngredientToList(Ingredient i){
         this.ingredients.add(i);
-
-        for(String attr: i.getAttributes()){
-            if(!(this.allAttributes.contains(attr)))
-                this.allAttributes.add(attr);
-        }
-
     }
 
     public Ingredient nameToIngredient(String name){

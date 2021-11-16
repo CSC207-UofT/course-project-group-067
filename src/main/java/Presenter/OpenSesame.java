@@ -7,12 +7,12 @@ import java.util.ArrayList;
 public class OpenSesame {
 
     public static void recipe(Dish d){
-        ArrayList<String> ingredients = d.getIngredientsName();
-        ArrayList<String > method = d.getMethod();
-        ArrayList<String> attributes = d.getAttributes();
+        ArrayList<String> ingredients = d.getPlainDish().getIngredientsName();
+        ArrayList<String > method = d.getPlainDish().getMethod();
+        String attributes = d.toString();
         System.out.println("--------------------------------------------------------------------------------------");
 
-        System.out.println(d.getName());
+        System.out.println(d.getPlainDish().getName());
 
         System.out.println("INGREDIENTS");
 
@@ -23,9 +23,7 @@ public class OpenSesame {
 
         System.out.println("ATTRIBUTES");
 
-        for(String attribute: attributes){
-            System.out.print(attribute + "  ");
-        }
+        System.out.println(attributes);
         System.out.println();
 
         System.out.println("INSTRUCTIONS");

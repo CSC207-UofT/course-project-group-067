@@ -13,7 +13,7 @@ public class BookView {
         int index = 1;
         for(Dish d: dishes){
             System.out.print(index + " ");
-            System.out.println(d.getName());
+            System.out.println(d.getPlainDish().getName());
             index++;
         }
 
@@ -24,7 +24,7 @@ public class BookView {
         int index = 1;
         for(Dish d: dishes){
             System.out.print(index + " ");
-            System.out.println(d.getName());
+            System.out.println(d.getPlainDish().getName());
             index++;
         }
 

@@ -24,7 +24,7 @@ public class IngSearch implements Searcher{
         ArrayList<Dish> ret = new ArrayList<>();
 
         for(Dish dish: list){
-            if(dish.getIngredientsName().containsAll(ingredients))
+            if(dish.getPlainDish().getIngredientsName().containsAll(ingredients))
                 ret.add(dish);
 
         }
