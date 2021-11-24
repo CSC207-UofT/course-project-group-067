@@ -10,6 +10,9 @@ import Serialization.SerializationClass;
 import java.io.IOException;
 
 public class Console {
+    private CreateExcecutor CreateExcecutor = new CreateExcecutor();
+    private CreateOperation CreateDish = new CreateDishOperation();
+    private CreateIngredientOperation CreateIngredient= new CreateIngredientOperation();
 
     public void run(String input) throws IOException {
 
@@ -28,10 +31,10 @@ public class Console {
             case "Preferences" : System.out.println(ReferenceStorage.u.getPreferences());
                 break;
             case "Create Dish" :
-                ReferenceStorage.dm.addDishToList(EntityCreatorDistributor.distribute("DISH", "").create());
+                CreateExcecutor.genesis(CreateDish);
                 break;
             case "Create Ingredient" :
-                ReferenceStorage.im.addIngredientToList(EntityCreatorDistributor.distribute("INGREDIENT","").create());
+                CreateExcecutor.genesis(CreateIngredient);
                 break;
             case "Save" :
                 SerializationClass.umWrite();
