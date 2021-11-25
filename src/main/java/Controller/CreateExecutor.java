@@ -3,7 +3,7 @@ package Controller;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CreateExcecutor {
+public class CreateExecutor {
     private final List<CreateOperation> operationList = new ArrayList<>();
 
     public void genesis(CreateOperation day1) {

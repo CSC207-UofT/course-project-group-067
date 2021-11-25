@@ -15,18 +15,29 @@ public class RecipeBook{
         initializeManagers();
         Scanner sc = new Scanner(System.in);
         BookView.view();
+        MainMenuConsole c = new MainMenuConsole();
+        BookConsole bc = new BookConsole();
+        UserConsole uc = new UserConsole();
+        AbstractConsole currentConsole = c;
 
-        System.out.println("Enter Command:");
 
-        String input = sc.nextLine();
+        String input = ("Main Menu");
 
-        Console c = new Console();
+
 
         while(!(input.equals("CLOSE"))){
-            c.run(input);
             System.out.println("Enter Command:");
-
+            System.out.println(currentConsole);
             input = sc.nextLine();
+            switch (input) {
+                case "User Profile": currentConsole = uc;
+                break;
+                case "Start": currentConsole = bc;
+                break;
+                case "Main Menu": currentConsole = c;
+                break;
+                default: currentConsole.run(input); //If the command does not change the console, it will be run
+            }
         }
 
         String[] args = new String[]{"TEMP"};
