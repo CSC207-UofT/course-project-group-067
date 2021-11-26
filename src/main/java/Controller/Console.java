@@ -29,10 +29,20 @@ public class Console {
                 break;
             case "Add to Favourites" :
                 System.out.println("Which dish would you like to add to favourites?");
-                String dishname = sc.nextLine().strip();
-                Entities.Dish d = ReferenceStorage.dm.nameToDish(dishname);
-                ReferenceStorage.u.addFavourite(d);
+                String dishtoadd = sc.nextLine().strip();
+                Entities.Dish da = ReferenceStorage.dm.nameToDish(dishtoadd);
+                ReferenceStorage.u.addFavourite(da);
                 break;
+            case "Remove from Favourites" :
+                System.out.println("Which dish would you like to remove from favourites?");
+                String dishtoremove = sc.nextLine().strip();
+                Entities.Dish dr = ReferenceStorage.dm.nameToDish(dishtoremove);
+                ReferenceStorage.u.removeFavourite(dr);
+                break;
+            case "Remove a Preference" :
+                System.out.println("Which preference would you like to remove?");
+                String pref = sc.nextLine().strip();
+                ReferenceStorage.u.removePreferences(pref);
             case "Preferences" : System.out.println(ReferenceStorage.u.getPreferences());
                 break;
             case "Create Dish" :
