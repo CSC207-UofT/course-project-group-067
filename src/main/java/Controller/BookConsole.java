@@ -1,6 +1,6 @@
 package Controller;
 
-import EntityCreation.EntityCreatorDistributor;
+import Entities.Dish;
 import ObjectConversion.ReferenceStorage;
 import Presenter.BookView;
 import Presenter.OpenSesame;
@@ -8,11 +8,15 @@ import Search.Search;
 import Serialization.SerializationClass;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
-public class Console {
-    private CreateExcecutor CreateExcecutor = new CreateExcecutor();
+public class BookConsole implements AbstractConsole {
+    private Controller.CreateExecutor CreateExecutor = new CreateExecutor();
     private CreateOperation CreateDish = new CreateDishOperation();
     private CreateIngredientOperation CreateIngredient= new CreateIngredientOperation();
+    private GetExecutor GetExecutor = new GetExecutor();
+    private GetPrefDishes prefDishes = new GetPrefDishes();
+    private GetFavouriteOperation GetFav = new GetFavouriteOperation();
 
     public void run(String input) throws IOException {
 
@@ -26,15 +30,15 @@ public class Console {
                 break;
             case "View Dishes" : BookView.view();
                 break;
-            case "Favourites" : BookView.view(ReferenceStorage.u.getFavourites());
+            case "Favourites" : BookView.view((ArrayList<Dish>) GetExecutor.grab(GetFav));
                 break;
-            case "Preferences" : System.out.println(ReferenceStorage.u.getPreferences());
+            case "Preferences" : BookView.view((ArrayList<Dish>) GetExecutor.grab(prefDishes)); //preferenceSearch
                 break;
             case "Create Dish" :
-                CreateExcecutor.genesis(CreateDish);
+                CreateExecutor.genesis(CreateDish);
                 break;
             case "Create Ingredient" :
-                CreateExcecutor.genesis(CreateIngredient);
+                CreateExecutor.genesis(CreateIngredient);
                 break;
             case "Save" :
                 SerializationClass.umWrite();
