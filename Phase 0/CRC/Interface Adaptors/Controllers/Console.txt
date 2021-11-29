@@ -1,4 +1,4 @@
-Class Name: Controller.Console
+Class Name: Controller.BookConsole
 
 Responsibilities:
 * Handles user commands and operates on user's Controller.RecipeBook

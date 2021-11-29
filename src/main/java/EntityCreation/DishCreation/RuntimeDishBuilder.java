@@ -24,7 +24,16 @@ public class RuntimeDishBuilder extends DishBuilder {
         String input = sc.nextLine();
 
         while(!(input.equals("END"))){
-            dish.addIngredient(ReferenceStorage.im.nameToIngredient(input));
+            if((ReferenceStorage.im.getIngredientNames().contains(input))) {
+                dish.addIngredient(ReferenceStorage.im.nameToIngredient(input));
+            }
+            else {
+                System.out.println("Ingredient '" + input + "' Doesn't exist");
+                System.out.println("Input attributes to create:");
+                String att = sc.nextLine()
+
+            }
+
             input = sc.nextLine();
         }
     }
