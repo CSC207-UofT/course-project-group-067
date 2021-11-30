@@ -1,8 +1,13 @@
 package EntityCreation.DishCreation;
 
+import EntityCreation.IngredientCreation.IngredientCreator;
+import EntityCreation.IngredientCreation.RuntimeIngredientBuilder;
+import EntityCreation.IngredientException;
 import ObjectConversion.ReferenceStorage;
 
 public class RuntimeDishBuilder extends DishBuilder {
+    private IngredientException noIngredient = new IngredientException();
+
     @Override
     void buildName() {
         System.out.println("Enter Dish Name");
@@ -24,16 +29,13 @@ public class RuntimeDishBuilder extends DishBuilder {
         String input = sc.nextLine();
 
         while(!(input.equals("END"))){
-            if((ReferenceStorage.im.getIngredientNames().contains(input))) {
+            try{
+            dish.addIngredient(ReferenceStorage.im.nameToIngredient(input));}
+            catch(Exception IllegalStateException) {
+                noIngredient.run(input);
                 dish.addIngredient(ReferenceStorage.im.nameToIngredient(input));
+                System.out.println("Ingredient added");
             }
-            else {
-                System.out.println("Ingredient '" + input + "' Doesn't exist");
-                System.out.println("Input attributes to create:");
-                String att = sc.nextLine()
-
-            }
-
             input = sc.nextLine();
         }
     }
