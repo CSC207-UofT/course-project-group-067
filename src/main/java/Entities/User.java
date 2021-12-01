@@ -8,11 +8,13 @@ public class User implements Serializable {
     private ArrayList<Dish> favourites;
     private ArrayList<String> preferences;
     private String name;
+    protected boolean edit;
 
     public User() { //Constructor creates a new user
         this.name = "EMPTY";
         this.preferences = new ArrayList<String>();
         this.favourites = new ArrayList<Dish>();
+        this.edit = false;
     }
 
 
@@ -49,7 +51,8 @@ public class User implements Serializable {
         return this.favourites;
     }
 
-    public boolean canEdit(){
-        return false;
+    public void changeEdit(){
+        this.edit = !this.edit;
     }
+
 }

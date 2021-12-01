@@ -18,6 +18,15 @@ public class RuntimeUserBuilder extends UserBuilder {
             preference = sc.nextLine().trim();
         }
 
+    }
+
+    @Override
+    void buildEdit(){
+        System.out.println("Allow user to edit the recipe book? Input Yes or No");
+        String input = sc.nextLine().trim();
+        if(input.toLowerCase().equals("yes"))
+            user.changeEdit();
+
 
     }
     @Override

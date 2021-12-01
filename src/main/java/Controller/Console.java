@@ -1,17 +1,19 @@
 package Controller;
 
+import Entities.Ingredient;
 import EntityCreation.EntityCreatorDistributor;
 import ObjectConversion.ReferenceStorage;
 import Presenter.BookView;
 import Presenter.OpenSesame;
 import Search.Search;
-import Serialization.SerializationClass;
+import Serialization.AddToDB;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class Console {
 
-    public void run(String input) throws IOException {
+    public void run(String input) throws IOException, SQLException {
 
         if(ReferenceStorage.dm.getDishNames().contains(input)){
             OpenSesame.recipe(ReferenceStorage.dm.nameToDish(input));
@@ -29,14 +31,12 @@ public class Console {
                 break;
             case "Create Dish" :
                 ReferenceStorage.dm.addDishToList(EntityCreatorDistributor.distribute("DISH", "").create());
+
                 break;
             case "Create Ingredient" :
-                ReferenceStorage.im.addIngredientToList(EntityCreatorDistributor.distribute("INGREDIENT","").create());
-                break;
-            case "Save" :
-                SerializationClass.umWrite();
-                SerializationClass.dmWrite();
-                SerializationClass.imWrite();
+                Ingredient i = EntityCreatorDistributor.distribute("INGREDIENT","").create();
+                ReferenceStorage.im.addIngredientToList(i);
+                new AddToDB().AddIngredient(i);
                 break;
             default : throw new IllegalStateException("Unexpected Command/Entities.Dish: " + input);
         }

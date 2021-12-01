@@ -4,7 +4,7 @@ package EntityCreation.UserCreation;
 import ObjectConversion.ReferenceStorage;
 
 public class FileUserBuilder extends UserBuilder {
-    private String[] inputs = new String[3];
+    private String[] inputs = new String[4];
 
     public FileUserBuilder(String data){
         int index = 0;
@@ -36,6 +36,16 @@ public class FileUserBuilder extends UserBuilder {
         for(String favourite: favourites){
             user.addFavourite(ReferenceStorage.dm.nameToDish(favourite));
         }
+
+    }
+
+    @Override
+    void buildEdit(){
+        String edit = inputs[3];
+
+        if(edit.equals("1"))
+            user.changeEdit();
+
 
     }
 

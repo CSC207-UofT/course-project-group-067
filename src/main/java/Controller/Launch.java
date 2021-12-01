@@ -1,26 +1,26 @@
 package Controller;
 
 
+import Database.JBDC;
 import Entities.User;
 import EntityCreation.EntityCreatorDistributor;
 
-import Managers.UserManager;
 import ObjectConversion.ReferenceStorage;
-import Serialization.SerializationClass;
+import Serialization.Initialize;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Launch {
     static Scanner sc = new Scanner(System.in);
-
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
-        initializeUserManager();
+    public static void main(String[] args) throws SQLException, IOException, ClassNotFoundException {
+        initializeAll();
 
         if(ReferenceStorage.um.getUserList().isEmpty()){
             System.out.println("No Users Found, Creating New Entities.User....");
             ReferenceStorage.um.addUser(EntityCreatorDistributor.distribute("USER","").create());
-            SerializationClass.umWrite();
+
         }
 
         System.out.println("Users:");
@@ -46,8 +46,12 @@ public class Launch {
     /*
     De-serialize the usermanager data and store it as a UserManager object in ReferenceStorage.um
      */
-    public static void initializeUserManager() throws IOException, ClassNotFoundException {
-        SerializationClass.umRead();
+    public static void initializeAll() throws SQLException {
+        Initialize i = new Initialize(JBDC.getDatasets());
+        i.initializeAttributes();
+        i.initializeIngredients();
+        i.initializeDishes();
+        i.initializeUsers();
     }
 
 }
