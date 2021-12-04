@@ -43,9 +43,6 @@ public class Launch {
     }
 
 
-    /*
-    De-serialize the usermanager data and store it as a UserManager object in ReferenceStorage.um
-     */
     public static void initializeAll() throws SQLException {
         Initialize i = new Initialize(JBDC.getDatasets());
         i.initializeAttributes();

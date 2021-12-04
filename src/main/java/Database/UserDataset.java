@@ -23,7 +23,8 @@ public class UserDataset implements Dataset{
             String name = r.getString("name").toLowerCase();
             String favourites = r.getString("favourites").toLowerCase();
             String preferences = r.getString("preferences").toLowerCase();
-            data.add(name+"@"+preferences+"@"+favourites);
+            String edit = r.getString("edit").toLowerCase();
+            data.add(name+"@"+preferences+"@"+favourites+"@"+edit);
         }
         return data;
     }

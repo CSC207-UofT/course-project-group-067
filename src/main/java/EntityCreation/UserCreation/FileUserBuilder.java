@@ -22,7 +22,7 @@ public class FileUserBuilder extends UserBuilder {
 
     @Override
     void buildPreferences() {
-        String[] preferences = inputs[1].split(" ");
+        String[] preferences = inputs[1].split("#");
         for(String preference: preferences){
             user.addPreferences(preference);
         }
@@ -32,7 +32,7 @@ public class FileUserBuilder extends UserBuilder {
     }
     @Override
     void buildFavourites(){
-        String[] favourites = inputs[2].split(" ");
+        String[] favourites = inputs[2].split("#");
         for(String favourite: favourites){
             user.addFavourite(ReferenceStorage.dm.nameToDish(favourite));
         }

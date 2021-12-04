@@ -55,4 +55,11 @@ public class User implements Serializable {
         this.edit = !this.edit;
     }
 
+    public String getEdit(){
+        if (edit)
+            return "1";
+        else
+            return "0";
+    }
+
 }
