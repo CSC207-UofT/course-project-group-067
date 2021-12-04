@@ -7,55 +7,63 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class RecipeBook{
+public class RecipeBook {
 
     public void open() throws IOException, ClassNotFoundException, SQLException {
 
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter Menu Input");
-        System.out.println("BOOK");
+        System.out.println("Book");
         System.out.println("Profile");
-        String choice = sc.nextLine();
+        String choice = sc.nextLine().toLowerCase();
 
-        if(choice.equals("Profile")) {
+        if (choice.equals("profile")) {
             System.out.println("Enter One Command: 'Favourites'; 'Preferences', 'CLOSE';");
 
-            String input = sc.nextLine();
+            String input = sc.nextLine().toLowerCase();
 
             UserConsole c = new UserConsole();
 
-            while (!(input.equals("CLOSE"))) {
-                c.run(input);
+            while (!(input.equals("close"))) {
+                try {
+                    c.run(input);
+                } catch (IllegalStateException e) {
+                    System.out.println("Unexpected Command/Entities.Dish: " + input);
+                }
                 System.out.println("Enter Command:");
 
-                input = sc.nextLine();
+                input = sc.nextLine().toLowerCase();
             }
             open();
         }
 
-        if(choice.equals("BOOK")){
+        if (choice.equals("book")) {
 
             BookView.view();
 
             System.out.println("Enter Command:");
 
-        String input = sc.nextLine();
+            String input = sc.nextLine();
 
-        BookConsole c = new BookConsole();
+            BookConsole c = new BookConsole();
 
-        while(!(input.equals("CLOSE"))){
-            c.run(input);
-            System.out.println("Enter Command:");
+            while (!(input.equals("close"))) {
+                try {
+                    c.run(input);
+                } catch (IllegalStateException e) {
+                    System.out.println("Unexpected Command/Entities.Dish: " + input);
+                }
+                System.out.println("Enter Command:");
 
-            input = sc.nextLine();
-        }
+                input = sc.nextLine().toLowerCase();
 
-        String[] args = new String[]{"TEMP"};
-        ReferenceStorage.reset();
-        Launch.main(args);
+                String[] args = new String[]{"TEMP"};
+                ReferenceStorage.reset();
+                Launch.main(args);
+            }
+
         }
 
     }
-
 }
