@@ -21,7 +21,7 @@ CRC Model: The three entities we've labelled are the Entities.User, Entities.Ing
 filtering dishes, Entities.Dish stores ingredients and other variables such as the cooktime and instructions. Users store a Recipe Book which have all their favourite recipes, notes and
 preferences inside.
 
-For controllers, we have the classes Controller.RecipeBook, Controller.Launch and Controller.Console. Controller.Launch determines which user's Controller.RecipeBook to access. Recipe book allows users to enter commands and console makes sense of the input by redirecting to relevant
+For controllers, we have the classes Controller.RecipeBook, Controller.Launch and Controller.BookConsole. Controller.Launch determines which user's Controller.RecipeBook to access. Recipe book allows users to enter commands and console makes sense of the input by redirecting to relevant
 methods/use cases.
 
 For our presenter classes, we have Presenter.BookView which is responsible for converting Controller.RecipeBook data into a string format that is printed to and viewed by the user.
@@ -34,8 +34,8 @@ the various methods that can be called from commands by the user which allow the
 Scenario Walkthrough: The scenario walkthrough we envisioned has the user creating their own dish to their Controller.RecipeBook and viewing it's information. When the program is initially
 run, 'Controller.Launch' calls 'Temp.CreateUser' which prompts the user to enter a username. A Entities.User class and corresponding Controller.RecipeBook instance is then created. 'Controller.Launch'
 then calls open on the 'Controller.RecipeBook' which calls 'Presenter.BookView', displaying the Controller.RecipeBook's contents to the user as well as a prompt to type commands in. The user types
-"Create Entities.Ingredient" and the command goes through to 'Controller.Console'. Controller.Console then calls the 'Temp.CreateIngredient' class which will prompt the user to enter the ingredient's name and
-attributes. The user types in "Egg" then "Non-veg" then END. Next the user types in "Create Entities.Dish", 'Controller.Console' is used again and 'CreateDish' is called. The user is prompted to enter
+"Create Entities.Ingredient" and the command goes through to 'Controller.BookConsole'. Controller.BookConsole then calls the 'Temp.CreateIngredient' class which will prompt the user to enter the ingredient's name and
+attributes. The user types in "Egg" then "Non-veg" then END. Next the user types in "Create Entities.Dish", 'Controller.BookConsole' is used again and 'CreateDish' is called. The user is prompted to enter
 the dish name and valid ingredients, so the user enters "Boiled Egg" as the name and "Egg" which was the newly created ingredient, then also types in the cooking instructions
 and cook time for the dish. The user then types the command View Dishes and 'Presenter.BookView' is called again and the user will be able to see their new dish and its details that they just inputted.
 The user exits the program by typing in CLOSE.

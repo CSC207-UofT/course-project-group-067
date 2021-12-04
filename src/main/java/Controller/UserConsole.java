@@ -15,14 +15,14 @@ public class UserConsole implements AbstractConsole {
         }
 
         switch (input) {
-            case "favourites":
+            case "Favourites":
                 BookView.view(ReferenceStorage.u.getFavourites()); //names only
                 break;
-            case "preferences":
+            case "Preferences":
                 System.out.println(ReferenceStorage.u.getPreferences());
                 break;
             default:
-                throw new IllegalStateException();
+                throw new IllegalStateException("Unexpected Command/Entities.Dish: " + input);
         }
     }
 }

@@ -7,62 +7,55 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class RecipeBook {
+public class RecipeBook{
 
     public void open() throws IOException, ClassNotFoundException, SQLException {
 
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter Menu Input");
-        System.out.println("Book");
+        System.out.println("BOOK");
         System.out.println("Profile");
-        String choice = sc.nextLine().toLowerCase();
+        String choice = sc.nextLine();
 
-        if (choice.equals("profile")) {
+        if(choice.equals("Profile")) {
             System.out.println("Enter One Command: 'Favourites'; 'Preferences', 'CLOSE';");
 
-            String input = sc.nextLine().toLowerCase();
+            String input = sc.nextLine();
 
             UserConsole c = new UserConsole();
 
-            while (!(input.equals("close"))) {
-                try {
-                    c.run(input);
-                } catch (IllegalStateException e) {
-                    System.out.println("Unexpected Command/Entities.Dish: " + input);
-                }
+            while (!(input.equals("CLOSE"))) {
+                c.run(input);
                 System.out.println("Enter Command:");
 
-                input = sc.nextLine().toLowerCase();
+                input = sc.nextLine();
             }
             open();
         }
 
-        if (choice.equals("book")) {
+        if(choice.equals("BOOK")){
 
             BookView.view();
 
             System.out.println("Enter Command:");
 
-            String input = sc.nextLine();
+        String input = sc.nextLine();
 
-            BookConsole c = new BookConsole();
+        BookConsole c = new BookConsole();
 
-            while (!(input.equals("close"))) {
-                try {
-                    c.run(input);
-                } catch (IllegalStateException e) {
-                    System.out.println("Unexpected Command/Entities.Dish: " + input);
-                }
-                System.out.println("Enter Command:");
+        while(!(input.equals("CLOSE"))){
+            c.run(input);
+            System.out.println("Enter Command:");
 
-                input = sc.nextLine().toLowerCase();
-            }
-            String[] args = new String[]{"TEMP"};
-            ReferenceStorage.reset();
-            Launch.main(args);
+            input = sc.nextLine();
+        }
 
+        String[] args = new String[]{"TEMP"};
+        ReferenceStorage.reset();
+        Launch.main(args);
         }
 
     }
+
 }

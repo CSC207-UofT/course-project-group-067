@@ -26,21 +26,21 @@ public class BookConsole implements AbstractConsole {
         }
 
         switch (input) {
-            case "search" : BookView.view(Search.find());
+            case "Search" : BookView.view(Search.find());
                 break;
-            case "view dishes" : BookView.view();
+            case "View Dishes" : BookView.view();
                 break;
-            case "favourites" : BookView.view((ArrayList<Dish>) GetExecutor.grab(GetFav));
+            case "Favourites" : BookView.view((ArrayList<Dish>) GetExecutor.grab(GetFav));
                 break;
-            case "preferences" : BookView.view((ArrayList<Dish>) GetExecutor.grab(prefDishes)); //preferenceSearch
+            case "Preferences" : BookView.view((ArrayList<Dish>) GetExecutor.grab(prefDishes)); //preferenceSearch
                 break;
-            case "create dish" :
+            case "Create Dish" :
                 CreateExecutor.genesis(CreateDish);
                 break;
-            case "create ingredient" :
+            case "Create Ingredient" :
                 CreateExecutor.genesis(CreateIngredient);
                 break;
-            default : throw new IllegalStateException();
+            default : throw new IllegalStateException("Unexpected Command/Dish: " + input);
         }
     }
 }
