@@ -57,11 +57,10 @@ public class RecipeBook {
                 System.out.println("Enter Command:");
 
                 input = sc.nextLine().toLowerCase();
-
-                String[] args = new String[]{"TEMP"};
-                ReferenceStorage.reset();
-                Launch.main(args);
             }
+            String[] args = new String[]{"TEMP"};
+            ReferenceStorage.reset();
+            Launch.main(args);
 
         }
 
