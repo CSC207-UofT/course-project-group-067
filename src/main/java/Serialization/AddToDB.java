@@ -63,8 +63,8 @@ public class AddToDB {
             w = s+"#";
         }
         if(w.length()>0)
-        return w.substring(0,w.length() -1);
+        return w.substring(0, w.length()-1);
         else
-        return w;
+            return w;
     }
 }

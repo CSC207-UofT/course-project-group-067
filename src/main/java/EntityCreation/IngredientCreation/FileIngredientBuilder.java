@@ -22,9 +22,12 @@ public class FileIngredientBuilder extends IngredientBuilder {
 
     @Override
     void buildAttribute() {
-        String[] attributes = inputs[1].split("#");
-        for(String attribute: attributes){
+        if (inputs[1].strip().length() != 0) {
+
+        String[] attributes = inputs[1].strip().split("#");
+        for(String attribute: attributes) {
             ingredient.addAttribute(attribute);
+        }
         }
     }
 
