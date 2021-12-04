@@ -22,29 +22,37 @@ public class RecipeBook{
         if(choice.equals("Profile")) {
             System.out.println("Enter One Command: 'Favourites'; 'Preferences'; 'Save' ");
 
-            String input = sc.nextLine();
+            String input = sc.nextLine().toLowerCase();
 
             UserConsole c = new UserConsole();
 
-            while (!(input.equals("CLOSE"))) {
-                c.run(input);
+            while (!(input.equals("close"))) {
+                try{
+                    c.run(input);
+                } catch(IllegalStateException e){
+                    System.out.println("Unexpected Command/Entities.Dish: " + input);
+                }
                 System.out.println("Enter Command:");
 
-                input = sc.nextLine();
+                input = sc.nextLine().toLowerCase();
             }
         }
         if(choice.equals("BOOK"))
         System.out.println("Enter Command:");
 
-        String input = sc.nextLine();
+        String input = sc.nextLine().toLowerCase();
 
         BookConsole c = new BookConsole();
 
-        while(!(input.equals("CLOSE"))){
-            c.run(input);
+        while(!(input.equals("close"))){
+            try{
+                c.run(input);
+            } catch(IllegalStateException e){
+                System.out.println("Unexpected Command/Entities.Dish: " + input);
+            }
             System.out.println("Enter Command:");
 
-            input = sc.nextLine();
+            input = sc.nextLine().toLowerCase();
         }
 
         String[] args = new String[]{"TEMP"};

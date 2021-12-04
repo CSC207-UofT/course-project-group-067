@@ -14,7 +14,7 @@ public class UserManager implements Serializable {
 
     public User getUserByName(String userName){
         for(User u : this.userList){
-            if(u.getName().equals(userName)){
+            if(u.getName().toLowerCase().equals(userName)){
                 return u;
             }
         }
@@ -24,7 +24,7 @@ public class UserManager implements Serializable {
     public ArrayList<String> getUserNames(){
         ArrayList<String> ret = new ArrayList<>();
         for (User u : this.userList){
-            ret.add(u.getName());
+            ret.add(u.getName().toLowerCase());
         }
         return ret;
     }

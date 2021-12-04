@@ -29,11 +29,11 @@ public class Launch {
         }
 
         System.out.println("Enter Your Username");
-        String input = sc.nextLine().strip();
+        String input = sc.nextLine().strip().toLowerCase();
 
         while(!(ReferenceStorage.um.getUserNames().contains(input))){
             System.out.println("Username not found, retry");
-            input = sc.nextLine().strip();
+            input = sc.nextLine().strip().toLowerCase();
         }
         ReferenceStorage.u = ReferenceStorage.um.getUserByName(input);
 
