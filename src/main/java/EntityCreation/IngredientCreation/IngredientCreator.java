@@ -26,4 +26,5 @@ public class IngredientCreator implements EntityCreator {
 
 
     }
+
 }
