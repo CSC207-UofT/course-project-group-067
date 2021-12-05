@@ -3,7 +3,6 @@ package Controller;
 import ObjectConversion.ReferenceStorage;
 import Presenter.BookView;
 import Presenter.OpenSesame;
-import Serialization.SerializationClass;
 
 import java.io.IOException;
 
@@ -21,11 +20,6 @@ public class UserConsole implements AbstractConsole {
                 break;
             case "Preferences":
                 System.out.println(ReferenceStorage.u.getPreferences());
-                break;
-            case "Save":
-                SerializationClass.umWrite();
-                SerializationClass.dmWrite();
-                SerializationClass.imWrite();
                 break;
             default:
                 throw new IllegalStateException("Unexpected Command/Entities.Dish: " + input);

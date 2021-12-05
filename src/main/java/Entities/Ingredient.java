@@ -9,7 +9,7 @@ public class Ingredient implements Serializable {
 
     public Ingredient(){
         this.name = "EMPTY";
-        this.attributes = new ArrayList<>();
+        this.attributes = new ArrayList<String>();
     }
 
     /**

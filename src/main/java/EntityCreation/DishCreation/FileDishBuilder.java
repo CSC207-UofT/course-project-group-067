@@ -2,8 +2,6 @@ package EntityCreation.DishCreation;
 
 import ObjectConversion.ReferenceStorage;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class FileDishBuilder extends DishBuilder {
     private String[] inputs = new String[4];
@@ -25,26 +23,29 @@ public class FileDishBuilder extends DishBuilder {
 
     @Override
     void buildTime() {
-        int time = Integer.parseInt(inputs[1].strip());
+        double time = Double.parseDouble(inputs[1].strip());
         dish.addTime(time);
     }
 
     @Override
     void buildIngredients() {
-        ArrayList<String> ingredients = new ArrayList<String>(List.of(inputs[2].strip().split(" ")));
+        if (inputs[2].strip().length() != 0) {
+        String[] ingredients = inputs[2].strip().split("#");
 
         for (String ingredient: ingredients){
             dish.addIngredient(ReferenceStorage.im.nameToIngredient(ingredient));
         }
-    }
+    }}
 
     @Override
     void buildMethod() {
-        ArrayList<String> method = new ArrayList<String>(List.of(inputs[3].strip().split(" ")));
+        if (inputs[3].strip().length() != 0) {
+
+        String[] method = inputs[3].strip().split("#");
 
         for (String line: method){
             dish.addMethod(line.strip());
-        }
+        }}
 
     }
 

@@ -4,9 +4,11 @@ public class FileIngredientBuilder extends IngredientBuilder {
     private String[] inputs = new String[2];
 
     public FileIngredientBuilder(String data){
+
         int index = 0;
         for(String info: data.split("@")){
             inputs[index] = info;
+
             index++;
         }
 
@@ -20,9 +22,12 @@ public class FileIngredientBuilder extends IngredientBuilder {
 
     @Override
     void buildAttribute() {
-        String[] attributes = inputs[1].split(" ");
-        for(String attribute: attributes){
+        if (inputs[1].strip().length() != 0) {
+
+        String[] attributes = inputs[1].strip().split("#");
+        for(String attribute: attributes) {
             ingredient.addAttribute(attribute);
+        }
         }
     }
 

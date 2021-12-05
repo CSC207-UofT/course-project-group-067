@@ -2,10 +2,9 @@ package Managers;
 
 import Entities.Ingredient;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
-public class IngredientManager implements Serializable {
+public class IngredientManager {
     public ArrayList<Ingredient> ingredients;
     public ArrayList<String> allAttributes = new ArrayList<>();
 

@@ -5,20 +5,20 @@ import ObjectConversion.ReferenceStorage;
 import Presenter.BookView;
 import Presenter.OpenSesame;
 import Search.Search;
-import Serialization.SerializationClass;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class BookConsole implements AbstractConsole {
     private Controller.CreateExecutor CreateExecutor = new CreateExecutor();
     private CreateOperation CreateDish = new CreateDishOperation();
-    private CreateIngredientOperation CreateIngredient= new CreateIngredientOperation();
+    private CreateOperation CreateIngredient= new CreateIngredientOperation();
     private GetExecutor GetExecutor = new GetExecutor();
     private GetPrefDishes prefDishes = new GetPrefDishes();
     private GetFavouriteOperation GetFav = new GetFavouriteOperation();
 
-    public void run(String input) throws IOException {
+    public void run(String input) throws IOException, SQLException {
 
         if(ReferenceStorage.dm.getDishNames().contains(input)){
             OpenSesame.recipe(ReferenceStorage.dm.nameToDish(input));
@@ -40,12 +40,7 @@ public class BookConsole implements AbstractConsole {
             case "Create Ingredient" :
                 CreateExecutor.genesis(CreateIngredient);
                 break;
-            case "Save" :
-                SerializationClass.umWrite();
-                SerializationClass.dmWrite();
-                SerializationClass.imWrite();
-                break;
-            default : throw new IllegalStateException("Unexpected Command/Entities.Dish: " + input);
+            default : throw new IllegalStateException("Unexpected Command/Dish: " + input);
         }
     }
 }

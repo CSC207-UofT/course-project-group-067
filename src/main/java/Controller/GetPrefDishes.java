@@ -8,7 +8,6 @@ public class GetPrefDishes implements GetOperation{
     PrefSearch searcher = new PrefSearch();
 
     public Object execute() {
-        BookView.view(searcher.getResults(ReferenceStorage.dm.getDishes()));
-        return null;
+        return searcher.getResults(ReferenceStorage.dm.getDishes());
     }
 }
