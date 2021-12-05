@@ -7,6 +7,7 @@ public class FileDishBuilder extends DishBuilder {
     private String[] inputs = new String[4];
 
     public FileDishBuilder(String data){
+
         int index = 0;
         for(String info: data.split("@")){
             inputs[index] = info;
@@ -39,6 +40,7 @@ public class FileDishBuilder extends DishBuilder {
 
     @Override
     void buildMethod() {
+
         if (inputs[3].strip().length() != 0) {
 
         String[] method = inputs[3].strip().split("#");

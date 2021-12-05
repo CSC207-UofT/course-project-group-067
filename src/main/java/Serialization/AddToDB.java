@@ -58,13 +58,13 @@ public class AddToDB {
     }
 
     private String ArrayListToStringWhitespace(ArrayList<String> a){
-        String w = "";
+        StringBuilder w = new StringBuilder();
         for(String s: a){
-            w = s+"#";
+            w.append(s).append("#");
         }
         if(w.length()>0)
         return w.substring(0, w.length()-1);
         else
-            return w;
+            return w.toString();
     }
 }
