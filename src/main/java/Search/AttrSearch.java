@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class AttrSearch implements Searcher{
 
     public ArrayList<Dish> getResults(ArrayList<Dish> list){
-
         Scanner in = new Scanner(System.in);
         System.out.println("Enter Attribute(s) to search by. Press END to finish");
         String input = in.nextLine();

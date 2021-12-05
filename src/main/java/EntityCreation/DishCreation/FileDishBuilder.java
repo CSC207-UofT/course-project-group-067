@@ -42,7 +42,6 @@ public class FileDishBuilder extends DishBuilder {
     void buildMethod() {
 
         if (inputs[3].strip().length() != 0) {
-
         String[] method = inputs[3].strip().split("#");
 
         for (String line: method){
