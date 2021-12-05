@@ -2,10 +2,9 @@ package Managers;
 
 import Entities.User;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
-public class UserManager implements Serializable {
+public class UserManager {
     private ArrayList<User> userList = new ArrayList<User>();
 
     public void addUser(User u) {

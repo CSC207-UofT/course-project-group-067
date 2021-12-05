@@ -15,6 +15,8 @@ abstract class UserBuilder extends BuilderFramework {
 
     abstract void buildFavourites();
 
+    abstract void buildEdit();
+
     @Override
     public User getObject() {
         return user;
