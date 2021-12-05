@@ -10,7 +10,7 @@ public class FileUserBuilder extends UserBuilder {
     private String[] inputs = new String[4];
 
     public FileUserBuilder(String data){
-        System.out.println(data);
+
         int index = 0;
 
         for(String info: data.split("@")){
@@ -19,7 +19,7 @@ public class FileUserBuilder extends UserBuilder {
 
             index = index + 1;
         }
-        System.out.println(Arrays.toString(inputs));
+
     }
 
     @Override

@@ -6,14 +6,14 @@ public class FileIngredientBuilder extends IngredientBuilder {
     private String[] inputs = new String[2];
 
     public FileIngredientBuilder(String data){
-        System.out.println(data);
+
         int index = 0;
         for(String info: data.split("@")){
             inputs[index] = info;
 
             index++;
         }
-        System.out.println(Arrays.toString(inputs));
+
     }
 
     @Override

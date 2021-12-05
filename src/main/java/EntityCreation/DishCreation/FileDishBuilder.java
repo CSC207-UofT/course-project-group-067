@@ -9,13 +9,13 @@ public class FileDishBuilder extends DishBuilder {
     private String[] inputs = new String[4];
 
     public FileDishBuilder(String data){
-        System.out.println(data);
+
         int index = 0;
         for(String info: data.split("@")){
             inputs[index] = info;
             index++;
         }
-        System.out.println(Arrays.toString(inputs));
+
 
     }
 
