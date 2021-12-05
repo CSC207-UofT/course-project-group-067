@@ -21,24 +21,31 @@ public class UserTest {
     Ingredient mac = new Ingredient("Macaroni", lst);Ingredient cheese;
     IngredientCreator IC, InC;
     UserCreator uc;
+    DishCreator dc;
     Dish dinner;
 
 
     @Before
     public void setUp() {
+
         IC = new IngredientCreator("macaroni@Veggie");
         macaroni = IC.create();
         InC = new IngredientCreator("cheese@Veggie");
         cheese = InC.create();
+        IngredientCreator ic = new IngredientCreator("macaroni@Veggie");
+        dc = new DishCreator("dinner@5@macaroni@testmethod");
+        ReferenceStorage.im.addIngredientToList(ic.create());
+
+
+    }
+
+    @Test(timeout = 100)
+    public void testNewUser() {
         dinner = new Dish();
         dinner.addName("mac N cheese");
         dinner.addTime(5);
         dinner.addIngredient(macaroni); dinner.addIngredient(cheese);
         dinner.addMethod("1.Cook Macaroni for 5 minutes/"); dinner.addMethod("2. mix in the cheese till melted/");
-    }
-
-    @Test(timeout = 100)
-    public void testNewUser() {
         User testUser = new User();
         testUser.addName("testUser");
         testUser.addFavourite(dinner);
@@ -60,14 +67,12 @@ public class UserTest {
     }
     @Test(timeout = 100)
     public void fileUserCreationTest() {
-        IngredientCreator ic = new IngredientCreator("macaroni@Veggie");
-        DishCreator dc = new DishCreator("dinner@5@macaroni@testmethod");
-        ReferenceStorage.im.addIngredientToList(ic.create());
         dinner = dc.create();
         ReferenceStorage.dm.addDishToList(dinner);
-        uc = new UserCreator("testUser@Veggie@dinner");
+        uc = new UserCreator("testUser@Veggie@dinner@1");
         User user3 = uc.create();
         ReferenceStorage.um.addUser(user3);
+
         assertEquals("testUser", user3.getName());
 
         ArrayList<Dish> favouriteDishes = new ArrayList<>();
