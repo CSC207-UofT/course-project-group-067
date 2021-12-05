@@ -4,7 +4,7 @@ import Entities.Dish;
 import EntityCreation.EntityCreator;
 
 public class DishCreator implements EntityCreator {
-    private String data;
+    private String data; //name@time@ingredients@method
 
     public DishCreator(String data){
         this.data = data;

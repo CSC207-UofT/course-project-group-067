@@ -1,5 +1,7 @@
 package EntityCreation.IngredientCreation;
 
+import java.util.Objects;
+
 public class FileIngredientBuilder extends IngredientBuilder {
     private String[] inputs = new String[2];
 
@@ -20,9 +22,11 @@ public class FileIngredientBuilder extends IngredientBuilder {
 
     @Override
     void buildAttribute() {
-        String[] attributes = inputs[1].split(" ");
-        for(String attribute: attributes){
-            ingredient.addAttribute(attribute);
+        if(!Objects.equals(inputs[1], "")) {
+            String[] attributes = inputs[1].split(" ");
+            for (String attribute : attributes) {
+                ingredient.addAttribute(attribute);
+            }
         }
     }
 

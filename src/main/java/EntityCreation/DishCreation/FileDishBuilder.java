@@ -31,7 +31,7 @@ public class FileDishBuilder extends DishBuilder {
 
     @Override
     void buildIngredients() {
-        ArrayList<String> ingredients = new ArrayList<String>(List.of(inputs[2].strip().split(" ")));
+        ArrayList<String> ingredients = new ArrayList<>(List.of(inputs[2].strip().split(" ")));
 
         for (String ingredient: ingredients){
             dish.addIngredient(ReferenceStorage.im.nameToIngredient(ingredient));
@@ -40,7 +40,7 @@ public class FileDishBuilder extends DishBuilder {
 
     @Override
     void buildMethod() {
-        ArrayList<String> method = new ArrayList<String>(List.of(inputs[3].strip().split(" ")));
+        ArrayList<String> method = new ArrayList<>(List.of(inputs[3].strip().split("/")));
 
         for (String line: method){
             dish.addMethod(line.strip());
