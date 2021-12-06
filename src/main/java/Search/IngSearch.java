@@ -16,7 +16,7 @@ public class IngSearch implements Searcher{
 
         ArrayList<String> ingredients = new ArrayList<>();
 
-        while(!(input.equals("END"))){
+        while(!(input.equalsIgnoreCase("END"))){
             ingredients.add(input);
             input = in.nextLine();
         }

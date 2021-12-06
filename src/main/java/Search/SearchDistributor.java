@@ -10,6 +10,8 @@ public class SearchDistributor {
         Searcher searcher;
         switch (term) {
             case "preferences":
+                searcher = new PrefSearch();
+                break;
             case "attributes":
                 searcher = new AttrSearch();
                 break;
