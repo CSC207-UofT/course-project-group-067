@@ -26,7 +26,7 @@ public class RuntimeDishBuilder extends DishBuilder {
         sc.nextLine();
         String input = sc.nextLine();
 
-        while(!(input.equals("END"))){
+        while(!(input.equalsIgnoreCase("END"))){
             try{
                 dish.addIngredient(ReferenceStorage.im.nameToIngredient(input));}
             catch(Exception IllegalStateException) {
@@ -44,7 +44,7 @@ public class RuntimeDishBuilder extends DishBuilder {
         System.out.println("Enter Cooking Instructions, END to finish");
         String input = sc.nextLine();
 
-        while(!(input.equals("END"))){
+        while(!(input.equalsIgnoreCase("END"))){
             dish.addMethod(input);
             input = sc.nextLine();
         }

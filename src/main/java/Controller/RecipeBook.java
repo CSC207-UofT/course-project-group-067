@@ -19,7 +19,7 @@ public class RecipeBook{
         String choice = sc.nextLine().toLowerCase();
 
         if(choice.equals("profile")) {
-            System.out.println("Enter One Command: 'Favourites'; 'Preferences', 'CLOSE';");
+            System.out.println("Enter One Command: 'Favourites'; 'Preferences', 'Add to preferences, 'Remove from preferences', 'Close';");
 
             String input = sc.nextLine().toLowerCase();
 

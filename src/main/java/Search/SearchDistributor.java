@@ -7,21 +7,19 @@ import java.util.ArrayList;
 public class SearchDistributor {
 
     public static ArrayList<Dish> searchBy(String term, ArrayList<Dish> list) {
-        Searcher searcher = null;
+        Searcher searcher;
         switch (term) {
-            case "Preferences":
+            case "preferences":
+            case "attributes":
                 searcher = new AttrSearch();
                 break;
-            case "Name":
+            case "name":
                 searcher = new NameSearch();
                 break;
-            case "Time":
+            case "time":
                 searcher = new TimeSearch();
                 break;
-            case "Attributes":
-                searcher = new AttrSearch();
-                break;
-            case "Ingredients":
+            case "ingredients":
                 searcher = new IngSearch();
                 break;
             default:

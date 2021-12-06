@@ -12,7 +12,7 @@ public class RuntimeIngredientBuilder extends IngredientBuilder {
     void buildAttribute() {
         System.out.println("Enter attributes, Enter END to finish");
         String attribute = sc.nextLine().trim();
-        while (!(attribute.equals("END"))){
+        while (!(attribute.equalsIgnoreCase("END"))){
             ingredient.addAttribute(attribute);
             attribute = sc.nextLine().trim();
         }

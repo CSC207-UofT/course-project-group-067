@@ -9,7 +9,7 @@ public class Ingredient implements Serializable {
 
     public Ingredient(){
         this.name = "EMPTY";
-        this.attributes = new ArrayList<String>();
+        this.attributes = new ArrayList<>();
     }
 
     /**
@@ -43,9 +43,9 @@ public class Ingredient implements Serializable {
     public String toString() {
         StringBuilder desc = new StringBuilder(this.name);
         desc.append(" is an ingredient with \n");
-        desc.append("--Attributes--");
+        desc.append("--Attributes-- \n");
         for (String item : this.attributes) {
-            desc.append(item + " \n");}
+            desc.append(item).append(" \n");}
         return desc.toString();
     }
 }

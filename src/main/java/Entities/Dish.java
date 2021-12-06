@@ -15,7 +15,7 @@ public class Dish implements Serializable {
         this.ingredients = new ArrayList<>();
         this.method = new ArrayList<>();
         this.time = -1.00;
-        this.attributes = new ArrayList<String>();
+        this.attributes = new ArrayList<>();
     }
 
     /**
@@ -79,5 +79,22 @@ public class Dish implements Serializable {
 
     public ArrayList<String> getAttributes() {
         return (ArrayList<String>) this.attributes.clone();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder desc = new StringBuilder(this.name);
+        desc.append(" is a dish with \n");
+        desc.append("Cooking time of: ").append(this.time).append(" minutes").append(" \n");
+        desc.append("--Ingredients-- \n");
+        for (Ingredient ingredient : this.ingredients) {
+            desc.append(ingredient.getName()).append(" \n");}
+        desc.append("--Instructions-- \n");
+        int i = 1;
+        for (String instruction : this.method){
+            desc.append(i).append(". ").append(instruction);
+            i++;
+        }
+        return desc.toString();
     }
 }
