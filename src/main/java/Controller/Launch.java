@@ -35,6 +35,7 @@ public class Launch {
 
             if (input.equals("end")){
                 loop = false;
+                break;
             }
 
             else if (input.equals("create")) {
