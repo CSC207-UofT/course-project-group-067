@@ -18,7 +18,7 @@ public class NameSearch implements Searcher{
         ArrayList<Dish> ret = new ArrayList<>();
 
         for(Dish dish: list){
-            if (dish.getName().equals(input))
+            if (dish.getName().contains(input))
                 ret.add(dish);
 
 

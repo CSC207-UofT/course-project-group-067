@@ -13,7 +13,7 @@ public class RuntimeUserBuilder extends UserBuilder {
     void buildPreferences() {
         System.out.println("Enter Preferences, Enter END to finish");
         String preference = sc.nextLine().trim();
-        while (!(preference.equals("END"))){
+        while (!(preference.equalsIgnoreCase("END"))){
             user.addPreferences(preference);
             preference = sc.nextLine().trim();
         }
@@ -24,7 +24,7 @@ public class RuntimeUserBuilder extends UserBuilder {
     void buildEdit(){
         System.out.println("Allow user to edit the recipe book? Input Yes or No");
         String input = sc.nextLine().trim();
-        if(input.toLowerCase().equals("yes"))
+        if(input.equalsIgnoreCase("yes"))
             user.changeEdit();
 
 

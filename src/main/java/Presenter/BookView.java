@@ -1,6 +1,7 @@
 package Presenter;
 
 import Entities.Dish;
+import Entities.Ingredient;
 import ObjectConversion.ReferenceStorage;
 
 import java.util.ArrayList;
@@ -25,6 +26,18 @@ public class BookView {
         for(Dish d: dishes){
             System.out.print(index + " ");
             System.out.println(d.getName());
+            index++;
+        }
+
+    }
+
+    public static void ingredientsView(){
+        ArrayList<Ingredient> ingredients = ReferenceStorage.im.getIngredients();
+        System.out.println("Ingredients:");
+        int index = 1;
+        for(Ingredient i : ingredients){
+            System.out.print(index + " ");
+            System.out.println(i.getName());
             index++;
         }
 

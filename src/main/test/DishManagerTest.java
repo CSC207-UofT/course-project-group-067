@@ -19,7 +19,7 @@ public class DishManagerTest {
     @Before
     public void setUp() {
     dm = new DishManager();
-    ArrayList<Ingredient> ing = new ArrayList<Ingredient>();  ing.add(chs); ing.add(mac);
+    ArrayList<Ingredient> ing = new ArrayList<>();  ing.add(chs); ing.add(mac);
     ArrayList<String> meth = new ArrayList<>(); meth.add("1.Cook Macaroni for 5 minutes");
     meth.add("2. mix in the cheese till melted");
     d = new Dish("mac N cheese", ing, meth, 0.05);
@@ -34,7 +34,7 @@ public class DishManagerTest {
         assertTrue(dm.getDishes().contains(d2));
         assertFalse(dm.getDishNames().contains("Pepperoni"));
         assertTrue(dm.getDishNames().contains("EMPTY"));
-        assertTrue(dm.nameToDish("mac N cheese").equals(d));
+        assertEquals(dm.nameToDish("mac N cheese"), d);
 
 
 
