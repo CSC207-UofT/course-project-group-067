@@ -57,6 +57,59 @@ public class AddToDB {
         s.execute();
     }
 
+    public void SetFavourites(User u) throws SQLException{
+        String name = u.getName();
+
+        ArrayList<String> favourites_list = new ArrayList<>();
+        for(Dish d: u.getFavourites()){
+            favourites_list.add(d.getName());
+        }
+        String favourites = ArrayListToStringWhitespace(favourites_list);
+
+        String query ="UPDATE users SET favourites = ? WHERE name = ?";
+        s = ReferenceStorage.connection.prepareStatement(query);
+        s.setString(1,favourites);
+        s.setString(2,name);
+        s.execute();
+    }
+
+    public void SetPreferences(User u) throws SQLException{
+
+        String preferences = ArrayListToStringWhitespace(u.getPreferences());
+
+        String query ="UPDATE users SET preferences = ? WHERE name = ?";
+        s = ReferenceStorage.connection.prepareStatement(query);
+        s.setString(1,preferences);
+        s.setString(2,u.getName());
+        s.execute();
+    }
+
+    public void RemoveUser(User u) throws SQLException{
+        String name = u.getName();
+        String query = "DELETE FROM users where name= ?";
+        s = ReferenceStorage.connection.prepareStatement(query);
+        s.setString(1,name);
+        s.execute();
+    }
+
+    public void RemoveDish(Dish d) throws SQLException{
+        String name = d.getName();
+
+        String query = "DELETE FROM dishes where name= ?";
+        s = ReferenceStorage.connection.prepareStatement(query);
+        s.setString(1,name);
+        s.execute();
+    }
+
+    public void RemoveIngredient(Ingredient i) throws SQLException{
+        String name = i.getName();
+
+        String query = "DELETE FROM ingredients where name= ?";
+        s = ReferenceStorage.connection.prepareStatement(query);
+        s.setString(1,name);
+        s.execute();
+    }
+
     private String ArrayListToStringWhitespace(ArrayList<String> a){
         StringBuilder w = new StringBuilder();
         for(String s: a){
@@ -67,4 +120,5 @@ public class AddToDB {
         else
             return w.toString();
     }
+
 }
