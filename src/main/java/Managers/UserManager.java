@@ -23,7 +23,7 @@ public class UserManager {
     public ArrayList<String> getUserNames(){
         ArrayList<String> ret = new ArrayList<>();
         for (User u : this.userList){
-            ret.add(u.getName());
+            ret.add(u.getName().toLowerCase());
         }
         return ret;
     }
