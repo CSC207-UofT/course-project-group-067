@@ -36,9 +36,15 @@ public class BookConsole implements AbstractConsole {
                 break;
             case "add to favourites" :
                 System.out.println("Which dish would you like to add to favourites?");
-                String dishName = sc.nextLine().toLowerCase();
-                Dish d = ReferenceStorage.dm.nameToDish(dishName);
-                ReferenceStorage.u.addFavourite(d);
+                String dishName1 = sc.nextLine().toLowerCase();
+                Dish d1 = ReferenceStorage.dm.nameToDish(dishName1);
+                ReferenceStorage.u.addFavourite(d1);
+                break;
+            case "remove from favourites" :
+                System.out.println("Which dish would you like to remove from favourites?");
+                String dishName2 = sc.nextLine().toLowerCase();
+                Dish d2 = ReferenceStorage.dm.nameToDish(dishName2);
+                ReferenceStorage.u.removeFavourite(d2);
                 break;
             case "preferences" : BookView.view((ArrayList<Dish>) GetExecutor.grab(prefDishes)); //preferenceSearch
                 break;
