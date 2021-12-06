@@ -72,6 +72,12 @@ We have also completely redesigned the object creation to use the factory and bu
 What each member has been working on:
 
 Prabuddha - 
+1. Learnt MYSQL fundamentals and initialized a Database using AWS' Relational Database Service
+2. Implemented serialization using a database
+3. Added some functionality to abstract console to allow parameter overriding
+Pull Requests:
+https://github.com/CSC207-UofT/course-project-group-067/pull/17
+https://github.com/CSC207-UofT/course-project-group-067/pull/23
 
 Jake - 
 
