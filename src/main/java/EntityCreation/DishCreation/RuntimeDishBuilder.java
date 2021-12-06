@@ -3,6 +3,8 @@ package EntityCreation.DishCreation;
 import EntityCreation.IngredientException;
 import ObjectConversion.ReferenceStorage;
 
+import java.util.InputMismatchException;
+
 public class RuntimeDishBuilder extends DishBuilder {
     private IngredientException noIngredient = new IngredientException();
 
@@ -15,9 +17,19 @@ public class RuntimeDishBuilder extends DishBuilder {
 
     @Override
     void buildTime() {
-        System.out.println("Enter Cook Time in Minutes:");
-        int input = sc.nextInt();
-        dish.addTime(input);
+        boolean again = true;
+        while(again) {
+            try {
+                System.out.println("Enter Cook Time in Minutes:");
+                int input = sc.nextInt();
+                dish.addTime(input);
+                again = false;
+            } catch (InputMismatchException ex) {
+                System.out.println("Invalid Input, please try again");
+                sc.next();
+            }
+        }
+
     }
 
     @Override
