@@ -9,6 +9,7 @@ import Search.Search;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class BookConsole implements AbstractConsole {
     private Controller.CreateExecutor CreateExecutor = new CreateExecutor();
@@ -19,6 +20,7 @@ public class BookConsole implements AbstractConsole {
     private GetFavouriteOperation GetFav = new GetFavouriteOperation();
 
     public void run(String input) throws IOException, SQLException {
+        Scanner sc = new Scanner(System.in);
 
         if(ReferenceStorage.dm.getDishNames().contains(input)){
             OpenSesame.recipe(ReferenceStorage.dm.nameToDish(input));
@@ -26,18 +28,30 @@ public class BookConsole implements AbstractConsole {
         }
 
         switch (input) {
-            case "Search" : BookView.view(Search.find());
+            case "search" : BookView.view(Search.find());
                 break;
-            case "View Dishes" : BookView.view();
+            case "view dishes" : BookView.view();
                 break;
-            case "Favourites" : BookView.view((ArrayList<Dish>) GetExecutor.grab(GetFav));
+            case "favourites" : BookView.view((ArrayList<Dish>) GetExecutor.grab(GetFav));
                 break;
-            case "Preferences" : BookView.view((ArrayList<Dish>) GetExecutor.grab(prefDishes)); //preferenceSearch
+            case "add to favourites" :
+                System.out.println("Which dish would you like to add to favourites?");
+                String dishName1 = sc.nextLine().toLowerCase();
+                Dish d1 = ReferenceStorage.dm.nameToDish(dishName1);
+                ReferenceStorage.u.addFavourite(d1);
                 break;
-            case "Create Dish" :
+            case "remove from favourites" :
+                System.out.println("Which dish would you like to remove from favourites?");
+                String dishName2 = sc.nextLine().toLowerCase();
+                Dish d2 = ReferenceStorage.dm.nameToDish(dishName2);
+                ReferenceStorage.u.removeFavourite(d2);
+                break;
+            case "preferences" : BookView.view((ArrayList<Dish>) GetExecutor.grab(prefDishes)); //preferenceSearch
+                break;
+            case "create dish" :
                 CreateExecutor.genesis(CreateDish);
                 break;
-            case "Create Ingredient" :
+            case "create ingredient" :
                 CreateExecutor.genesis(CreateIngredient);
                 break;
             default : throw new IllegalStateException("Unexpected Command/Dish: " + input);

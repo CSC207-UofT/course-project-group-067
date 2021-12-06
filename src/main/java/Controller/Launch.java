@@ -31,7 +31,7 @@ public class Launch {
         while(loop) {
 
             System.out.println("Select from the users listed or enter 'create' to create a new user or 'end' to terminate");
-            String input = sc.nextLine().strip();
+            String input = sc.nextLine().strip().toLowerCase();
 
             if (input.equals("end")){
                 loop = false;

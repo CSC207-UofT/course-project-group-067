@@ -15,10 +15,10 @@ public class UserConsole implements AbstractConsole {
         }
 
         switch (input) {
-            case "Favourites":
+            case "favourites":
                 BookView.view(ReferenceStorage.u.getFavourites()); //names only
                 break;
-            case "Preferences":
+            case "preferences":
                 System.out.println(ReferenceStorage.u.getPreferences());
                 break;
             default:
