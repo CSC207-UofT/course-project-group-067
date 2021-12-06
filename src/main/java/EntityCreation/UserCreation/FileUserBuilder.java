@@ -3,6 +3,8 @@ package EntityCreation.UserCreation;
 
 import ObjectConversion.ReferenceStorage;
 
+import java.util.Arrays;
+
 
 public class FileUserBuilder extends UserBuilder {
     private String[] inputs = new String[4];
@@ -28,7 +30,7 @@ public class FileUserBuilder extends UserBuilder {
 
     @Override
     void buildPreferences() {
-        if (inputs[1].strip().length() != 0) {
+        if (inputs[1]!= null && inputs[1].strip().length() != 0) {
 
             String[] preferences = inputs[1].strip().split("#");
 
@@ -43,7 +45,7 @@ public class FileUserBuilder extends UserBuilder {
     }
     @Override
     void buildFavourites() {
-        if (inputs[2].strip().length() != 0) {
+        if (inputs[2]!= null && inputs[2].strip().length() != 0) {
 
             String[] favourites = inputs[2].strip().split("#");
 

@@ -2,6 +2,8 @@ package EntityCreation.DishCreation;
 
 import ObjectConversion.ReferenceStorage;
 
+import java.util.Arrays;
+
 
 public class FileDishBuilder extends DishBuilder {
     private String[] inputs = new String[4];
@@ -13,6 +15,7 @@ public class FileDishBuilder extends DishBuilder {
             inputs[index] = info;
             index++;
         }
+
 
     }
 
@@ -30,7 +33,8 @@ public class FileDishBuilder extends DishBuilder {
 
     @Override
     void buildIngredients() {
-        if (inputs[2].strip().length() != 0) {
+
+        if (inputs[2]!= null && inputs[2].strip().length() != 0) {
         String[] ingredients = inputs[2].strip().split("#");
 
         for (String ingredient: ingredients){
@@ -41,7 +45,8 @@ public class FileDishBuilder extends DishBuilder {
     @Override
     void buildMethod() {
 
-        if (inputs[3].strip().length() != 0) {
+
+        if (inputs[3]!= null && inputs[3].strip().length() != 0) {
 
         String[] method = inputs[3].strip().split("#");
 
