@@ -1,6 +1,7 @@
 package Controller;
 
 import Entities.Dish;
+import Entities.Ingredient;
 import ObjectConversion.ReferenceStorage;
 import Presenter.BookView;
 import Presenter.OpenSesame;
@@ -32,6 +33,18 @@ public class BookConsole implements AbstractConsole {
             case "search" : BookView.view(Search.find());
                 break;
             case "view dishes" : BookView.view();
+                break;
+            case "view dish" :
+                System.out.println("Which dish would you like to view?");
+                Dish dishToView = ReferenceStorage.dm.nameToDish(sc.nextLine().toLowerCase());
+                System.out.println(dishToView.toString());
+                break;
+            case "view ingredients" : BookView.ingredientsView();
+                break;
+            case "view ingredient" :
+                System.out.println("Which ingredient would you like to view?");
+                Ingredient ingredientToView = ReferenceStorage.im.nameToIngredient(sc.nextLine().toLowerCase());
+                System.out.println(ingredientToView.toString());
                 break;
             case "favourites" : BookView.view((ArrayList<Dish>) GetExecutor.grab(GetFav));
                 break;

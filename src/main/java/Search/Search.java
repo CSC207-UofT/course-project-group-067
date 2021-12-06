@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Search {
 
 
-    private final static ArrayList<String> FILTERS = new ArrayList<String>(Arrays.asList("Preferences","Name", "Time", "Attributes", "Ingredients"));;
+    private final static ArrayList<String> FILTERS = new ArrayList<>(Arrays.asList("Preferences","Name", "Time", "Attributes", "Ingredients"));
 
     public static ArrayList<Dish> find() {
 
@@ -17,16 +17,20 @@ public class Search {
 
         printOptions();
 
-        String input = in.nextLine();
+        String input = in.nextLine().toLowerCase();
 
         ArrayList<Dish> ret = ReferenceStorage.dm.getDishes();
 
-        while(!(input.equals("END"))){
+        while(!(input.equalsIgnoreCase("END"))){
             ret = SearchDistributor.searchBy(input, ret);
-            System.out.println(ret);
+            ArrayList<String> dishByName = new ArrayList<>();
+            for (Dish d : ret){
+                dishByName.add(d.getName());
+            }
+            System.out.println(dishByName);
             printOptions();
 
-            input = in.nextLine();
+            input = in.nextLine().toLowerCase();
 
         }
 

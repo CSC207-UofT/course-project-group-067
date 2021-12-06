@@ -12,8 +12,8 @@ public class User implements Serializable {
 
     public User() { //Constructor creates a new user
         this.name = "EMPTY";
-        this.preferences = new ArrayList<String>();
-        this.favourites = new ArrayList<Dish>();
+        this.preferences = new ArrayList<>();
+        this.favourites = new ArrayList<>();
         this.edit = false;
     }
 
@@ -23,11 +23,11 @@ public class User implements Serializable {
     }
 
     public void addPreferences(String pref) {
-        this.preferences.add(pref);
+        this.preferences.add(pref.toLowerCase());
     }
 
     public void removePreferences(String pref) {
-        this.preferences.remove(pref);
+        this.preferences.remove(pref.toLowerCase());
     }
 
     public String getName() {

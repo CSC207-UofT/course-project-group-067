@@ -14,7 +14,7 @@ public class AttrSearch implements Searcher{
 
         ArrayList<String> attributes = new ArrayList<>();
 
-        while(!(input.equals("END"))){
+        while(!(input.equalsIgnoreCase("END"))){
             attributes.add(input);
             input = in.nextLine();
         }
