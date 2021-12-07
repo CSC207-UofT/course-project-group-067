@@ -25,19 +25,22 @@ public class BookConsole implements AbstractConsole {
         Scanner sc = new Scanner(System.in);
 
         if(ReferenceStorage.dm.getDishNames().contains(input)){
-            OpenSesame.recipe(ReferenceStorage.dm.nameToDish(input));
+            Dish dishToView = ReferenceStorage.dm.nameToDish(input);
+            System.out.println(dishToView.toString());
+            return;
+        }
+        if(ReferenceStorage.im.getIngredientNames().contains(input)){
+            Ingredient ingredientToView = ReferenceStorage.im.nameToIngredient(input);
+            System.out.println(ingredientToView.toString());
+            return;
+        }
+        if(input.matches("search .*")){
+            BookView.view(Search.find(input));
             return;
         }
 
         switch (input) {
-            case "search" : BookView.view(Search.find());
-                break;
             case "view dishes" : BookView.view();
-                break;
-            case "view dish" :
-                System.out.println("Which dish would you like to view?");
-                Dish dishToView = ReferenceStorage.dm.nameToDish(sc.nextLine().toLowerCase());
-                System.out.println(dishToView.toString());
                 break;
             case "view ingredients" : BookView.ingredientsView();
                 break;

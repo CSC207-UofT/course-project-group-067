@@ -46,6 +46,7 @@ public class Ingredient implements Serializable {
         desc.append("--Attributes-- \n");
         for (String item : this.attributes) {
             desc.append(item).append(" \n");}
+        desc.append("--------------");
         return desc.toString();
     }
 }
