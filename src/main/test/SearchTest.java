@@ -2,12 +2,9 @@ import Entities.Dish;
 import Entities.User;
 import EntityCreation.DishCreation.DishCreator;
 import EntityCreation.IngredientCreation.IngredientCreator;
-import Search.AttrSearch;
+import Search.*;
 import Entities.Ingredient;
 import Managers.DishManager;
-import Search.IngSearch;
-import Search.PrefSearch;
-import Search.TimeSearch;
 import org.junit.Before;
 import org.junit.Test;
 import org.w3c.dom.Attr;
@@ -31,9 +28,9 @@ public class SearchTest {
     public void setUp() {
         testUser = new User();
         testUser.addName("testUser");
-        testUser.addPreferences("Vegetarian");
+        testUser.addPreferences("vegetarian");
         ReferenceStorage.u = testUser;
-        IngredientCreator ic1 = new IngredientCreator("Broccoli@Vegetarian");
+        IngredientCreator ic1 = new IngredientCreator("Broccoli@vegetarian");
         broccoli = ic1.create();
         IngredientCreator ic2 = new IngredientCreator("Chicken@ ");
         chicken = ic2.create();
@@ -55,7 +52,7 @@ public class SearchTest {
         expected = new ArrayList<>();
         expected.add(testDish);
         AttrSearch AttrSearcher = new AttrSearch();
-        String input = "Vegetarian" + System.getProperty("line.separator") + "END" + System.getProperty("line.separator");
+        String input = "vegetarian" + System.getProperty("line.separator") + "END" + System.getProperty("line.separator");
         System.setIn(new ByteArrayInputStream(input.getBytes()));
         assertEquals(expected, AttrSearcher.getResults(dishList)); //Tests if AttributeSearch returns
         // the dish with the given attribute correctly and doesn't return the dish without the attribute
@@ -112,10 +109,25 @@ public class SearchTest {
         expected = new ArrayList<>();
         expected.add(testDish);
         PrefSearch PrefSearcher = new PrefSearch();
-        String input = "6";
+        String input = "vegetarian";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
         assertEquals(expected, PrefSearcher.getResults(dishList)); //Tests if PrefSearch returns the dish with
         //the preferred attribute of the User
+    }
+
+    @Test(timeout = 100)
+    public void NameSearchTest() {
+        ArrayList<Dish> expected;
+        expected = new ArrayList<>();
+        expected.add(testDish);
+        NameSearch NameSearcher = new NameSearch();
+        String input = "test1";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        assertEquals(expected, NameSearcher.getResults(dishList));
+        input = "dinner";
+        expected.remove(testDish);
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        assertEquals(expected, NameSearcher.getResults(dishList));
     }
 
 
