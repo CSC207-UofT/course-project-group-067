@@ -29,6 +29,14 @@ Commands:
   * "remove from preferences" removes a preference from the user's preferences
 * BookConsole Commands:
   * "search" starts a search function with difference search filters
+    * -n dishname : returns a list of dishes containing dishname in their names
+    * -p : returns a list of dishes matching the user's preferences
+    * -t time : returns a list of dishes with cook time less than or equal to time
+    * -i ing1/ing2/... : returns a list of dishes with ing1, ing2, ... as their ingredients
+    * -a att1/att2/... : returns a list of dishes with att1, att2, ... as their attributes
+    * EXAMPLE: search -n burger -t 15 -i lettuce/pickles -a vegan
+      * this will return a list of dishes that has "burger" in its name, cook time no more than 15 minutes,
+      * lettuce, pickles as ingredients, and the vegan attribute.
   * "view dishes" lists out the dishes in the dish manager
   * "view dish" allows user to input the dish name to view details of the dish
   * "view ingredients" lists out the ingredients in the ingredient manager
