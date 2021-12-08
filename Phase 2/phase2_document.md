@@ -28,6 +28,8 @@ Commands:
   * "add to preferences" adds a preference to the user's preferences
   * "remove from preferences" removes a preference from the user's preferences
 * BookConsole Commands:
+  * Typing in a name of a dish or ingredient will show its description. If there's a dish and an ingredient sharing
+    * the same name, the dish is displayed. The user can use "view ingredient" to view the ingredient 
   * "search" starts a search function with difference search filters
     * -n dishname : returns a list of dishes containing dishname in their names
     * -p : returns a list of dishes matching the user's preferences
@@ -38,7 +40,6 @@ Commands:
       * this will return a list of dishes that has "burger" in its name, cook time no more than 15 minutes,
       * lettuce, pickles as ingredients, and the vegan attribute.
   * "view dishes" lists out the dishes in the dish manager
-  * "view dish" allows user to input the dish name to view details of the dish
   * "view ingredients" lists out the ingredients in the ingredient manager
   * "view ingredient" allows user to input the ingredient name to view attributes of the ingredient
   * "favourites" lists out the favourite dishes of the user
@@ -93,9 +94,9 @@ James -
 1. Implemented difference commands in both UserConsole and BookConsole.
 2. Made the program catch some exceptions, so it doesn't crash on an invalid user input command.
 3. Made the search function more intuitive.
-Pull Requests: 
+Pull Requests:
+https://github.com/CSC207-UofT/course-project-group-067/pull/26
 https://github.com/CSC207-UofT/course-project-group-067/pull/25
-https://github.com/CSC207-UofT/course-project-group-067/pull/22
 
 Angelo - 
 1. Worked on abstract console implementation
@@ -103,7 +104,7 @@ Angelo -
 3. Fixed code so that tests would pass and worked on catching exception so code didn't crash  
 Pull Requests: 
 https://github.com/CSC207-UofT/course-project-group-067/pull/20  
-   https://github.com/CSC207-UofT/course-project-group-067/pull/24
+https://github.com/CSC207-UofT/course-project-group-067/pull/24
 
 
 
