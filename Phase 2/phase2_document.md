@@ -93,7 +93,7 @@ Jake -
 James - 
 1. Implemented difference commands in both UserConsole and BookConsole.
 2. Made the program catch some exceptions, so it doesn't crash on an invalid user input command.
-3. Made the search function more intuitive.
+3. Made the search function more intuitive into a single line command.
 Pull Requests:
 https://github.com/CSC207-UofT/course-project-group-067/pull/26
 https://github.com/CSC207-UofT/course-project-group-067/pull/25
