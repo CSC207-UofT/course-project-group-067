@@ -1,26 +1,20 @@
 import Entities.Dish;
 import Entities.Ingredient;
-import EntityCreation.DishCreation.DishBuilderDirector;
 import EntityCreation.DishCreation.DishCreator;
-import EntityCreation.DishCreation.RuntimeDishBuilder;
 import EntityCreation.IngredientCreation.IngredientCreator;
 import ObjectConversion.ReferenceStorage;
-import org.junit.Assert;
-import org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class DishTest {
-    ArrayList<String> lst = new ArrayList<>();
-    Ingredient chs = new Ingredient("Cheese", lst);
+    final ArrayList<String> lst = new ArrayList<>();
+    final Ingredient chs = new Ingredient("Cheese", lst);
     Ingredient macaroni;
-    Ingredient mac = new Ingredient("Macaroni", lst);
+    final Ingredient mac = new Ingredient("Macaroni", lst);
     Ingredient cheese;
     IngredientCreator IC, InC;
     DishCreator DC;

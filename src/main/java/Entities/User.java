@@ -5,10 +5,11 @@ import java.util.ArrayList;
 
 public class User implements Serializable {
 
-    private ArrayList<Dish> favourites;
-    private ArrayList<String> preferences;
+    private final ArrayList<Dish> favourites;
+    private final ArrayList<String> preferences;
     private String name;
     protected boolean edit;
+    private String password;
 
     public User() { //Constructor creates a new user
         this.name = "EMPTY";
@@ -26,6 +27,9 @@ public class User implements Serializable {
         this.preferences.add(pref.toLowerCase());
     }
 
+    public void addPassword(String password){
+        this.password = password;
+    }
     public void removePreferences(String pref) {
         this.preferences.remove(pref.toLowerCase());
     }
@@ -38,7 +42,9 @@ public class User implements Serializable {
         return this.preferences;
     }
 
-
+    public String getPassword(){
+        return this.password;
+    }
     public void addFavourite(Dish d) {
         this.favourites.add(d);
     }

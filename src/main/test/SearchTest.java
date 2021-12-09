@@ -5,12 +5,12 @@ import EntityCreation.IngredientCreation.IngredientCreator;
 import Search.*;
 import Entities.Ingredient;
 import Managers.DishManager;
+import Search.IngSearch;
+import Search.PrefSearch;
+import Search.TimeSearch;
 import org.junit.Before;
 import org.junit.Test;
-import org.w3c.dom.Attr;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.util.ArrayList;
 import static org.junit.Assert.*;
 import ObjectConversion.ReferenceStorage;
@@ -66,9 +66,9 @@ public class SearchTest {
         expected = new ArrayList<>();
         expected.add(testDish);
         IngSearch IngSearcher = new IngSearch();
-        String input = "Broccoli" + System.getProperty("line.separator") + "END" + System.getProperty("line.separator");
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        assertEquals(expected, IngSearcher.getResults(dishList)); //Tests if IngSearch returns the dish with the
+        String input = "broccoli";
+
+        assertEquals(expected, IngSearcher.getResults(dishList, input)); //Tests if IngSearch returns the dish with the
         // given ingredient as expected
 
 
@@ -83,8 +83,8 @@ public class SearchTest {
         expected.add(testMeatDish);
         TimeSearch TimeSearcher = new TimeSearch();
         String input = "7";
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        assertEquals(expected, TimeSearcher.getResults(dishList)); //Tests if IngSearch returns both dishes since
+
+        assertEquals(expected, TimeSearcher.getResults(dishList, input)); //Tests if IngSearch returns both dishes since
         // they are under the indicated cook time
 
 
@@ -97,8 +97,8 @@ public class SearchTest {
         expected.add(testDish);
         TimeSearch TimeSearcher = new TimeSearch();
         String input = "6";
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        assertEquals(expected, TimeSearcher.getResults(dishList)); //Tests if IngSearch returns the dish with the
+//        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        assertEquals(expected, TimeSearcher.getResults(dishList, input)); //Tests if IngSearch returns the dish with the
         // allowed cook time
 
     }

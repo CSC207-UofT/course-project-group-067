@@ -10,8 +10,8 @@ import static org.junit.Assert.*;
 public class IngredientManagerTest {
     IngredientManager im;
     ArrayList<Ingredient> lst = new ArrayList<>();
-    Ingredient chs = new Ingredient("Cheese", new ArrayList<>());
-    Ingredient mac = new Ingredient("Macaroni", new ArrayList<>());
+    final Ingredient chs = new Ingredient("Cheese", new ArrayList<>());
+    final Ingredient mac = new Ingredient("Macaroni", new ArrayList<>());
 
     @Before
     public void setUp() {

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class SearchDistributor {
 
-    public static ArrayList<Dish> searchBy(String term, ArrayList<Dish> list) {
+    public static ArrayList<Dish> searchBy(String term, ArrayList<Dish> list, String value) {
         Searcher searcher;
         switch (term) {
             case "preferences":
@@ -28,7 +28,7 @@ public class SearchDistributor {
                 throw new IllegalStateException("Unexpected value: " + term);
 
         }
-        return searcher.getResults(list);
+        return searcher.getResults(list, value);
     }
 
 }

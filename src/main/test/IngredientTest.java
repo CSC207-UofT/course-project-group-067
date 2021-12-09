@@ -1,5 +1,4 @@
 import Entities.Ingredient;
-import EntityCreation.EntityCreatorDistributor;
 import EntityCreation.IngredientCreation.IngredientCreator;
 import org.junit.Before;
 import org.junit.Test;
@@ -7,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class IngredientTest {
-    Ingredient ing = new Ingredient();
+    final Ingredient ing = new Ingredient();
     IngredientCreator IC;
 
     @Before

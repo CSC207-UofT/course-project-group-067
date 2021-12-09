@@ -16,7 +16,7 @@ import ObjectConversion.ReferenceStorage;
  * */
 
 public class UserTest {
-    ArrayList<String> lst = new ArrayList<>();
+    final ArrayList<String> lst = new ArrayList<>();
     Ingredient chs = new Ingredient("Cheese", lst); Ingredient macaroni;
     Ingredient mac = new Ingredient("Macaroni", lst);Ingredient cheese;
     IngredientCreator IC, InC;

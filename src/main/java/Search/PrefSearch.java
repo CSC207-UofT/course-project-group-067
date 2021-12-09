@@ -1,18 +1,13 @@
 package Search;
 
 import Entities.Dish;
-import Entities.User;
-import Managers.UserManager;
 import ObjectConversion.ReferenceStorage;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class PrefSearch implements Searcher{
 
-    public ArrayList<Dish> getResults(ArrayList<Dish> list){
-
-        Scanner sc = new Scanner(System.in);
+    public ArrayList<Dish> getResults(ArrayList<Dish> list, String value){
 
         ArrayList<Dish> ret = new ArrayList<>();
 

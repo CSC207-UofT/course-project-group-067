@@ -5,6 +5,7 @@ import EntityCreation.BuilderFramework;
 
 import java.util.Scanner;
 
+@SuppressWarnings("ALL")
 abstract class IngredientBuilder extends BuilderFramework {
     Scanner sc = new Scanner(System.in);
     Ingredient ingredient;

@@ -5,11 +5,11 @@ import Entities.Ingredient;
 import java.util.ArrayList;
 
 public class IngredientManager {
-    public ArrayList<Ingredient> ingredients;
-    public ArrayList<String> allAttributes = new ArrayList<>();
+    private final ArrayList<Ingredient> ingredients;
+    private final ArrayList<String> allAttributes = new ArrayList<>();
 
     public IngredientManager() {
-        this.ingredients = new ArrayList<Ingredient>();
+        this.ingredients = new ArrayList<>();
     }
 
     public void addIngredientToList(Ingredient i){

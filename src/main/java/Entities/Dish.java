@@ -6,8 +6,8 @@ import java.util.ArrayList;
 public class Dish implements Serializable {
     private String name;
     private double time;
-    private ArrayList<Ingredient> ingredients;
-    private ArrayList<String> method;
+    private final ArrayList<Ingredient> ingredients;
+    private final ArrayList<String> method;
     private ArrayList<String> attributes;
 
     public Dish() {
@@ -36,6 +36,7 @@ public class Dish implements Serializable {
     public void addName(String name){
         this.name = name;
     }
+
     public void addIngredient(Ingredient i) {
         this.ingredients.add(i);
         this.attributes.addAll(i.getAttributes());
@@ -55,7 +56,7 @@ public class Dish implements Serializable {
     }
 
     public ArrayList<Ingredient> getIngredients(){
-        return (ArrayList<Ingredient>) this.ingredients.clone();
+        return this.ingredients;
     }
 
     public ArrayList<String> getIngredientsName(){
@@ -69,7 +70,7 @@ public class Dish implements Serializable {
     }
 
     public ArrayList<String> getMethod() {
-        return (ArrayList<String>) this.method.clone();
+        return this.method;
     }
 
     public double getTime() {
@@ -78,8 +79,10 @@ public class Dish implements Serializable {
 
 
     public ArrayList<String> getAttributes() {
-        return (ArrayList<String>) this.attributes.clone();
+        return this.attributes;
     }
+
+    public void setAttributes(String attribute){this.attributes.add(attribute);}
 
     @Override
     public String toString() {

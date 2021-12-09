@@ -6,7 +6,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class UserDataset implements Dataset{
-    private Statement s;
+    private final Statement s;
 
     public UserDataset(Statement s){
         this.s = s;
@@ -15,7 +15,7 @@ public class UserDataset implements Dataset{
 
     @Override
     public ArrayList<String> getData() throws SQLException {
-        ArrayList<String> data = new ArrayList<String>();
+        ArrayList<String> data = new ArrayList<>();
 
         ResultSet r = s.executeQuery("SELECT * FROM users");
 
@@ -24,7 +24,8 @@ public class UserDataset implements Dataset{
             String favourites = r.getString("favourites").toLowerCase();
             String preferences = r.getString("preferences").toLowerCase();
             String edit = r.getString("edit").toLowerCase();
-            data.add(name+"@"+preferences+"@"+favourites+"@"+edit);
+            String password = r.getString("password".toLowerCase());
+            data.add(name+"@"+preferences+"@"+favourites+"@"+edit+"@"+password);
         }
         return data;
     }

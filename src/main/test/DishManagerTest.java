@@ -11,10 +11,10 @@ import static org.junit.Assert.*;
 public class DishManagerTest {
     DishManager dm;
     Dish d;
-    ArrayList<String> lst = new ArrayList<>();
-    Ingredient chs = new Ingredient("Cheese", lst);
-    Ingredient mac = new Ingredient("Macaroni", lst);
-    Dish d2 = new Dish();
+    final ArrayList<String> lst = new ArrayList<>();
+    final Ingredient chs = new Ingredient("Cheese", lst);
+    final Ingredient mac = new Ingredient("Macaroni", lst);
+    final Dish d2 = new Dish();
 
     @Before
     public void setUp() {
@@ -29,7 +29,7 @@ public class DishManagerTest {
     public void testDishManager() {
         dm.addDishToList(d);
         dm.addDishToList(d2);
-        ArrayList<Dish> dshlst = new ArrayList<>(); dshlst.add(d); dshlst.add(d2);
+        @SuppressWarnings("MismatchedQueryAndUpdateOfCollection") ArrayList<Dish> dshlst = new ArrayList<>(); dshlst.add(d); dshlst.add(d2);
         assertTrue(dm.getDishes().contains(d));
         assertTrue(dm.getDishes().contains(d2));
         assertFalse(dm.getDishNames().contains("Pepperoni"));

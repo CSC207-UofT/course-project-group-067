@@ -5,8 +5,9 @@ import Entities.User;
 import EntityCreation.EntityCreator;
 
 
+@SuppressWarnings("unchecked")
 public class UserCreator implements EntityCreator {
-    private String data;
+    private final String data;
 
     public UserCreator(String data){
         this.data = data;

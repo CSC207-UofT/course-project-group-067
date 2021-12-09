@@ -6,7 +6,7 @@ import EntityCreation.BuilderFramework;
 import java.util.Scanner;
 
 abstract class UserBuilder extends BuilderFramework {
-    Scanner sc = new Scanner(System.in);
+    final Scanner sc = new Scanner(System.in);
     User user;
 
     abstract void buildName();
@@ -17,6 +17,9 @@ abstract class UserBuilder extends BuilderFramework {
 
     abstract void buildEdit();
 
+    abstract void buildPassword();
+
+    @SuppressWarnings("unchecked")
     @Override
     public User getObject() {
         return user;
