@@ -20,7 +20,7 @@ public class RuntimeUserBuilder extends UserBuilder {
     void buildPreferences() {
         System.out.println("Enter Preferences, Enter end to finish");
         String attribute = sc.nextLine().strip().toLowerCase();
-
+        System.out.println("Available attributes: "+ReferenceStorage.attributes);
         while (!(attribute.equals("end"))){
             if(ReferenceStorage.attributes.contains(attribute)){
                 user.addPreferences(attribute);}
