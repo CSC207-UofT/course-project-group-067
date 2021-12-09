@@ -19,7 +19,7 @@ public class User implements Serializable {
     }
 
 
-    public void addName(String name){
+    public void addName(String name) {
         this.name = name;
     }
 
@@ -27,9 +27,10 @@ public class User implements Serializable {
         this.preferences.add(pref.toLowerCase());
     }
 
-    public void addPassword(String password){
+    public void addPassword(String password) {
         this.password = password;
     }
+
     public void removePreferences(String pref) {
         this.preferences.remove(pref.toLowerCase());
     }
@@ -38,13 +39,14 @@ public class User implements Serializable {
         return this.name;
     }
 
-    public ArrayList<String> getPreferences(){
+    public ArrayList<String> getPreferences() {
         return this.preferences;
     }
 
-    public String getPassword(){
+    public String getPassword() {
         return this.password;
     }
+
     public void addFavourite(Dish d) {
         this.favourites.add(d);
     }
@@ -57,11 +59,11 @@ public class User implements Serializable {
         return this.favourites;
     }
 
-    public void changeEdit(){
+    public void changeEdit() {
         this.edit = !this.edit;
     }
 
-    public String getEdit(){
+    public String getEdit() {
         if (edit)
             return "1";
         else

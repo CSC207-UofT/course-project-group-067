@@ -21,10 +21,10 @@ public class Dish implements Serializable {
     /**
      * Alternative Constructor for reading from file with all input fields given
      *
-     * @param dishName  name of Entities.Dish
+     * @param dishName    name of Entities.Dish
      * @param ingredients List of Ingredients in Entities.Dish
-     * @param method    List of method in Entities.Dish
-     * @param time time taken to make dish
+     * @param method      List of method in Entities.Dish
+     * @param time        time taken to make dish
      */
     public Dish(String dishName, ArrayList<Ingredient> ingredients, ArrayList<String> method, double time) {
         this.name = dishName;
@@ -33,7 +33,7 @@ public class Dish implements Serializable {
         this.time = time;
     }
 
-    public void addName(String name){
+    public void addName(String name) {
         this.name = name;
     }
 
@@ -55,14 +55,14 @@ public class Dish implements Serializable {
         return this.name;
     }
 
-    public ArrayList<Ingredient> getIngredients(){
+    public ArrayList<Ingredient> getIngredients() {
         return this.ingredients;
     }
 
-    public ArrayList<String> getIngredientsName(){
+    public ArrayList<String> getIngredientsName() {
         ArrayList<String> names = new ArrayList<>();
 
-        for(Ingredient i: this.ingredients){
+        for (Ingredient i : this.ingredients) {
             names.add(i.getName());
         }
 
@@ -82,7 +82,9 @@ public class Dish implements Serializable {
         return this.attributes;
     }
 
-    public void setAttributes(String attribute){this.attributes.add(attribute);}
+    public void setAttributes(String attribute) {
+        this.attributes.add(attribute);
+    }
 
     @Override
     public String toString() {
@@ -91,10 +93,11 @@ public class Dish implements Serializable {
         desc.append("Cooking time of: ").append(this.time).append(" minutes").append(" \n");
         desc.append("--Ingredients-- \n");
         for (Ingredient ingredient : this.ingredients) {
-            desc.append(ingredient.getName()).append(" \n");}
+            desc.append(ingredient.getName()).append(" \n");
+        }
         desc.append("--Instructions-- \n");
         int i = 1;
-        for (String instruction : this.method){
+        for (String instruction : this.method) {
             desc.append(i).append(". ").append(instruction);
             i++;
         }

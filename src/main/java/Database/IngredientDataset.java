@@ -5,10 +5,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class IngredientDataset implements Dataset{
+public class IngredientDataset implements Dataset {
     private final Statement s;
 
-    public IngredientDataset(Statement s){
+    public IngredientDataset(Statement s) {
         this.s = s;
 
     }
@@ -19,10 +19,10 @@ public class IngredientDataset implements Dataset{
 
         ResultSet r = s.executeQuery("SELECT * FROM ingredients");
 
-        while (r.next()){
+        while (r.next()) {
             String name = r.getString("name").toLowerCase().strip();
             String attributes = r.getString("attributes").toLowerCase().strip();
-            data.add(name+"@"+attributes);
+            data.add(name + "@" + attributes);
         }
 
         return data;

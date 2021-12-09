@@ -7,11 +7,11 @@ import ObjectConversion.ReferenceStorage;
 public class FileUserBuilder extends UserBuilder {
     private final String[] inputs = new String[5];
 
-    public FileUserBuilder(String data){
+    public FileUserBuilder(String data) {
 
         int index = 0;
 
-        for(String info: data.split("@")){
+        for (String info : data.split("@")) {
 
             inputs[index] = info;
 
@@ -28,7 +28,7 @@ public class FileUserBuilder extends UserBuilder {
 
     @Override
     void buildPreferences() {
-        if (inputs[1]!= null && inputs[1].strip().length() != 0) {
+        if (inputs[1] != null && inputs[1].strip().length() != 0) {
 
             String[] preferences = inputs[1].strip().split("#");
 
@@ -39,11 +39,11 @@ public class FileUserBuilder extends UserBuilder {
         }
 
 
-
     }
+
     @Override
     void buildFavourites() {
-        if (inputs[2]!= null && inputs[2].strip().length() != 0) {
+        if (inputs[2] != null && inputs[2].strip().length() != 0) {
 
             String[] favourites = inputs[2].strip().split("#");
 
@@ -55,17 +55,17 @@ public class FileUserBuilder extends UserBuilder {
     }
 
     @Override
-    void buildEdit(){
+    void buildEdit() {
         String edit = inputs[3];
 
-        if(edit.equals("1"))
+        if (edit.equals("1"))
             user.changeEdit();
 
 
     }
 
     @Override
-    void buildPassword(){
+    void buildPassword() {
         String password = inputs[4];
         user.addPassword(password);
     }

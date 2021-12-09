@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class IngSearch implements Searcher{
+public class IngSearch implements Searcher {
 
 
     public ArrayList<Dish> getResults(ArrayList<Dish> list, String value) {
@@ -15,14 +15,11 @@ public class IngSearch implements Searcher{
 
         ArrayList<Dish> ret = new ArrayList<>();
 
-        for(Dish dish: list){
-            if(dish.getIngredientsName().containsAll(ingredientsList))
+        for (Dish dish : list) {
+            if (dish.getIngredientsName().containsAll(ingredientsList))
                 ret.add(dish);
         }
         return ret;
-
-
-
 
 
     }

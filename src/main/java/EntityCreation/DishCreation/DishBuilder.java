@@ -1,8 +1,9 @@
 package EntityCreation.DishCreation;
 
-import java.util.Scanner;
 import Entities.Dish;
 import EntityCreation.BuilderFramework;
+
+import java.util.Scanner;
 
 @SuppressWarnings("unchecked")
 abstract class DishBuilder extends BuilderFramework {
@@ -24,6 +25,6 @@ abstract class DishBuilder extends BuilderFramework {
 
     @Override
     public void createObject() {
-    dish = new Dish();
+        dish = new Dish();
     }
 }

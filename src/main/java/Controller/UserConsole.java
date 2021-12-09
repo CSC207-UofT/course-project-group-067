@@ -24,12 +24,12 @@ public class UserConsole implements AbstractConsole {
             case "preferences":
                 System.out.println(ReferenceStorage.u.getPreferences());
                 break;
-            case "add to preferences" :
+            case "add to preferences":
                 System.out.println("What preference would you like to add?");
                 ReferenceStorage.u.addPreferences(sc.nextLine().toLowerCase());
                 new AddToDB().SetPreferences(ReferenceStorage.u);
                 break;
-            case "remove from preferences" :
+            case "remove from preferences":
                 System.out.println("Which preference would you like to remove?");
                 ReferenceStorage.u.removePreferences(sc.nextLine().toLowerCase());
                 new AddToDB().SetPreferences(ReferenceStorage.u);

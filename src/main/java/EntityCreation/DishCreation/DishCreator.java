@@ -6,15 +6,16 @@ import EntityCreation.EntityCreator;
 public class DishCreator implements EntityCreator {
     private final String data; //name@time@ingredients@method
 
-    public DishCreator(String data){
+    public DishCreator(String data) {
         this.data = data;
     }
+
     @SuppressWarnings("unchecked")
-    public Dish create(){
+    public Dish create() {
         DishBuilderDirector dishBuilderDirector = new DishBuilderDirector();
         DishBuilder dishBuilder;
 
-        if(data.equals(""))
+        if (data.equals(""))
             dishBuilder = new RuntimeDishBuilder();
         else
             dishBuilder = new FileDishBuilder(data);

@@ -7,14 +7,15 @@ public class Ingredient implements Serializable {
     public String name;
     public final ArrayList<String> attributes;
 
-    public Ingredient(){
+    public Ingredient() {
         this.name = "EMPTY";
         this.attributes = new ArrayList<>();
     }
 
     /**
-     *Alternative Constructor for reading from file with all inputs given
-     * @param name name of ingredient
+     * Alternative Constructor for reading from file with all inputs given
+     *
+     * @param name       name of ingredient
      * @param attributes list of string attributes
      */
     public Ingredient(String name, ArrayList<String> attributes) {
@@ -22,11 +23,11 @@ public class Ingredient implements Serializable {
         this.attributes = attributes;
     }
 
-    public void addName(String name){
+    public void addName(String name) {
         this.name = name;
     }
 
-    public void addAttribute(String attr){
+    public void addAttribute(String attr) {
         this.attributes.add(attr);
     }
 
@@ -45,7 +46,8 @@ public class Ingredient implements Serializable {
         desc.append(" is an ingredient with \n");
         desc.append("--Attributes-- \n");
         for (String item : this.attributes) {
-            desc.append(item).append(" \n");}
+            desc.append(item).append(" \n");
+        }
         desc.append("--------------");
         return desc.toString();
     }

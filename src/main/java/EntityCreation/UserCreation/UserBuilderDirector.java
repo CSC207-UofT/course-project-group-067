@@ -5,15 +5,15 @@ import Entities.User;
 public class UserBuilderDirector {
     private UserBuilder userBuilder;
 
-    public void setUserBuilder(UserBuilder userBuilder){
+    public void setUserBuilder(UserBuilder userBuilder) {
         this.userBuilder = userBuilder;
     }
 
-    public User getUser(){
+    public User getUser() {
         return userBuilder.getObject();
     }
 
-    public void construct(){
+    public void construct() {
         userBuilder.createObject();
         userBuilder.buildName();
         userBuilder.buildPreferences();

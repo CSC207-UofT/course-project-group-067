@@ -8,6 +8,7 @@ public class CreateExecutor {
 
         operation.execute();
     }
+
     public void genesis(CreateOperation operation, String data) throws SQLException {
 
         operation.execute(data);

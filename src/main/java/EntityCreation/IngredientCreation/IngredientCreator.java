@@ -6,16 +6,16 @@ import EntityCreation.EntityCreator;
 public class IngredientCreator implements EntityCreator {
     private final String data;
 
-    public IngredientCreator(String data){
+    public IngredientCreator(String data) {
         this.data = data;
     }
 
     @SuppressWarnings("unchecked")
-    public Ingredient create(){
+    public Ingredient create() {
         IngredientBuilderDirector ingredientBuilderDirector = new IngredientBuilderDirector();
         IngredientBuilder ingredientBuilder;
 
-        if(data.equals(""))
+        if (data.equals(""))
             ingredientBuilder = new RuntimeIngredientBuilder();
         else
             ingredientBuilder = new FileIngredientBuilder(data);

@@ -5,10 +5,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class AttributeDataset implements Dataset{
+public class AttributeDataset implements Dataset {
     private final Statement s;
 
-    AttributeDataset(Statement s){
+    AttributeDataset(Statement s) {
         this.s = s;
     }
 
@@ -18,7 +18,7 @@ public class AttributeDataset implements Dataset{
 
         ResultSet r = s.executeQuery("SELECT * FROM attributes");
 
-        while (r.next()){
+        while (r.next()) {
             data.add(r.getString("name").toLowerCase().strip());
         }
         return data;
