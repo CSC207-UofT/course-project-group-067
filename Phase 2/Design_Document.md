@@ -1,56 +1,65 @@
 #Specification
 This project provides an implementation using Java of a Recipe book program that can be used and added to by Users.
-Users of the program have the following access and capabilities when using the recipe book.\
-* $new path/ dp$ Manually adding a new *Entities.Dish* to the *Recipe Book* from within the program. For example, adding 'Pepperoni Pizza' to the *Recipe Book* during runtime.
+Users of the program have the following access and capabilities when using the recipe book.
+* Manually adding a new *Dish* to the *Recipe Book* from within the program. For example, adding 'Pepperoni Pizza' to the *Recipe Book* during runtime.
 * View *Dishes* inside the recipe book with search functionality
-* $new$ Reading *Entities.Dish* information from a specifically formatted file and adding to the *Recipe Book*\
-* $updated with design patterns$ Searching for a *Entities.Dish* or Dishes in the *Recipe Book* by name, favourites, cook time, user preferences, certain attributes (Vegetarian, Non-Vegetarian, Kosher)
- and whether it contains certain *Entities.Ingredient*(s) (eg: Searching for dishes that contain *Potato*)
-* Generate favourites and preferences for the *User* within the program which can then be used with search functionality to sort through recipes\
-* $new$Save changes to the recipe book to a file format
+* Reading *Dish* information from a specifically formatted file and adding to the *Recipe Book*
+* Searching for a *Dish* or Dishes in the *Recipe Book* by name, favourites, cook time, user preferences, certain attributes (Vegetarian, Non-Vegetarian, Vegan)
+ and whether it contains certain *Ingredient*(s) (eg: Searching for dishes that contain *Potato*)
+* Create favourites and preferences for the *User* within the program which can then be used with search functionality to sort through recipes
+* Serialize the recipe book via a database
 
-Each *Entities.Dish* in the *Recipe Book* must store information such as name, *Entities.Ingredient*(s), cook time, attributes (Veg, Non-Veg, etc.) and
+Each *Dish* in the *Recipe Book* must store information such as name, *Ingredient*(s), cook time, attributes (Veg, Non-Veg, etc.) and
 cooking instructions.
-These can either be input manually during runtime by the user or uploaded through a *new* structures file. The structure splits each dish by the @ symbol in the file.
+These can either be input manually during runtime by the user or uploaded through a file. The structure splits each dish by the @ symbol in the file.
 
-Each *Entities.User* will be able to add dishes to the communal *Recipe Book* and have their own implementation of *favourites* and *Preferences*
-When new *User* constructure will ask for and store *Preferences* and *Favourites* but these can be edited at anytime in the program
-These can be saved as well as the current status of the dishes and ingredients known to the recipe book.
-Existing Users can be viewed to see collaborators in the Recipe Book
-*new* There exists a User Subclass *Admin* which gives such users more capabilities.
+Each *User* will be able to add dishes to the communal *Recipe Book* (If allowed access) and have their own implementation of *favourites* and *Preferences*
+When a new *User* is created, the program will ask for and store *Preferences* but these can be edited at anytime in the program
+These can be saved as well as the current status of the dishes and ingredients known to the recipe book.\
+*IMPORTANT*: Since the program will be tested without our assistance, we have decided to allow the User to give themselves editorial access, since otherwise the TA would have to email us in order to gain access to the functionality
 
 Commands:
-* "Close" logs out the user
-* "Create" creates a new user
+* "end" terminates the program
+* "create" creates a new user
+* Entering a username that exist prompts a password entry
 * UserConsole Commands:
   * "favourites" lists out the names of the dish the user has added to their favourites
   * "preferences" lists out the user's preferences
   * "add to preferences" adds a preference to the user's preferences
   * "remove from preferences" removes a preference from the user's preferences
 * BookConsole Commands:
+  * Typing in a name of a dish or ingredient will show its description. If there's a dish and an ingredient sharing
+    * the same name, the dish is displayed. The user can use "view ingredient" to view the ingredient
   * "search" starts a search function with difference search filters
+    * -n dishname : returns a list of dishes containing dishname in their names
+    * -p : returns a list of dishes matching the user's preferences
+    * -t time : returns a list of dishes with cook time less than or equal to time
+    * -i ing1/ing2/... : returns a list of dishes with ing1, ing2, ... as their ingredients
+    * -a att1/att2/... : returns a list of dishes with att1, att2, ... as their attributes
+    * EXAMPLE: search -n burger -t 15 -i lettuce/pickles -a vegan
+      * this will return a list of dishes that has "burger" in its name, cook time no more than 15 minutes,
+      * lettuce, pickles as ingredients, and the vegan attribute.
   * "view dishes" lists out the dishes in the dish manager
-  * "view dish" allows user to input the dish name to view details of the dish
   * "view ingredients" lists out the ingredients in the ingredient manager
   * "view ingredient" allows user to input the ingredient name to view attributes of the ingredient
   * "favourites" lists out the favourite dishes of the user
   * "add to favourites" adds a specified dish to the user's favourites list
   * "remove from favourites" removes a specified dish from the user's favourites list
-  * "preferences" shows the user's preferences
+  * "preferences" shows the dishes matching the users preferences
   * "create dish" starts the dish creator
   * "create ingredient" starts the ingredient creator
 
 ##Design decisions
-*adaptation from textUI: while doing this process I had to change several of our in place classes to fit with Springs architecture, and further
-to create controller clases better equipt for non-text based inputs. This resulted in heavy use of the command principles to use Interfaces and abstraction for these similiar functions.
+*adaptation from textUI*: while doing this process I had to change several of our in place classes to fit with Springs architecture, and further
+to create controller classes better equipped for non-text based inputs. This resulted in heavy use of the command principles to use Interfaces and abstraction for these similar functions.
 * We decided to drop the decorator design pattern used for attributes. Since it was given in our feedback that it would be a good idea to have ingredients have their own attributes and have dishes automatically compile the attributes from ingredients. We found it unnecessary to use the decorator pattern as individual ingredients would usually only have 1 attribute layer so it would just be very complex when a simple string arraylist would work just fine.
 
 ##Clean Architecture
 * Previous problems we had encountered was a lack of implementation of Clean architecture in reference to our *Recipe Book* class. As such, we have restructured our files such that there are no dependencies from our entities.
-* Use of Execute() function in interface to create abstraction between controllers and usecase classes.
+* Use of Execute() function in interface to create abstraction between controllers and use case classes.
 * Through the use of manager classes for our use cases they keep our back end 'structurally’ sound according to clean architecture.
 * Entity creation classes have many dependencies and as such this was an area were we had to be very careful when concerning Clean architecture.
-* Presentation level of clean architecture provided very few issues especially with our well structured and useful manager classes.
+* Presentation level of clean architecture provided very few issues especially with our well-structured and useful manager classes.
 * As we start to move towards the front end of our program we will be focusing on keeping clean architecture with this end and likely applying useful design patterns to achieve this.
 
 ##SOLID principles
@@ -60,8 +69,8 @@ to create controller clases better equipt for non-text based inputs. This result
 Packaging strategies
 * The most correlated packaging strategy Implemented in the project is packaging according to Clean architecture. Moreover, the construct of our packages is through convenience of coding as grouping by amount of interaction and similarity of functionality is prevalent.
 * *Entities* *Controller* *Presenters* are the clear packaging that mimics Clean architecture and is useful to us especially when making changes towards the back end to help follow dependencies and ensure continued following of clean architecture
-* Packaging *Entity Creation* classes together and creating sub-packages for each entity proved very efficient and useful as very similar code exists between these classes. Furthermore the sharing of abstract classes within this package made this strategy strong. Making the abstraction clear as well as which classes have dependencies, with all this similar code, this clear grouping has been very important
-* As *Object Conversion* and our *serialization* process’ are very unique branch of the program separating these into their packages was a clear strategy. This well become very useful later in the process if we make the design decision to move away from a file based system.
+* Packaging *Entity Creation* classes together and creating sub-packages for each entity proved very efficient and useful as very similar code exists between these classes. Furthermore, the sharing of abstract classes within this package made this strategy strong. Making the abstraction clear as well as which classes have dependencies, with all this similar code, this clear grouping has been very important
+* As *Object Conversion* and our *serialization* process’ are unique branch of the program separating these into their packages was a clear strategy. This well become very useful later in the process if we make the design decision to move away from a file based system.
 * *Search* is a very specific and large feature of our program and as such packaging our search related classes was obvious. Especially when encountering problems with the search functionality when expanding the code this strategy proved useful.
 
 ##Design patterns
@@ -78,30 +87,32 @@ Prabuddha -
 1. Learnt MYSQL fundamentals and initialized a Database using AWS' Relational Database Service
 2. Implemented serialization using a database
 3. Added some functionality to abstract console to allow parameter overriding
-Pull Requests:
-https://github.com/CSC207-UofT/course-project-group-067/pull/17
+4. Added automatic dish attribute detection
+5. Added force checks on user inputs\
+Pull Requests:\
+https://github.com/CSC207-UofT/course-project-group-067/pull/17 \
 https://github.com/CSC207-UofT/course-project-group-067/pull/23
 
 Jake - 
 * Implementing Command design pattern for controller classes
-* Adapting code from textUI towards a html front-end and the implementation of this adapted code using SpringInitializer.
-https://github.com/CSC207-UofT/project067.FrontEnd/tree/main/src : Front end so far DataNodes still to be implemented
+* Adapting code from textUI towards a html front-end and the implementation of this adapted code using SpringInitializer.\
+https://github.com/CSC207-UofT/project067.FrontEnd/tree/main/src : Front end so far DataNodes still to be implemented\
 https://github.com/CSC207-UofT/course-project-group-067/tree/Gramsey
 
 James - 
 1. Implemented difference commands in both UserConsole and BookConsole.
 2. Made the program catch some exceptions, so it doesn't crash on an invalid user input command.
-3. Made the search function more intuitive.
-Pull Requests: 
-https://github.com/CSC207-UofT/course-project-group-067/pull/25
+3. Made the search function more intuitive.\
+Pull Requests: \
+https://github.com/CSC207-UofT/course-project-group-067/pull/25 \
 https://github.com/CSC207-UofT/course-project-group-067/pull/22
 
 Angelo - 
 1. Worked on abstract console implementation
 2. Added and edited tests for entities, managers and search classes
-3. Fixed code so that tests would pass and worked on catching exception so code didn't crash  
-Pull Requests: 
-https://github.com/CSC207-UofT/course-project-group-067/pull/20  
+3. Fixed code so that tests would pass and worked on catching exception so code didn't crash  \
+Pull Requests: \
+https://github.com/CSC207-UofT/course-project-group-067/pull/20   \
    https://github.com/CSC207-UofT/course-project-group-067/pull/24
 
 
@@ -162,7 +173,7 @@ an interest in cooking who are often busy can use the search feature to find Dis
 under a specified cook time, or someone with very specific dietary restrictions can use our program
 to find dishes they can make. 
 
-**5. Write a paragraph about whether or not your program is less likely to be used by certain demographics. For example, a program that converts txt files to files that can be printed by a braille printer are less likely to be used by people who do not read braille.**  
+**5. Write a paragraph about whether your program is less likely to be used by certain demographics. For example, a program that converts txt files to files that can be printed by a braille printer are less likely to be used by people who do not read braille.**  
 Our program is less likely to be used by people who do not usually prepare food or have an interest in it.
 This is obvious since they would not be getting any practical use out of our program.
 Other than this, our program is meant to be useful to all who have an interest in preparing
