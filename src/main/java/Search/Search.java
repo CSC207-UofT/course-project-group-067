@@ -14,7 +14,7 @@ public class Search {
 
         String[] searchCommandParsed = searchCommand.split(" ");
 
-        for(int i = 0; i < searchCommandParsed.length; i++) {
+        for (int i = 0; i < searchCommandParsed.length; i++) {
 
             if (searchCommandParsed[i].matches("-.*")) {
                 int j = i + 1;
@@ -28,7 +28,7 @@ public class Search {
                     arg.append(" ").append(searchCommandParsed[k]);
                 }
 
-                if (arg.length() != 0){
+                if (arg.length() != 0) {
                     if (searchCommandParsed[i].equalsIgnoreCase("-p")) {
                         ret = SearchDistributor.searchBy("preferences", ret, "");
                     } else if (searchCommandParsed[i].equalsIgnoreCase("-n")) {

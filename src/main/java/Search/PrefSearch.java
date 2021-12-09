@@ -5,14 +5,14 @@ import ObjectConversion.ReferenceStorage;
 
 import java.util.ArrayList;
 
-public class PrefSearch implements Searcher{
+public class PrefSearch implements Searcher {
 
-    public ArrayList<Dish> getResults(ArrayList<Dish> list, String value){
+    public ArrayList<Dish> getResults(ArrayList<Dish> list, String value) {
 
         ArrayList<Dish> ret = new ArrayList<>();
 
-        for(Dish dish: list){
-            if(dish.getAttributes().containsAll(ReferenceStorage.u.getPreferences())){
+        for (Dish dish : list) {
+            if (dish.getAttributes().containsAll(ReferenceStorage.u.getPreferences())) {
                 ret.add(dish);
             }
         }

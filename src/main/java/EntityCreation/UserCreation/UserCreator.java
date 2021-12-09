@@ -9,14 +9,15 @@ import EntityCreation.EntityCreator;
 public class UserCreator implements EntityCreator {
     private final String data;
 
-    public UserCreator(String data){
+    public UserCreator(String data) {
         this.data = data;
     }
-    public User create(){
+
+    public User create() {
         UserBuilderDirector userBuilderDirector = new UserBuilderDirector();
         UserBuilder userBuilder;
 
-        if(data.equals(""))
+        if (data.equals(""))
             userBuilder = new RuntimeUserBuilder();
         else
             userBuilder = new FileUserBuilder(data);

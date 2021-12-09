@@ -8,11 +8,11 @@ import java.util.ArrayList;
 
 public class BookView {
 
-    public static void view(){
+    public static void view() {
         ArrayList<Dish> dishes = ReferenceStorage.dm.getDishes();
         System.out.println("Dishes:");
         int index = 1;
-        for(Dish d: dishes){
+        for (Dish d : dishes) {
             System.out.print(index + " ");
             System.out.println(d.getName());
             index++;
@@ -21,10 +21,10 @@ public class BookView {
 
     }
 
-    public static void view(ArrayList<Dish> dishes){
+    public static void view(ArrayList<Dish> dishes) {
         System.out.println("Specified Dishes:");
         int index = 1;
-        for(Dish d: dishes){
+        for (Dish d : dishes) {
             System.out.print(index + " ");
             System.out.println(d.getName());
             index++;
@@ -32,11 +32,11 @@ public class BookView {
         System.out.println();
     }
 
-    public static void ingredientsView(){
+    public static void ingredientsView() {
         ArrayList<Ingredient> ingredients = ReferenceStorage.im.getIngredients();
         System.out.println("Ingredients:");
         int index = 1;
-        for(Ingredient i : ingredients){
+        for (Ingredient i : ingredients) {
             System.out.print(index + " ");
             System.out.println(i.getName());
             index++;

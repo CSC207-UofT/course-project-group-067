@@ -16,18 +16,18 @@ public class DishManager {
     }
 
 
-    public Dish nameToDish(String name){
+    public Dish nameToDish(String name) {
         Dish ret = null;
         boolean found = false;
 
-        for(Dish d: this.dishes){
-            if(d.getName().equals(name)){
+        for (Dish d : this.dishes) {
+            if (d.getName().equals(name)) {
                 ret = d;
                 found = true;
                 break;
             }
         }
-        if(found)
+        if (found)
             return ret;
         else
             throw new IllegalStateException("Entities.Dish Does Not Exist: " + name);
@@ -41,7 +41,8 @@ public class DishManager {
     public ArrayList<String> getDishNames() {
         ArrayList<String> ret = new ArrayList<>();
         for (Dish dish : this.dishes) {
-            ret.add(dish.getName());}
+            ret.add(dish.getName());
+        }
         return ret;
     }
 

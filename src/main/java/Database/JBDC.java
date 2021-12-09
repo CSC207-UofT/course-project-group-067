@@ -2,7 +2,8 @@ package Database;
 
 import ObjectConversion.ReferenceStorage;
 
-import java.sql.*;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class JBDC {
@@ -12,7 +13,7 @@ public class JBDC {
         return setCreator(statement);
     }
 
-    private static ArrayList<Dataset> setCreator(Statement s){
+    private static ArrayList<Dataset> setCreator(Statement s) {
         ArrayList<Dataset> ret = new ArrayList<>();
         ret.add(new AttributeDataset(s));
         ret.add(new IngredientDataset(s));

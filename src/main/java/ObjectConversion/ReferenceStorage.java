@@ -23,7 +23,7 @@ public class ReferenceStorage {
 
     static {
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://book.c6vcsh0l5wfl.ca-central-1.rds.amazonaws.com:3306/Data",user, pass);
+            connection = DriverManager.getConnection("jdbc:mysql://book.c6vcsh0l5wfl.ca-central-1.rds.amazonaws.com:3306/Data", user, pass);
         } catch (SQLException e) {
             e.printStackTrace();
         }

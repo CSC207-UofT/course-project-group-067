@@ -11,24 +11,24 @@ public class UserManager {
         userList.add(u);
     }
 
-    public User getUserByName(String userName){
-        for(User u : this.userList){
-            if(u.getName().equals(userName)){
+    public User getUserByName(String userName) {
+        for (User u : this.userList) {
+            if (u.getName().equals(userName)) {
                 return u;
             }
         }
         return null;
     }
 
-    public ArrayList<String> getUserNames(){
+    public ArrayList<String> getUserNames() {
         ArrayList<String> ret = new ArrayList<>();
-        for (User u : this.userList){
+        for (User u : this.userList) {
             ret.add(u.getName().toLowerCase());
         }
         return ret;
     }
 
-    public  ArrayList<User> getUserList(){
+    public ArrayList<User> getUserList() {
         return userList;
     }
 }

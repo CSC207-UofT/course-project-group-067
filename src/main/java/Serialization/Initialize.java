@@ -25,12 +25,12 @@ public class Initialize {
         users = data.get(3).getData();
     }
 
-    public void initializeAttributes(){
+    public void initializeAttributes() {
         ReferenceStorage.attributes.addAll(attributes);
     }
 
-    public void initializeIngredients(){
-        for(String data: ingredients){
+    public void initializeIngredients() {
+        for (String data : ingredients) {
             IngredientCreator ic = new IngredientCreator(data);
             Ingredient i = ic.create();
             ReferenceStorage.im.addIngredientToList(i);
@@ -38,16 +38,16 @@ public class Initialize {
         }
     }
 
-    public void initializeDishes(){
-        for(String data: dishes){
+    public void initializeDishes() {
+        for (String data : dishes) {
             DishCreator dc = new DishCreator(data);
             Dish d = dc.create();
             ReferenceStorage.dm.addDishToList(d);
         }
     }
 
-    public void initializeUsers(){
-        for(String data: users){
+    public void initializeUsers() {
+        for (String data : users) {
             UserCreator uc = new UserCreator(data);
             User u = uc.create();
             ReferenceStorage.um.addUser(u);
