@@ -22,8 +22,9 @@ public class RuntimeUserBuilder extends UserBuilder {
     @Override
     void buildPreferences() {
         System.out.println("Enter Preferences, Enter end to finish");
-        String attribute = sc.nextLine().strip().toLowerCase();
         System.out.println("Available attributes: "+ReferenceStorage.attributes);
+        String attribute = sc.nextLine().strip().toLowerCase();
+
         while (!(attribute.equals("end"))){
             if(ReferenceStorage.attributes.contains(attribute)){
                 user.addPreferences(attribute);}
@@ -41,7 +42,10 @@ public class RuntimeUserBuilder extends UserBuilder {
         String input = sc.nextLine().trim().toLowerCase();
         if(input.equalsIgnoreCase("yes"))
             user.changeEdit();
-
+        else if (!(input.equalsIgnoreCase("no"))){
+            System.out.println("Invalid input");
+            buildEdit();
+        }
 
     }
     @Override
@@ -53,7 +57,11 @@ public class RuntimeUserBuilder extends UserBuilder {
     void buildPassword(){
         System.out.println("Enter Password, in lower case");
         String input = sc.nextLine().trim().toLowerCase();
+        if (input.length()>0)
         user.addPassword(input);
+        else
+        {System.out.println("Invalid input");
+            buildPassword();}
     }
 
 }
