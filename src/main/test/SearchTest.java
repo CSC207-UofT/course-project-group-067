@@ -55,9 +55,10 @@ public class SearchTest {
         expected = new ArrayList<>();
         expected.add(testDish);
         AttrSearch AttrSearcher = new AttrSearch();
-        String input = "Vegetarian" + System.getProperty("line.separator") + "END" + System.getProperty("line.separator");
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        assertEquals(expected, AttrSearcher.getResults(dishList)); //Tests if AttributeSearch returns
+        String input = "vegetarian";
+//                + System.getProperty("line.separator") + "END" + System.getProperty("line.separator");
+//        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        assertEquals(expected, AttrSearcher.getResults(dishList, input)); //Tests if AttributeSearch returns
         // the dish with the given attribute correctly and doesn't return the dish without the attribute
 
 
@@ -69,9 +70,10 @@ public class SearchTest {
         expected = new ArrayList<>();
         expected.add(testDish);
         IngSearch IngSearcher = new IngSearch();
-        String input = "Broccoli" + System.getProperty("line.separator") + "END" + System.getProperty("line.separator");
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        assertEquals(expected, IngSearcher.getResults(dishList)); //Tests if IngSearch returns the dish with the
+        String input = "broccoli";
+//                + System.getProperty("line.separator") + "END" + System.getProperty("line.separator");
+//        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        assertEquals(expected, IngSearcher.getResults(dishList, input)); //Tests if IngSearch returns the dish with the
         // given ingredient as expected
 
 
@@ -86,8 +88,8 @@ public class SearchTest {
         expected.add(testMeatDish);
         TimeSearch TimeSearcher = new TimeSearch();
         String input = "7";
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        assertEquals(expected, TimeSearcher.getResults(dishList)); //Tests if IngSearch returns both dishes since
+//        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        assertEquals(expected, TimeSearcher.getResults(dishList, input)); //Tests if IngSearch returns both dishes since
         // they are under the indicated cook time
 
 
@@ -100,8 +102,8 @@ public class SearchTest {
         expected.add(testDish);
         TimeSearch TimeSearcher = new TimeSearch();
         String input = "6";
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        assertEquals(expected, TimeSearcher.getResults(dishList)); //Tests if IngSearch returns the dish with the
+//        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        assertEquals(expected, TimeSearcher.getResults(dishList, input)); //Tests if IngSearch returns the dish with the
         // allowed cook time
 
     }
@@ -113,8 +115,8 @@ public class SearchTest {
         expected.add(testDish);
         PrefSearch PrefSearcher = new PrefSearch();
         String input = "6";
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        assertEquals(expected, PrefSearcher.getResults(dishList)); //Tests if PrefSearch returns the dish with
+//        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        assertEquals(expected, PrefSearcher.getResults(dishList, input)); //Tests if PrefSearch returns the dish with
         //the preferred attribute of the User
     }
 
