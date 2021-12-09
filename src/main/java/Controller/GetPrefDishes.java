@@ -1,7 +1,6 @@
 package Controller;
 
 import ObjectConversion.ReferenceStorage;
-import Presenter.BookView;
 import Search.PrefSearch;
 
 public class GetPrefDishes implements GetOperation{

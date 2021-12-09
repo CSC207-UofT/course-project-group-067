@@ -1,5 +1,4 @@
 import Entities.Ingredient;
-import EntityCreation.EntityCreatorDistributor;
 import EntityCreation.IngredientCreation.IngredientCreator;
 import org.junit.Before;
 import org.junit.Test;

@@ -4,16 +4,13 @@ import EntityCreation.DishCreation.DishCreator;
 import EntityCreation.IngredientCreation.IngredientCreator;
 import Search.AttrSearch;
 import Entities.Ingredient;
-import Managers.DishManager;
 import Search.IngSearch;
 import Search.PrefSearch;
 import Search.TimeSearch;
 import org.junit.Before;
 import org.junit.Test;
-import org.w3c.dom.Attr;
 
 import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.util.ArrayList;
 import static org.junit.Assert.*;
 import ObjectConversion.ReferenceStorage;

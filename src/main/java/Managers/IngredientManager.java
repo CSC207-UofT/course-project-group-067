@@ -9,7 +9,7 @@ public class IngredientManager {
     public ArrayList<String> allAttributes = new ArrayList<>();
 
     public IngredientManager() {
-        this.ingredients = new ArrayList<Ingredient>();
+        this.ingredients = new ArrayList<>();
     }
 
     public void addIngredientToList(Ingredient i){

@@ -1,7 +1,6 @@
 package Controller;
 
 import Entities.Dish;
-import Entities.Ingredient;
 import EntityCreation.EntityCreatorDistributor;
 import ObjectConversion.ReferenceStorage;
 import Serialization.AddToDB;

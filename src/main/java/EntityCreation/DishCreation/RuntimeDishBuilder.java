@@ -6,7 +6,7 @@ import ObjectConversion.ReferenceStorage;
 import java.util.InputMismatchException;
 
 public class RuntimeDishBuilder extends DishBuilder {
-    private IngredientException noIngredient = new IngredientException();
+    private final IngredientException noIngredient = new IngredientException();
 
     @Override
     void buildName() {

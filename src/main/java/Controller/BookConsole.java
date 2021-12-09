@@ -14,12 +14,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BookConsole implements AbstractConsole {
-    private Controller.CreateExecutor CreateExecutor = new CreateExecutor();
-    private CreateOperation CreateDish = new CreateDishOperation();
-    private CreateOperation CreateIngredient= new CreateIngredientOperation();
-    private GetExecutor GetExecutor = new GetExecutor();
-    private GetPrefDishes prefDishes = new GetPrefDishes();
-    private GetFavouriteOperation GetFav = new GetFavouriteOperation();
+    private final Controller.CreateExecutor CreateExecutor = new CreateExecutor();
+    private final CreateOperation CreateDish = new CreateDishOperation();
+    private final CreateOperation CreateIngredient= new CreateIngredientOperation();
+    private final GetExecutor GetExecutor = new GetExecutor();
+    private final GetPrefDishes prefDishes = new GetPrefDishes();
+    private final GetFavouriteOperation GetFav = new GetFavouriteOperation();
 
     public void run(String input) throws IOException, SQLException {
         Scanner sc = new Scanner(System.in);

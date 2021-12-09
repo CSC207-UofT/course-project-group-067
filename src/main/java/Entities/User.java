@@ -5,7 +5,9 @@ import java.util.ArrayList;
 
 public class User implements Serializable {
 
+    @SuppressWarnings("FieldMayBeFinal")
     private ArrayList<Dish> favourites;
+    @SuppressWarnings("FieldMayBeFinal")
     private ArrayList<String> preferences;
     private String name;
     protected boolean edit;

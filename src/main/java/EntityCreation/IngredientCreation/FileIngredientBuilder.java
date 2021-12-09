@@ -1,9 +1,7 @@
 package EntityCreation.IngredientCreation;
 
-import java.util.Arrays;
-
 public class FileIngredientBuilder extends IngredientBuilder {
-    private String[] inputs = new String[2];
+    private final String[] inputs = new String[2];
 
     public FileIngredientBuilder(String data){
 

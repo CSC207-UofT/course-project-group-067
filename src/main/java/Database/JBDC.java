@@ -13,7 +13,7 @@ public class JBDC {
     }
 
     private static ArrayList<Dataset> setCreator(Statement s){
-        ArrayList<Dataset> ret = new ArrayList<Dataset>();
+        ArrayList<Dataset> ret = new ArrayList<>();
         ret.add(new AttributeDataset(s));
         ret.add(new IngredientDataset(s));
         ret.add(new DishDataset(s));

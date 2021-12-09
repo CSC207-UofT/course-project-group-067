@@ -5,7 +5,7 @@ import Entities.User;
 import java.util.ArrayList;
 
 public class UserManager {
-    private ArrayList<User> userList = new ArrayList<User>();
+    private final ArrayList<User> userList = new ArrayList<>();
 
     public void addUser(User u) {
         userList.add(u);

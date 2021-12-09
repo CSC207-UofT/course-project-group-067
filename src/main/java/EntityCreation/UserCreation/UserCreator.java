@@ -6,7 +6,7 @@ import EntityCreation.EntityCreator;
 
 
 public class UserCreator implements EntityCreator {
-    private String data;
+    private final String data;
 
     public UserCreator(String data){
         this.data = data;

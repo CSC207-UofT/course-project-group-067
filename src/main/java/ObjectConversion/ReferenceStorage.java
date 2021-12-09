@@ -18,7 +18,7 @@ public class ReferenceStorage {
     public static User u = null;
 
     public static void reset(){
-        attributes = new ArrayList<String>();
+        attributes = new ArrayList<>();
         dm = new DishManager();
         im = new IngredientManager();
         um = new UserManager();

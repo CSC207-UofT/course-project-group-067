@@ -3,6 +3,7 @@ package Entities;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+@SuppressWarnings("FieldMayBeFinal")
 public class Dish implements Serializable {
     private String name;
     private double time;

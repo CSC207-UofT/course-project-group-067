@@ -11,6 +11,8 @@ public class CreateExecutor {
         operationList.add(operation);
         operation.execute();
     }
+
+//Not used in UI interface but applied for other front ends
     public void genesis(CreateOperation operation, String data) throws SQLException {
         operationList.add(operation);
         operation.execute(data);

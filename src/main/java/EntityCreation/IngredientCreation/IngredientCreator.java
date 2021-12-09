@@ -4,7 +4,7 @@ import Entities.Ingredient;
 import EntityCreation.EntityCreator;
 
 public class IngredientCreator implements EntityCreator {
-    private String data;
+    private final String data;
 
     public IngredientCreator(String data){
         this.data = data;
