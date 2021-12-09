@@ -7,10 +7,10 @@ public class RuntimeIngredientBuilder extends IngredientBuilder {
     void buildName() {
         System.out.println("Enter Ingredient Name");
         String input = sc.nextLine().trim().toLowerCase();
-        if(!(ReferenceStorage.im.getIngredientNames().contains(input)))
+        if(!(ReferenceStorage.im.getIngredientNames().contains(input))  && (input.length()>0))
         ingredient.addName(input);
         else {
-            System.out.println("Ingredient already exists, please enter a different name");
+            System.out.println("Ingredient already exists/Invalid name , please enter a different name");
         buildName();}
     }
 
