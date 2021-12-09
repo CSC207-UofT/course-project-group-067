@@ -8,11 +8,14 @@ public class RuntimeUserBuilder extends UserBuilder {
     void buildName() {
         System.out.println("Enter User Name, in lower case");
         String input = sc.nextLine().trim().toLowerCase();
-        if(ReferenceStorage.um.getUserNames().contains(input))
-        {System.out.println("Username already exists, try again");
-            buildName();}
-        else
-            user.addName(input);
+        if(!(ReferenceStorage.um.getUserNames().contains(input))  && (input.length()>0))
+        {user.addName(input);
+            }
+        else {
+            System.out.println("Username already exists/Invalid name, try again");
+            buildName();
+        }
+
 
     }
 

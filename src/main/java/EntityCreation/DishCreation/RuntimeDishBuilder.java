@@ -12,10 +12,10 @@ public class RuntimeDishBuilder extends DishBuilder {
     void buildName() {
         System.out.println("Enter Dish Name");
         String input = sc.nextLine().trim().toLowerCase();
-        if(!(ReferenceStorage.dm.getDishNames().contains(input)))
+        if(!(ReferenceStorage.dm.getDishNames().contains(input)) && (input.length()>0))
             dish.addName(input);
         else {
-            System.out.println("Dish already exists, please enter a different name");
+            System.out.println("Dish already exists/Invalid name, please enter a different name");
             buildName();}
     }
 
