@@ -3,11 +3,9 @@ package EntityCreation.UserCreation;
 
 import ObjectConversion.ReferenceStorage;
 
-import java.util.Arrays;
-
 
 public class FileUserBuilder extends UserBuilder {
-    private String[] inputs = new String[4];
+    private final String[] inputs = new String[5];
 
     public FileUserBuilder(String data){
 
@@ -66,5 +64,10 @@ public class FileUserBuilder extends UserBuilder {
 
     }
 
+    @Override
+    void buildPassword(){
+        String password = inputs[4];
+        user.addPassword(password);
+    }
 
 }

@@ -2,11 +2,9 @@ package EntityCreation.DishCreation;
 
 import ObjectConversion.ReferenceStorage;
 
-import java.util.Arrays;
-
 
 public class FileDishBuilder extends DishBuilder {
-    private String[] inputs = new String[4];
+    private final String[] inputs = new String[4];
 
     public FileDishBuilder(String data){
 

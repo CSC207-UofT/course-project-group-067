@@ -1,8 +1,5 @@
-import Entities.Dish;
 import Entities.User;
 import Managers.UserManager;
-import Entities.Ingredient;
-import Managers.DishManager;
 import org.junit.Before;
 import org.junit.Test;
 

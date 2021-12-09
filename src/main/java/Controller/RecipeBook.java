@@ -1,25 +1,23 @@
 package Controller;
 
 import ObjectConversion.ReferenceStorage;
-import Presenter.BookView;
 
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
 public class RecipeBook{
 
-    public void open() throws IOException, ClassNotFoundException, SQLException {
+    public void open() throws SQLException {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter Menu Input");
-        System.out.println("BOOK");
-        System.out.println("Profile");
-        String choice = sc.nextLine().toLowerCase();
+        menuOptions();
 
-        if(choice.equals("profile")) {
-            System.out.println("Enter One Command: 'Favourites'; 'Preferences', 'Add to preferences, 'Remove from preferences', 'Close';");
+        String choice = sc.nextLine().strip().toLowerCase();
+        while(!(choice.equals("close"))){
+
+            if (choice.equals("profile")) {
+            userOptions();
 
             String input = sc.nextLine().toLowerCase();
 
@@ -31,39 +29,76 @@ public class RecipeBook{
                 } catch (IllegalStateException e){
                     System.out.println(e.getMessage());
                 }
-                System.out.println("Enter Command:");
+                userOptions();
 
                 input = sc.nextLine().toLowerCase();
             }
-            open();
+
         }
 
-        if(choice.equals("book")){
 
-            BookView.view();
+            else if(choice.equals("book")) {
 
-            System.out.println("Enter Command:");
+                bookOptions();
 
-            String input = sc.nextLine().toLowerCase();
+                String input = sc.nextLine().toLowerCase();
 
-            BookConsole c = new BookConsole();
+                BookConsole c = new BookConsole();
 
-            while(!(input.equals("close"))){
-                try{
-                    c.run(input);
-                } catch (IllegalStateException e){
-                    System.out.println(e.getMessage());
+                while (!(input.equals("close"))) {
+                    try {
+                        c.run(input);
+                    } catch (IllegalStateException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    bookOptions();
+
+                    input = sc.nextLine().toLowerCase();
                 }
-                System.out.println("Enter Command:");
-
-                input = sc.nextLine().toLowerCase();
             }
+            else{
+                System.out.println("Invalid choice");
+                }
+            menuOptions();
 
-        String[] args = new String[]{"TEMP"};
-        ReferenceStorage.reset();
-        Launch.main(args);
+            choice = sc.nextLine().strip().toLowerCase();
+
         }
 
+
+    }
+
+    private void userOptions(){
+        System.out.println("Enter one of the following"+"\n");
+        System.out.println("favourites -> To see the favourite dishes \n");
+        System.out.println("preferences -> To see the preferred attributes \n");
+        System.out.println("add to preferences -> To add an attribute to your preferred attributes \n");
+        System.out.println("remove from preferences -> To remove an attribute from your preferred attributes \n");
+        System.out.println("close -> To return to main menu \n");
+
+    }
+
+    private void menuOptions(){
+        System.out.println("Enter one of the following"+"\n");
+        System.out.println("book -> To open the recipe book menu"+"\n");
+        System.out.println("profile -> To open the user profile menu"+"\n");
+        System.out.println("close -> To return to user selection menu \n");
+
+    }
+
+    private void bookOptions(){
+        System.out.println("Enter one of the following"+"\n");
+        System.out.println("view dishes -> To view all stored dishes \n");
+        System.out.println("view ingredients -> To view all stored ingredients \n");
+        System.out.println("view ingredient -> To view details of a specific ingredient \n");
+        System.out.println("favourites -> To view all dishes marked as favourite \n");
+        System.out.println("add to favourites -> To add a dish to your list of favourite dishes \n");
+        System.out.println("remove from favourites -> To remove a dish from your list of favourite dishes \n");
+        System.out.println("preferences -> To view all dishes containing preferred attributes \n");
+        if(ReferenceStorage.u.getEdit().equals("1")) {
+            System.out.println("create dish -> To create a new dish \n");
+            System.out.println("create ingredient -> To create a new ingredient \n");
+        }
     }
 
 }

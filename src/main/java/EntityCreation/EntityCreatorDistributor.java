@@ -7,14 +7,16 @@ import EntityCreation.UserCreation.UserCreator;
 public class EntityCreatorDistributor {
 
     public static EntityCreator distribute(String type, String data) {
-        if(type.equals("DISH"))
-            return new DishCreator(data);
-        else if(type.equals("INGREDIENT"))
-            return new IngredientCreator(data);
-        else if(type.equals("USER"))
-            return new UserCreator(data);
-        else
-            throw new IllegalStateException("Unexpected Type: " + type);
+        switch (type) {
+            case "DISH":
+                return new DishCreator(data);
+            case "INGREDIENT":
+                return new IngredientCreator(data);
+            case "USER":
+                return new UserCreator(data);
+            default:
+                throw new IllegalStateException("Unexpected Type: " + type);
+        }
     }
 
 }

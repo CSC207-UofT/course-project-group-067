@@ -3,7 +3,6 @@ package Search;
 import Entities.Dish;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class NameSearch implements Searcher{
 

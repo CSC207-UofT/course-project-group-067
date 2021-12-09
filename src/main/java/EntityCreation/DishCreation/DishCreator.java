@@ -4,11 +4,12 @@ import Entities.Dish;
 import EntityCreation.EntityCreator;
 
 public class DishCreator implements EntityCreator {
-    private String data; //name@time@ingredients@method
+    private final String data; //name@time@ingredients@method
 
     public DishCreator(String data){
         this.data = data;
     }
+    @SuppressWarnings("unchecked")
     public Dish create(){
         DishBuilderDirector dishBuilderDirector = new DishBuilderDirector();
         DishBuilder dishBuilder;
@@ -20,6 +21,7 @@ public class DishCreator implements EntityCreator {
 
         dishBuilderDirector.setDishBuilder(dishBuilder);
         dishBuilderDirector.construct();
+
 
         return dishBuilderDirector.getDish();
 

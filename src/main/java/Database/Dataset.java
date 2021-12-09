@@ -5,5 +5,5 @@ import java.util.ArrayList;
 
 public interface Dataset {
 
-    public ArrayList<String> getData() throws SQLException;
+    ArrayList<String> getData() throws SQLException;
 }

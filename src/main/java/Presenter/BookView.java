@@ -17,6 +17,7 @@ public class BookView {
             System.out.println(d.getName());
             index++;
         }
+        System.out.println();
 
     }
 
@@ -28,7 +29,7 @@ public class BookView {
             System.out.println(d.getName());
             index++;
         }
-
+        System.out.println();
     }
 
     public static void ingredientsView(){
@@ -40,6 +41,7 @@ public class BookView {
             System.out.println(i.getName());
             index++;
         }
+        System.out.println();
 
     }
 

@@ -5,13 +5,12 @@ import Presenter.BookView;
 import Presenter.OpenSesame;
 import Serialization.AddToDB;
 
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
 public class UserConsole implements AbstractConsole {
 
-    public void run(String input) throws IOException, SQLException {
+    public void run(String input) throws SQLException {
         Scanner sc = new Scanner(System.in);
         if (ReferenceStorage.dm.getDishNames().contains(input)) {
             OpenSesame.recipe(ReferenceStorage.dm.nameToDish(input));
@@ -36,7 +35,7 @@ public class UserConsole implements AbstractConsole {
                 new AddToDB().SetPreferences(ReferenceStorage.u);
                 break;
             default:
-                throw new IllegalStateException("Unexpected Command/Entities.Dish: " + input);
+                throw new IllegalStateException("Unexpected Command/Dish: " + input);
         }
     }
 }

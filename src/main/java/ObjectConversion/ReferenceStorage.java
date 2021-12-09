@@ -11,20 +11,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ReferenceStorage {
-    public static ArrayList<String> attributes = new ArrayList<>();
-    public static DishManager dm = new DishManager();
-    public static IngredientManager im = new IngredientManager();
-    public static UserManager um = new UserManager();
+    public static final ArrayList<String> attributes = new ArrayList<>();
+    public static final DishManager dm = new DishManager();
+    public static final IngredientManager im = new IngredientManager();
+    public static final UserManager um = new UserManager();
     public static User u = null;
-
-    public static void reset(){
-        attributes = new ArrayList<String>();
-        dm = new DishManager();
-        im = new IngredientManager();
-        um = new UserManager();
-        u = null;
-    }
-
 
     private static final String user = "admin";
     private static final String pass = "uZ?[}raO3SdS-wDm";

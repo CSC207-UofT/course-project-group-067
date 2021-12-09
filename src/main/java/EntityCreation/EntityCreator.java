@@ -1,5 +1,5 @@
 package EntityCreation;
 
-public interface EntityCreator {
+public interface EntityCreator  {
     <T> T create();
 }
