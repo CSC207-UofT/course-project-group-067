@@ -52,6 +52,7 @@ public class SearchTest {
         expected.add(testDish);
         AttrSearch AttrSearcher = new AttrSearch();
         String input = "vegetarian";
+
         assertEquals(expected, AttrSearcher.getResults(dishList, input)); //Tests if AttributeSearch returns
         // the dish with the given attribute correctly and doesn't return the dish without the attribute
 
@@ -65,6 +66,7 @@ public class SearchTest {
         expected.add(testDish);
         IngSearch IngSearcher = new IngSearch();
         String input = "broccoli";
+
         assertEquals(expected, IngSearcher.getResults(dishList, input)); //Tests if IngSearch returns the dish with the
         // given ingredient as expected
 
@@ -80,7 +82,7 @@ public class SearchTest {
         expected.add(testMeatDish);
         TimeSearch TimeSearcher = new TimeSearch();
         String input = "7";
-//        System.setIn(new ByteArrayInputStream(input.getBytes()));
+
         assertEquals(expected, TimeSearcher.getResults(dishList, input)); //Tests if IngSearch returns both dishes since
         // they are under the indicated cook time
 
