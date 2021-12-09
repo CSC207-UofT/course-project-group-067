@@ -9,32 +9,32 @@ import ObjectConversion.ReferenceStorage;
 import Serialization.AddToDB;
 import Serialization.Initialize;
 
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Launch {
-    static Scanner sc = new Scanner(System.in);
-    public static void main(String[] args) throws SQLException, IOException, ClassNotFoundException {
+    static final Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws SQLException {
         initializeAll();
 
         if(ReferenceStorage.um.getUserList().isEmpty()){
-            System.out.println("No Users Found, Creating New User....");
+            System.out.println("No users found, creating new user...."+"\n"+"\n");
             LaunchUserMaker();
 
         }
 
-        printUsers();
 
 
         boolean loop = true;
         while(loop) {
 
-            System.out.println("Select from the users listed or enter 'create' to create a new user or 'end' to terminate");
+            System.out.println("Enter one of the following:"+"\n"+"\n"+"username -> Takes you to the login screen"+"\n");
+            System.out.println("create -> To create a new user"+"\n"+"\n"+"end -> To terminate the program"+"\n");
             String input = sc.nextLine().strip().toLowerCase();
 
             if (input.equals("end")){
                 loop = false;
+
             }
 
             else if (input.equals("create")) {
@@ -44,14 +44,22 @@ public class Launch {
             else if (ReferenceStorage.um.getUserNames().contains(input)){
                 ReferenceStorage.u = ReferenceStorage.um.getUserByName(input);
 
-                RecipeBook rb = new RecipeBook();
-                rb.open();
+                System.out.println("Enter password for "+ReferenceStorage.u.getName()+"\n");
+                String pass = sc.nextLine().strip().toLowerCase();
+
+                if(pass.equals(ReferenceStorage.u.getPassword()))
+                {RecipeBook rb = new RecipeBook();
+                rb.open();}
+                else{
+                    System.out.println("Invalid password...\n");
+                }
+
             }
 
             else{
-                System.out.println("User not found...");
+                System.out.println("User not found...\n");
             }
-            printUsers();
+
 
         }
     }
@@ -71,11 +79,5 @@ public class Launch {
         new AddToDB().AddUser(u);
     }
 
-    private static void printUsers(){
-        System.out.println("Users:");
-        for(User u : ReferenceStorage.um.getUserList()){
-            System.out.println(u.getName());
-        }
-    }
 
 }

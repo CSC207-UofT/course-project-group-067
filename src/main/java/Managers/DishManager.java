@@ -5,10 +5,10 @@ import Entities.Dish;
 import java.util.ArrayList;
 
 public class DishManager {
-    private ArrayList<Dish> dishes;
+    private final ArrayList<Dish> dishes;
 
     public DishManager() {
-        this.dishes = new ArrayList<Dish>();
+        this.dishes = new ArrayList<>();
     }
 
     public void addDishToList(Dish dish) {

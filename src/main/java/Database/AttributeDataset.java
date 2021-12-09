@@ -6,7 +6,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class AttributeDataset implements Dataset{
-    private Statement s;
+    private final Statement s;
 
     AttributeDataset(Statement s){
         this.s = s;

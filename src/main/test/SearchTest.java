@@ -4,16 +4,12 @@ import EntityCreation.DishCreation.DishCreator;
 import EntityCreation.IngredientCreation.IngredientCreator;
 import Search.AttrSearch;
 import Entities.Ingredient;
-import Managers.DishManager;
 import Search.IngSearch;
 import Search.PrefSearch;
 import Search.TimeSearch;
 import org.junit.Before;
 import org.junit.Test;
-import org.w3c.dom.Attr;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.util.ArrayList;
 import static org.junit.Assert.*;
 import ObjectConversion.ReferenceStorage;
@@ -56,8 +52,6 @@ public class SearchTest {
         expected.add(testDish);
         AttrSearch AttrSearcher = new AttrSearch();
         String input = "vegetarian";
-//                + System.getProperty("line.separator") + "END" + System.getProperty("line.separator");
-//        System.setIn(new ByteArrayInputStream(input.getBytes()));
         assertEquals(expected, AttrSearcher.getResults(dishList, input)); //Tests if AttributeSearch returns
         // the dish with the given attribute correctly and doesn't return the dish without the attribute
 
@@ -71,8 +65,6 @@ public class SearchTest {
         expected.add(testDish);
         IngSearch IngSearcher = new IngSearch();
         String input = "broccoli";
-//                + System.getProperty("line.separator") + "END" + System.getProperty("line.separator");
-//        System.setIn(new ByteArrayInputStream(input.getBytes()));
         assertEquals(expected, IngSearcher.getResults(dishList, input)); //Tests if IngSearch returns the dish with the
         // given ingredient as expected
 

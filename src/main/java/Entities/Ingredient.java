@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Ingredient implements Serializable {
     public String name;
-    public ArrayList<String> attributes;
+    public final ArrayList<String> attributes;
 
     public Ingredient(){
         this.name = "EMPTY";
@@ -35,7 +35,7 @@ public class Ingredient implements Serializable {
     }
 
     public ArrayList<String> getAttributes() {
-        return (ArrayList<String>) attributes.clone();
+        return this.attributes;
     }
 
 

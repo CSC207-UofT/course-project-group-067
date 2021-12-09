@@ -19,5 +19,6 @@ public class UserBuilderDirector {
         userBuilder.buildPreferences();
         userBuilder.buildFavourites();
         userBuilder.buildEdit();
+        userBuilder.buildPassword();
     }
 }

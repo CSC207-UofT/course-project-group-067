@@ -6,13 +6,17 @@ import ObjectConversion.ReferenceStorage;
 import java.util.InputMismatchException;
 
 public class RuntimeDishBuilder extends DishBuilder {
-    private IngredientException noIngredient = new IngredientException();
+    private final IngredientException noIngredient = new IngredientException();
 
     @Override
     void buildName() {
         System.out.println("Enter Dish Name");
-        String input = sc.nextLine().trim();
-        dish.addName(input);
+        String input = sc.nextLine().trim().toLowerCase();
+        if(!(ReferenceStorage.dm.getDishNames().contains(input)))
+            dish.addName(input);
+        else {
+            System.out.println("Dish already exists, please enter a different name");
+            buildName();}
     }
 
     @Override
@@ -34,11 +38,11 @@ public class RuntimeDishBuilder extends DishBuilder {
 
     @Override
     void buildIngredients() {
-        System.out.println("Enter Ingredients, END to finish");
+        System.out.println("Enter Ingredients, end to finish");
         sc.nextLine();
-        String input = sc.nextLine();
+        String input = sc.nextLine().toLowerCase();
 
-        while(!(input.equalsIgnoreCase("END"))){
+        while(!(input.equalsIgnoreCase("end"))){
             try{
                 dish.addIngredient(ReferenceStorage.im.nameToIngredient(input));}
             catch(Exception IllegalStateException) {
@@ -53,10 +57,10 @@ public class RuntimeDishBuilder extends DishBuilder {
 
     @Override
     void buildMethod() {
-        System.out.println("Enter Cooking Instructions, END to finish");
+        System.out.println("Enter Cooking Instructions, end to finish");
         String input = sc.nextLine();
 
-        while(!(input.equalsIgnoreCase("END"))){
+        while(!(input.equalsIgnoreCase("end"))){
             dish.addMethod(input);
             input = sc.nextLine();
         }

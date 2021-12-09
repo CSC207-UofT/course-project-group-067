@@ -4,8 +4,9 @@ import java.util.Scanner;
 import Entities.Dish;
 import EntityCreation.BuilderFramework;
 
+@SuppressWarnings("unchecked")
 abstract class DishBuilder extends BuilderFramework {
-    Scanner sc = new Scanner(System.in);
+    final Scanner sc = new Scanner(System.in);
     Dish dish;
 
     abstract void buildName();
