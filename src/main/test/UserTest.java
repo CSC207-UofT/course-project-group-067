@@ -49,18 +49,18 @@ public class UserTest {
         User testUser = new User();
         testUser.addName("testUser");
         testUser.addFavourite(dinner);
-        testUser.addPreferences("Vegan");
+        testUser.addPreferences("vegan");
         assertEquals(testUser.getName(), "testUser"); //Tests if the user's name was successfully added
         ArrayList<Dish> dishes = new ArrayList<>();
         ArrayList<String> preferences = new ArrayList<>();
-        preferences.add("Vegan");
+        preferences.add("vegan");
         dishes.add(dinner);
         assertEquals(testUser.getFavourites(), dishes); //Tests if getFavourites properly
         // returns an ArrayList with the added Dish
         assertEquals(testUser.getPreferences(), preferences); //Tests if getPreferences properly returns
         // an ArrayList with the added Preference
         testUser.removeFavourite(dinner);
-        testUser.removePreferences("Vegan");
+        testUser.removePreferences("vegan");
         assertEquals(testUser.getFavourites(), new ArrayList<Dish>()); //Tests if dish was properly removed
         assertEquals(testUser.getPreferences(), new ArrayList<String>()); //Tests if preference was properly removed
 
@@ -80,7 +80,7 @@ public class UserTest {
         assertEquals(favouriteDishes, user3.getFavourites());
 
         ArrayList<String> prefList = new ArrayList<>();
-        prefList.add("Veggie");
+        prefList.add("veggie");
         assertEquals(prefList, user3.getPreferences());
     }
 
